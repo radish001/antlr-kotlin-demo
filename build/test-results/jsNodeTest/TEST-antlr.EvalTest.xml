@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="antlr.EvalTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-10-16T09:41:22" hostname="huxiaodong-deMacBook-Pro.local" time="0.134">
+  <properties/>
+  <testcase name="test[js, node]" classname="antlr.EvalTest" time="0.134">
+    <failure message="ClassCastException:" type="ClassCastException">ClassCastException:
+	at &lt;global&gt;.THROW_CCE(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/runtime/hacks.kt:23)
+	at CalculatorLexer.Lexer.readInputStream_cn8ozw(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/Lexer.kt:44)
+	at CalculatorLexer.Lexer.nextToken_jykgjq(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/Lexer.kt:214)
+	at CommonTokenStream.BufferedTokenStream.fetch_es1drt(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/BufferedTokenStream.kt:170)
+	at CommonTokenStream.BufferedTokenStream.sync_o63rt2(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/BufferedTokenStream.kt:153)
+	at CommonTokenStream.BufferedTokenStream.setup_2uql04(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/BufferedTokenStream.kt:254)
+	at CommonTokenStream.BufferedTokenStream.lazyInit_ml29bh(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/BufferedTokenStream.kt:249)
+	at CommonTokenStream.LT_6crwc9(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/CommonTokenStream.kt:101)
+	at CalculatorParser.Parser.enterRule_khu8i(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/Parser.kt:647)
+	at CalculatorParser.prog_21xsq(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/src/commonAntlr/kotlin/antlr/CalculatorParser.kt:145)
+	at antlr.EvalTest.test_w6j16n(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/src/commonTest/kotlin/antlr/EvalTest.kt:32)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-test.js:94)
+	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
+	at &lt;global&gt;.processImmediate(node:internal/timers:464)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

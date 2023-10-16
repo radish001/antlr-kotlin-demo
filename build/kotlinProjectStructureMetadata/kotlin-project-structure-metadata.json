@@ -1,0 +1,55 @@
+{
+  "projectStructure": {
+    "formatVersion": "0.3.2",
+    "isPublishedAsRoot": "true",
+    "variants": [
+      {
+        "name": "jsApiElements",
+        "sourceSet": [
+          "commonMain",
+          "commonAntlr"
+        ]
+      },
+      {
+        "name": "jsRuntimeElements",
+        "sourceSet": [
+          "commonMain",
+          "commonAntlr"
+        ]
+      },
+      {
+        "name": "jvmApiElements",
+        "sourceSet": [
+          "commonMain",
+          "commonAntlr"
+        ]
+      },
+      {
+        "name": "jvmRuntimeElements",
+        "sourceSet": [
+          "commonMain",
+          "commonAntlr"
+        ]
+      }
+    ],
+    "sourceSets": [
+      {
+        "name": "commonAntlr",
+        "dependsOn": [],
+        "moduleDependency": [
+          "org.jetbrains.kotlin:kotlin-stdlib-common",
+          "com.strumenta.antlr-kotlin:antlr-kotlin-runtime"
+        ],
+        "binaryLayout": "klib"
+      },
+      {
+        "name": "commonMain",
+        "dependsOn": [
+          "commonAntlr"
+        ],
+        "moduleDependency": [],
+        "binaryLayout": "klib"
+      }
+    ]
+  }
+}
