@@ -18,17 +18,17 @@
     }
     root['antlt-kotlin-demo-test'] = factory(typeof this['antlt-kotlin-demo-test'] === 'undefined' ? {} : this['antlt-kotlin-demo-test'], this['antlr-kotlin-antlr-kotlin-runtime-js-ir'], this['antlt-kotlin-demo'], this['kotlin-kotlin-stdlib-js-ir'], this['kotlin-kotlin-test-js-ir']);
   }
-}(this, function (_, kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime, kotlin_me_goal_antlt_kotlin_demo, kotlin_kotlin, kotlin_kotlin_test) {
+}(this, function (_, kotlin_com_github_radish001_antlr_kotlin_antlr_kotlin_runtime, kotlin_me_goal_antlt_kotlin_demo, kotlin_kotlin, kotlin_kotlin_test) {
   'use strict';
   //region block: imports
-  var ANTLRInputStream_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.h;
+  var ANTLRInputStream_init_$Create$ = kotlin_com_github_radish001_antlr_kotlin_antlr_kotlin_runtime.$_$.h;
   var CalculatorLexer = kotlin_me_goal_antlt_kotlin_demo.$_$.b;
-  var CommonTokenStream = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.w;
+  var CommonTokenStream = kotlin_com_github_radish001_antlr_kotlin_antlr_kotlin_runtime.$_$.w;
   var CalculatorParser = kotlin_me_goal_antlt_kotlin_demo.$_$.c;
   var println = kotlin_kotlin.$_$.c3;
   var CalculatorVistorImp = kotlin_me_goal_antlt_kotlin_demo.$_$.d;
-  var CharStreams_getInstance = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.m;
-  var ParseTreeWalker = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.v;
+  var CharStreams_getInstance = kotlin_com_github_radish001_antlr_kotlin_antlr_kotlin_runtime.$_$.m;
+  var ParseTreeWalker = kotlin_com_github_radish001_antlr_kotlin_antlr_kotlin_runtime.$_$.v;
   var CalculatorBaseListenerImpl = kotlin_me_goal_antlt_kotlin_demo.$_$.a;
   var getKClassFromExpression = kotlin_kotlin.$_$.a;
   var ensureNotNull = kotlin_kotlin.$_$.y4;
