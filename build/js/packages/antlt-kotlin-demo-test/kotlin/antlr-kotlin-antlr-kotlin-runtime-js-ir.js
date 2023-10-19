@@ -21,25 +21,25 @@
   var charSequenceLength = kotlin_kotlin.$_$.h3;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.j;
   var charSequenceGet = kotlin_kotlin.$_$.g3;
-  var Char = kotlin_kotlin.$_$.m4;
+  var Char = kotlin_kotlin.$_$.o4;
   var toCharArray = kotlin_kotlin.$_$.q2;
   var contentEquals = kotlin_kotlin.$_$.w1;
   var contentEquals_0 = kotlin_kotlin.$_$.x1;
   var joinToString$default = kotlin_kotlin.$_$.f;
   var interfaceMeta = kotlin_kotlin.$_$.n3;
-  var ensureNotNull = kotlin_kotlin.$_$.w4;
+  var ensureNotNull = kotlin_kotlin.$_$.y4;
   var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.x;
   var Char__toInt_impl_vasixd = kotlin_kotlin.$_$.j1;
   var copyOfRange = kotlin_kotlin.$_$.y1;
   var classMeta = kotlin_kotlin.$_$.i3;
   var NullPointerException_init_$Create$ = kotlin_kotlin.$_$.b1;
-  var THROW_CCE = kotlin_kotlin.$_$.u4;
+  var THROW_CCE = kotlin_kotlin.$_$.w4;
   var isInterface = kotlin_kotlin.$_$.p3;
   var IndexOutOfBoundsException_init_$Create$ = kotlin_kotlin.$_$.z;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.k;
   var HashSet_init_$Create$ = kotlin_kotlin.$_$.n;
   var StringBuilder_init_$Create$ = kotlin_kotlin.$_$.s;
-  var Pair = kotlin_kotlin.$_$.s4;
+  var Pair = kotlin_kotlin.$_$.u4;
   var replace$default = kotlin_kotlin.$_$.g;
   var captureStack = kotlin_kotlin.$_$.e3;
   var NotImplementedError_init_$Create$ = kotlin_kotlin.$_$.i;
@@ -47,15 +47,19 @@
   var numberToChar = kotlin_kotlin.$_$.u3;
   var toString_0 = kotlin_kotlin.$_$.k1;
   var emptyList = kotlin_kotlin.$_$.d2;
-  var RuntimeException = kotlin_kotlin.$_$.t4;
+  var RuntimeException = kotlin_kotlin.$_$.v4;
   var RuntimeException_init_$Init$ = kotlin_kotlin.$_$.c1;
   var HashMap_init_$Create$ = kotlin_kotlin.$_$.m;
   var toMap = kotlin_kotlin.$_$.t2;
   var UnsupportedOperationException_init_$Create$ = kotlin_kotlin.$_$.g1;
-  var to = kotlin_kotlin.$_$.y4;
+  var to = kotlin_kotlin.$_$.a5;
   var toMap_0 = kotlin_kotlin.$_$.u2;
   var List = kotlin_kotlin.$_$.o1;
   var listOf = kotlin_kotlin.$_$.i2;
+  var isHighSurrogate = kotlin_kotlin.$_$.j4;
+  var until = kotlin_kotlin.$_$.a4;
+  var hasSurrogatePairAt = kotlin_kotlin.$_$.i4;
+  var toIntArray = kotlin_kotlin.$_$.r2;
   var fillArrayVal = kotlin_kotlin.$_$.k3;
   var copyOf = kotlin_kotlin.$_$.a2;
   var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.h1;
@@ -66,15 +70,15 @@
   var last = kotlin_kotlin.$_$.d4;
   var none = kotlin_kotlin.$_$.e4;
   var LinkedHashMap_init_$Create$ = kotlin_kotlin.$_$.p;
-  var NotImplementedError = kotlin_kotlin.$_$.r4;
+  var NotImplementedError = kotlin_kotlin.$_$.t4;
   var hashCode = kotlin_kotlin.$_$.m3;
   var HashSet_init_$Create$_0 = kotlin_kotlin.$_$.o;
   var UnsupportedOperationException_init_$Create$_0 = kotlin_kotlin.$_$.f1;
   var Set = kotlin_kotlin.$_$.s1;
-  var THROW_ISE = kotlin_kotlin.$_$.v4;
-  var Enum = kotlin_kotlin.$_$.p4;
+  var THROW_ISE = kotlin_kotlin.$_$.x4;
+  var Enum = kotlin_kotlin.$_$.r4;
   var toLong = kotlin_kotlin.$_$.y3;
-  var Long = kotlin_kotlin.$_$.q4;
+  var Long = kotlin_kotlin.$_$.s4;
   var copyOf_0 = kotlin_kotlin.$_$.z1;
   var Companion_getInstance = kotlin_kotlin.$_$.m1;
   var IllegalStateException_init_$Create$_0 = kotlin_kotlin.$_$.w;
@@ -84,10 +88,10 @@
   var filterNotNull = kotlin_kotlin.$_$.e2;
   var joinToString$default_0 = kotlin_kotlin.$_$.e;
   var copyOf_1 = kotlin_kotlin.$_$.b2;
-  var Comparable = kotlin_kotlin.$_$.n4;
+  var Comparable = kotlin_kotlin.$_$.p4;
   var toList = kotlin_kotlin.$_$.s2;
   var joinToString$default_1 = kotlin_kotlin.$_$.d;
-  var Comparator = kotlin_kotlin.$_$.o4;
+  var Comparator = kotlin_kotlin.$_$.q4;
   var compareValues = kotlin_kotlin.$_$.z2;
   var ArrayList_init_$Create$_1 = kotlin_kotlin.$_$.l;
   var sortWith = kotlin_kotlin.$_$.o2;
@@ -98,7 +102,7 @@
   var numberToInt = kotlin_kotlin.$_$.v3;
   var isObject = kotlin_kotlin.$_$.q3;
   var MutableSet = kotlin_kotlin.$_$.r1;
-  var toString_1 = kotlin_kotlin.$_$.x4;
+  var toString_1 = kotlin_kotlin.$_$.z4;
   var filterNotNull_0 = kotlin_kotlin.$_$.f2;
   var collectionSizeOrDefault = kotlin_kotlin.$_$.v1;
   var addAll = kotlin_kotlin.$_$.t1;
@@ -107,7 +111,6 @@
   var MutableMap = kotlin_kotlin.$_$.q1;
   var IllegalArgumentException_init_$Create$_0 = kotlin_kotlin.$_$.u;
   var toTypedArray = kotlin_kotlin.$_$.x2;
-  var toIntArray = kotlin_kotlin.$_$.r2;
   var checkIndexOverflow = kotlin_kotlin.$_$.u1;
   var IndexOutOfBoundsException_init_$Create$_0 = kotlin_kotlin.$_$.y;
   var sort = kotlin_kotlin.$_$.p2;
@@ -123,13 +126,12 @@
   var arrayIterator = kotlin_kotlin.$_$.d3;
   var minOrNull = kotlin_kotlin.$_$.l2;
   var maxOrNull = kotlin_kotlin.$_$.k2;
-  var toLong_0 = kotlin_kotlin.$_$.j4;
+  var toLong_0 = kotlin_kotlin.$_$.l4;
   var getKClassFromExpression = kotlin_kotlin.$_$.a;
   var get_js = kotlin_kotlin.$_$.r3;
-  var until = kotlin_kotlin.$_$.a4;
-  var uppercaseChar = kotlin_kotlin.$_$.k4;
+  var uppercaseChar = kotlin_kotlin.$_$.m4;
   var get_kotlin = kotlin_kotlin.$_$.s3;
-  var Annotation = kotlin_kotlin.$_$.l4;
+  var Annotation = kotlin_kotlin.$_$.n4;
   //endregion
   //region block: pre-declaration
   function startPoint() {
@@ -274,6 +276,8 @@
   ErrorNodeImpl.prototype.constructor = ErrorNodeImpl;
   Variant.prototype = Object.create(Enum.prototype);
   Variant.prototype.constructor = Variant;
+  CharStreams.prototype = Object.create(AbstractCharStreams.prototype);
+  CharStreams.prototype.constructor = CharStreams;
   //endregion
   function Math_0() {
     Math_instance = this;
@@ -520,6 +524,17 @@
     this.name_1 = null;
   }
   ANTLRInputStream.$metadata$ = classMeta('ANTLRInputStream', [CharStream]);
+  function AbstractCharStreams() {
+  }
+  AbstractCharStreams.prototype.fromString_u4ybkp_k$ = function (s, sourceName) {
+    return new StringCharStream(s, sourceName);
+  };
+  AbstractCharStreams.prototype.fromString$default_ibgbyx_k$ = function (s, sourceName, $mask0, $handler) {
+    if (!(($mask0 & 2) === 0))
+      sourceName = Companion_getInstance_4().UNKNOWN_SOURCE_NAME_1;
+    return this.fromString_u4ybkp_k$(s, sourceName);
+  };
+  AbstractCharStreams.$metadata$ = classMeta('AbstractCharStreams');
   function BufferedTokenStream(tokenSource) {
     this.tokenSource_1 = tokenSource;
     this.tokens_1 = ArrayList_init_$Create$(100);
@@ -3043,6 +3058,150 @@
       EMPTY_RULECTX = ParserRuleContext_init_$Create$();
     }
   }
+  function _get_source__4cuw5s($this) {
+    return $this.source_1;
+  }
+  function _get_codePointIndices__57x7t3($this) {
+    return $this.codePointIndices_1;
+  }
+  function _get_size__ddoh9m($this) {
+    return $this.size_1;
+  }
+  function _set_position__5hlfea($this, _set____db54di) {
+    $this.position_1 = _set____db54di;
+  }
+  function _get_position__iahqv2($this) {
+    return $this.position_1;
+  }
+  function codePoint($this, index) {
+    var tmp;
+    if (0 <= index ? index < $this.size_1 : false) {
+      var char = charSequenceGet($this.source_1, $this.codePointIndices_1[index]);
+      var tmp_0;
+      if (isHighSurrogate(char)) {
+        var tmp_1;
+        var containsUpper = $this.size_1;
+        var containsArg = index + 1 | 0;
+        if (0 <= containsArg ? containsArg < containsUpper : false) {
+          var low = charSequenceGet($this.source_1, $this.codePointIndices_1[index] + 1 | 0);
+          tmp_1 = toCodePoint(char, low);
+        } else {
+          tmp_1 = Companion_getInstance_4().EOF_1;
+        }
+        tmp_0 = tmp_1;
+      } else {
+        tmp_0 = Char__toInt_impl_vasixd(char);
+      }
+      tmp = tmp_0;
+    } else {
+      tmp = Companion_getInstance_4().EOF_1;
+    }
+    return tmp;
+  }
+  function StringCharStream(source, sourceName) {
+    this.source_1 = source;
+    this.sourceName_1 = sourceName;
+    this.codePointIndices_1 = codePointIndices(this.source_1);
+    this.size_1 = this.codePointIndices_1.length;
+    this.position_1 = 0;
+  }
+  StringCharStream.prototype.get_sourceName_wh0te7_k$ = function () {
+    return this.sourceName_1;
+  };
+  StringCharStream.prototype.consume_spbz2t_k$ = function () {
+    if ((this.size_1 - this.position_1 | 0) === 0) {
+      assert(this.LA_y7f82c_k$(1) === Companion_getInstance_4().EOF_1);
+      throw IllegalStateException_init_$Create$('cannot consume EOF');
+    }
+    var tmp0_this = this;
+    tmp0_this.position_1 = tmp0_this.position_1 + 1 | 0;
+  };
+  StringCharStream.prototype.index_1nqriq_k$ = function () {
+    return this.position_1;
+  };
+  StringCharStream.prototype.size_23och_k$ = function () {
+    return this.size_1;
+  };
+  StringCharStream.prototype.mark_1zob1_k$ = function () {
+    return -1;
+  };
+  StringCharStream.prototype.release_knbvef_k$ = function (marker) {
+  };
+  StringCharStream.prototype.seek_5aisp4_k$ = function (index) {
+    this.position_1 = index;
+  };
+  StringCharStream.prototype.toString = function () {
+    return this.getText_egqjjt_k$(Companion_getInstance_32().of_9v4utl_k$(0, this.size_1 - 1 | 0));
+  };
+  StringCharStream.prototype.getText_egqjjt_k$ = function (interval) {
+    var startIndex = Math_getInstance().min_vhgrta_k$(interval.a_1, this.size_1);
+    var endIndex = Math_getInstance().min_vhgrta_k$(interval.b_1, this.size_1);
+    var tmp$ret$1;
+    // Inline function 'kotlin.text.substring' call
+    var tmp0_substring = this.source_1;
+    var tmp1_substring = this.codePointIndices_1[startIndex];
+    var tmp2_substring = this.codePointIndices_1[endIndex] + 1 | 0;
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = tmp0_substring;
+    tmp$ret$1 = tmp$ret$0.substring(tmp1_substring, tmp2_substring);
+    return tmp$ret$1;
+  };
+  StringCharStream.prototype.LA_y7f82c_k$ = function (i) {
+    var tmp;
+    if (i < 0) {
+      tmp = codePoint(this, this.position_1 + i | 0);
+    } else if (i > 0) {
+      tmp = codePoint(this, (this.position_1 + i | 0) - 1 | 0);
+    } else {
+      return 0;
+    }
+    return tmp;
+  };
+  StringCharStream.$metadata$ = classMeta('StringCharStream', [CharStream]);
+  function codePointIndices(_this__u8e3s4) {
+    var tmp$ret$3;
+    // Inline function 'kotlin.collections.mapNotNull' call
+    var tmp0_mapNotNull = until(0, _this__u8e3s4.length);
+    var tmp$ret$2;
+    // Inline function 'kotlin.collections.mapNotNullTo' call
+    var tmp0_mapNotNullTo = ArrayList_init_$Create$_0();
+    // Inline function 'kotlin.collections.forEach' call
+    var inductionVariable = tmp0_mapNotNull.first_1;
+    var last = tmp0_mapNotNull.last_1;
+    if (inductionVariable <= last)
+      do {
+        var element = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        // Inline function 'kotlin.collections.mapNotNullTo.<anonymous>' call
+        var tmp$ret$0;
+        // Inline function 'org.antlr.v4.kotlinruntime.codePointIndices.<anonymous>' call
+        var tmp;
+        if (hasSurrogatePairAt(_this__u8e3s4, element - 1 | 0)) {
+          tmp = null;
+        } else {
+          tmp = element;
+        }
+        tmp$ret$0 = tmp;
+        var tmp0_safe_receiver = tmp$ret$0;
+        if (tmp0_safe_receiver == null)
+          null;
+        else {
+          var tmp$ret$1;
+          // Inline function 'kotlin.let' call
+          // Inline function 'kotlin.contracts.contract' call
+          tmp0_mapNotNullTo.add_1j60pz_k$(tmp0_safe_receiver);
+          tmp$ret$1 = Unit_getInstance();
+        }
+      }
+       while (!(element === last));
+    tmp$ret$2 = tmp0_mapNotNullTo;
+    tmp$ret$3 = tmp$ret$2;
+    return toIntArray(tmp$ret$3);
+  }
+  function toCodePoint(high, low) {
+    return ((Char__toInt_impl_vasixd(high) << 10) + Char__toInt_impl_vasixd(low) | 0) + -56613888 | 0;
+  }
   function Companion_6() {
     Companion_instance_6 = this;
     this.INVALID_TYPE_1 = 0;
@@ -4316,10 +4475,10 @@
   function Companion_12() {
     Companion_instance_12 = this;
     this.SERIALIZED_VERSION_1 = 3;
-    this.BASE_SERIALIZED_UUID_1 = Companion_getInstance_35().fromString_2a1yvu_k$('33761B2D-78BB-4A43-8B0B-4F5BEE8AACF3');
-    this.ADDED_PRECEDENCE_TRANSITIONS_1 = Companion_getInstance_35().fromString_2a1yvu_k$('1DA0C57D-6C06-438A-9B27-10BCB3CE0F61');
-    this.ADDED_LEXER_ACTIONS_1 = Companion_getInstance_35().fromString_2a1yvu_k$('AADB8D7E-AEEF-4415-AD2B-8204D6CF042E');
-    this.ADDED_UNICODE_SMP_1 = Companion_getInstance_35().fromString_2a1yvu_k$('59627784-3BE5-417A-B9EB-8131A7286089');
+    this.BASE_SERIALIZED_UUID_1 = Companion_getInstance_36().fromString_2a1yvu_k$('33761B2D-78BB-4A43-8B0B-4F5BEE8AACF3');
+    this.ADDED_PRECEDENCE_TRANSITIONS_1 = Companion_getInstance_36().fromString_2a1yvu_k$('1DA0C57D-6C06-438A-9B27-10BCB3CE0F61');
+    this.ADDED_LEXER_ACTIONS_1 = Companion_getInstance_36().fromString_2a1yvu_k$('AADB8D7E-AEEF-4415-AD2B-8204D6CF042E');
+    this.ADDED_UNICODE_SMP_1 = Companion_getInstance_36().fromString_2a1yvu_k$('59627784-3BE5-417A-B9EB-8131A7286089');
     this.SUPPORTED_UUIDS_1 = ArrayList_init_$Create$_0();
     this.SUPPORTED_UUIDS_1.add_1j60pz_k$(this.BASE_SERIALIZED_UUID_1);
     this.SUPPORTED_UUIDS_1.add_1j60pz_k$(this.ADDED_PRECEDENCE_TRANSITIONS_1);
@@ -13053,9 +13212,81 @@
   function ParseTreeListener() {
   }
   ParseTreeListener.$metadata$ = interfaceMeta('ParseTreeListener');
+  function ParseTreeProperty() {
+    this.annotations_1 = new IdentityHashMap();
+  }
+  ParseTreeProperty.prototype.set_annotations_c2fa8y_k$ = function (_set____db54di) {
+    this.annotations_1 = _set____db54di;
+  };
+  ParseTreeProperty.prototype.get_annotations_20dirp_k$ = function () {
+    return this.annotations_1;
+  };
+  ParseTreeProperty.prototype.get_ygppjo_k$ = function (node) {
+    return ensureNotNull(this.annotations_1.get_1mhr4y_k$(node));
+  };
+  ParseTreeProperty.prototype.put_6s7jo3_k$ = function (node, value) {
+    this.annotations_1.put_3mhbri_k$(node, value);
+  };
+  ParseTreeProperty.prototype.removeFrom_4oy6ic_k$ = function (node) {
+    return ensureNotNull(this.annotations_1.remove_8hbkc0_k$(node));
+  };
+  ParseTreeProperty.$metadata$ = classMeta('ParseTreeProperty');
   function ParseTreeVisitor() {
   }
   ParseTreeVisitor.$metadata$ = interfaceMeta('ParseTreeVisitor');
+  function Companion_34() {
+    Companion_instance_34 = this;
+    this.DEFAULT_1 = new ParseTreeWalker();
+  }
+  Companion_34.prototype.get_DEFAULT_wccqmg_k$ = function () {
+    return this.DEFAULT_1;
+  };
+  Companion_34.$metadata$ = objectMeta('Companion');
+  var Companion_instance_34;
+  function Companion_getInstance_35() {
+    if (Companion_instance_34 == null)
+      new Companion_34();
+    return Companion_instance_34;
+  }
+  function ParseTreeWalker() {
+    Companion_getInstance_35();
+  }
+  ParseTreeWalker.prototype.walk_g0y9jc_k$ = function (listener, t) {
+    if (isInterface(t, ErrorNode)) {
+      listener.visitErrorNode_7q1wqt_k$(isInterface(t, ErrorNode) ? t : THROW_CCE());
+      return Unit_getInstance();
+    } else {
+      if (isInterface(t, TerminalNode)) {
+        listener.visitTerminal_j27dif_k$(isInterface(t, TerminalNode) ? t : THROW_CCE());
+        return Unit_getInstance();
+      }
+    }
+    var r = isInterface(t, RuleNode) ? t : THROW_CCE();
+    this.enterRule_9qx9ba_k$(listener, r);
+    var n = r.get_childCount_1t393w_k$();
+    var inductionVariable = 0;
+    if (inductionVariable < n)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        this.walk_g0y9jc_k$(listener, ensureNotNull(r.getChild_tm8i57_k$(i)));
+      }
+       while (inductionVariable < n);
+    this.exitRule_sgziwc_k$(listener, r);
+  };
+  ParseTreeWalker.prototype.enterRule_9qx9ba_k$ = function (listener, r) {
+    var tmp = r.get_ruleContext_kkgnmy_k$();
+    var ctx = tmp instanceof ParserRuleContext ? tmp : THROW_CCE();
+    listener.enterEveryRule_qb430n_k$(ctx);
+    ctx.enterRule_nsg4az_k$(listener);
+  };
+  ParseTreeWalker.prototype.exitRule_sgziwc_k$ = function (listener, r) {
+    var tmp = r.get_ruleContext_kkgnmy_k$();
+    var ctx = tmp instanceof ParserRuleContext ? tmp : THROW_CCE();
+    ctx.exitRule_ixwge3_k$(listener);
+    listener.exitEveryRule_1zne9f_k$(ctx);
+  };
+  ParseTreeWalker.$metadata$ = classMeta('ParseTreeWalker');
   function RuleNode() {
   }
   RuleNode.$metadata$ = interfaceMeta('RuleNode', [ParseTree]);
@@ -13573,10 +13804,10 @@
     return this.bitsLength_1;
   };
   Variant.$metadata$ = classMeta('Variant', undefined, undefined, undefined, undefined, Enum.prototype);
-  function Companion_34() {
-    Companion_instance_34 = this;
+  function Companion_35() {
+    Companion_instance_35 = this;
   }
-  Companion_34.prototype.fromString_2a1yvu_k$ = function (encoded) {
+  Companion_35.prototype.fromString_2a1yvu_k$ = function (encoded) {
     var parts = split$default(encoded, ['-'], false, 0, 6, null);
     // Inline function 'kotlin.require' call
     var tmp0_require = parts.get_size_woubt6_k$() === 5;
@@ -13689,12 +13920,12 @@
     var node = toLong_0(parts.get_fkrdnv_k$(4), 16);
     return UUID_init_$Create$_0(version, timeLow, timeMid, timeHi, variant, clockSeq, node);
   };
-  Companion_34.$metadata$ = objectMeta('Companion');
-  var Companion_instance_34;
-  function Companion_getInstance_35() {
-    if (Companion_instance_34 == null)
-      new Companion_34();
-    return Companion_instance_34;
+  Companion_35.$metadata$ = objectMeta('Companion');
+  var Companion_instance_35;
+  function Companion_getInstance_36() {
+    if (Companion_instance_35 == null)
+      new Companion_35();
+    return Companion_instance_35;
   }
   function UUID_init_$Init$(most, least, $this) {
     UUID.call($this);
@@ -13780,7 +14011,7 @@
     return 'UUID(timeLow=' + toString(this.timeLow_1) + ', timeMid=' + toString(this.timeMid_1) + ', version=' + toString(this.version_1) + ', timeHi=' + toString(this.timeHi_1) + ', variant=' + toString(this.variant_1) + ', clock_seq=' + toString(this.clock_seq_1) + ', node=' + toString(this.node_1) + ')';
   };
   function UUID() {
-    Companion_getInstance_35();
+    Companion_getInstance_36();
   }
   UUID.$metadata$ = classMeta('UUID');
   function WeakHashMap_init_$Init$(_wrapped, $mask0, $marker, $this) {
@@ -13941,6 +14172,17 @@
     tmp$ret$2 = tmp$ret$1;
     return new Type(get_js(ensureNotNull(tmp$ret$2)));
   }
+  function CharStreams() {
+    CharStreams_instance = this;
+    AbstractCharStreams.call(this);
+  }
+  CharStreams.$metadata$ = objectMeta('CharStreams', undefined, undefined, undefined, undefined, AbstractCharStreams.prototype);
+  var CharStreams_instance;
+  function CharStreams_getInstance() {
+    if (CharStreams_instance == null)
+      new CharStreams();
+    return CharStreams_instance;
+  }
   function ThreadLocal() {
   }
   ThreadLocal.prototype.equals = function (other) {
@@ -13991,19 +14233,22 @@
   _.$_$.j = ParserRuleContext_init_$Init$;
   _.$_$.k = ParserRuleContext_init_$Init$_0;
   _.$_$.l = Companion_getInstance_9;
-  _.$_$.m = LexerATNSimulator;
-  _.$_$.n = ParserATNSimulator;
-  _.$_$.o = PredictionContextCache;
-  _.$_$.p = DFA;
-  _.$_$.q = AbstractParseTreeVisitor;
-  _.$_$.r = ParseTreeListener;
-  _.$_$.s = ParseTreeVisitor;
-  _.$_$.t = CommonTokenStream;
-  _.$_$.u = Lexer;
-  _.$_$.v = ParserRuleContext;
-  _.$_$.w = Parser;
-  _.$_$.x = RecognitionException;
-  _.$_$.y = Token;
+  _.$_$.m = CharStreams_getInstance;
+  _.$_$.n = LexerATNSimulator;
+  _.$_$.o = ParserATNSimulator;
+  _.$_$.p = PredictionContextCache;
+  _.$_$.q = DFA;
+  _.$_$.r = AbstractParseTreeVisitor;
+  _.$_$.s = ParseTreeListener;
+  _.$_$.t = ParseTreeProperty;
+  _.$_$.u = ParseTreeVisitor;
+  _.$_$.v = ParseTreeWalker;
+  _.$_$.w = CommonTokenStream;
+  _.$_$.x = Lexer;
+  _.$_$.y = ParserRuleContext;
+  _.$_$.z = Parser;
+  _.$_$.a1 = RecognitionException;
+  _.$_$.b1 = Token;
   //endregion
   return _;
 }));

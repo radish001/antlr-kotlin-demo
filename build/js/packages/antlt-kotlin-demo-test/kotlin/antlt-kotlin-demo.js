@@ -1,74 +1,79 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd)
-    define(['exports', 'base-64', './antlr-kotlin-antlr-kotlin-runtime-js-ir.js', './kotlin-kotlin-stdlib-js-ir.js'], factory);
+    define(['exports', 'base-64', './kotlin-kotlin-stdlib-js-ir.js', './antlr-kotlin-antlr-kotlin-runtime-js-ir.js'], factory);
   else if (typeof exports === 'object')
-    factory(module.exports, require('base-64'), require('./antlr-kotlin-antlr-kotlin-runtime-js-ir.js'), require('./kotlin-kotlin-stdlib-js-ir.js'));
+    factory(module.exports, require('base-64'), require('./kotlin-kotlin-stdlib-js-ir.js'), require('./antlr-kotlin-antlr-kotlin-runtime-js-ir.js'));
   else {
     if (typeof Base64 === 'undefined') {
       throw new Error("Error loading module 'antlt-kotlin-demo'. Its dependency 'base-64' was not found. Please, check whether 'base-64' is loaded prior to 'antlt-kotlin-demo'.");
     }
-    if (typeof this['antlr-kotlin-antlr-kotlin-runtime-js-ir'] === 'undefined') {
-      throw new Error("Error loading module 'antlt-kotlin-demo'. Its dependency 'antlr-kotlin-antlr-kotlin-runtime-js-ir' was not found. Please, check whether 'antlr-kotlin-antlr-kotlin-runtime-js-ir' is loaded prior to 'antlt-kotlin-demo'.");
-    }
     if (typeof this['kotlin-kotlin-stdlib-js-ir'] === 'undefined') {
       throw new Error("Error loading module 'antlt-kotlin-demo'. Its dependency 'kotlin-kotlin-stdlib-js-ir' was not found. Please, check whether 'kotlin-kotlin-stdlib-js-ir' is loaded prior to 'antlt-kotlin-demo'.");
     }
-    root['antlt-kotlin-demo'] = factory(typeof this['antlt-kotlin-demo'] === 'undefined' ? {} : this['antlt-kotlin-demo'], Base64, this['antlr-kotlin-antlr-kotlin-runtime-js-ir'], this['kotlin-kotlin-stdlib-js-ir']);
+    if (typeof this['antlr-kotlin-antlr-kotlin-runtime-js-ir'] === 'undefined') {
+      throw new Error("Error loading module 'antlt-kotlin-demo'. Its dependency 'antlr-kotlin-antlr-kotlin-runtime-js-ir' was not found. Please, check whether 'antlr-kotlin-antlr-kotlin-runtime-js-ir' is loaded prior to 'antlt-kotlin-demo'.");
+    }
+    root['antlt-kotlin-demo'] = factory(typeof this['antlt-kotlin-demo'] === 'undefined' ? {} : this['antlt-kotlin-demo'], Base64, this['kotlin-kotlin-stdlib-js-ir'], this['antlr-kotlin-antlr-kotlin-runtime-js-ir']);
   }
-}(this, function (_, Base64, kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime, kotlin_kotlin) {
+}(this, function (_, Base64, kotlin_kotlin, kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime) {
   'use strict';
   //region block: imports
   var imul = Math.imul;
-  var AbstractParseTreeVisitor = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.q;
   var classMeta = kotlin_kotlin.$_$.i3;
-  var THROW_ISE = kotlin_kotlin.$_$.v4;
+  var ParseTreeProperty = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.t;
+  var HashMap_init_$Create$ = kotlin_kotlin.$_$.m;
+  var ensureNotNull = kotlin_kotlin.$_$.y4;
+  var println = kotlin_kotlin.$_$.c3;
+  var AbstractParseTreeVisitor = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.r;
+  var THROW_ISE = kotlin_kotlin.$_$.x4;
   var Unit_getInstance = kotlin_kotlin.$_$.n1;
-  var PredictionContextCache = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.o;
+  var PredictionContextCache = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.p;
   var listOf = kotlin_kotlin.$_$.i2;
   var copyToArray = kotlin_kotlin.$_$.c2;
   var VocabularyImpl_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.g;
   var fillArrayVal = kotlin_kotlin.$_$.k3;
   var ATNDeserializer_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.d;
   var asCharArray = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.b;
-  var ensureNotNull = kotlin_kotlin.$_$.w4;
-  var DFA = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.p;
+  var DFA = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.q;
   var objectMeta = kotlin_kotlin.$_$.w3;
-  var Enum = kotlin_kotlin.$_$.p4;
-  var Lexer = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.u;
+  var Enum = kotlin_kotlin.$_$.r4;
+  var Lexer = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.x;
   var Lexer_init_$Init$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.i;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.j;
-  var THROW_CCE = kotlin_kotlin.$_$.u4;
+  var THROW_CCE = kotlin_kotlin.$_$.w4;
   var isArray = kotlin_kotlin.$_$.o3;
-  var LexerATNSimulator = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.m;
+  var LexerATNSimulator = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.n;
   var KProperty1 = kotlin_kotlin.$_$.b4;
   var getPropertyCallableRef = kotlin_kotlin.$_$.l3;
-  var ParseTreeListener = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.r;
+  var ParseTreeListener = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.s;
   var interfaceMeta = kotlin_kotlin.$_$.n3;
   var ParserRuleContext_init_$Init$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.k;
   var ParserRuleContext_init_$Init$_0 = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.j;
   var getKClass = kotlin_kotlin.$_$.b;
   var TypeDeclarator = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.a;
-  var ParserRuleContext = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.v;
+  var ParserRuleContext = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.y;
   var RuntimeException_init_$Create$ = kotlin_kotlin.$_$.d1;
   var getType = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.c;
   var isInterface = kotlin_kotlin.$_$.p3;
   var NoViableAltException_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.f;
-  var Token = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.y;
+  var Token = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.b1;
   var Companion_getInstance = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.l;
   var FailedPredicateException_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.e;
-  var RecognitionException = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.x;
-  var Parser = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.w;
-  var ParserATNSimulator = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.n;
-  var Long = kotlin_kotlin.$_$.q4;
-  var ParseTreeVisitor = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.s;
-  var HashMap_init_$Create$ = kotlin_kotlin.$_$.m;
-  var toInt = kotlin_kotlin.$_$.i4;
+  var RecognitionException = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.a1;
+  var Parser = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.z;
+  var ParserATNSimulator = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.o;
+  var Long = kotlin_kotlin.$_$.s4;
+  var ParseTreeVisitor = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.u;
+  var RuntimeException_init_$Create$_0 = kotlin_kotlin.$_$.e1;
+  var toInt = kotlin_kotlin.$_$.k4;
   var StringBuilder_init_$Create$ = kotlin_kotlin.$_$.r;
   var numberToChar = kotlin_kotlin.$_$.u3;
   var decodeToString = kotlin_kotlin.$_$.g4;
   var encodeToByteArray = kotlin_kotlin.$_$.h4;
   //endregion
   //region block: pre-declaration
+  CalculatorBaseListenerImpl.prototype = Object.create(CalculatorBaseListener.prototype);
+  CalculatorBaseListenerImpl.prototype.constructor = CalculatorBaseListenerImpl;
   CalculatorBaseVisitor.prototype = Object.create(AbstractParseTreeVisitor.prototype);
   CalculatorBaseVisitor.prototype.constructor = CalculatorBaseVisitor;
   Tokens.prototype = Object.create(Enum.prototype);
@@ -140,35 +145,111 @@
     return value;
   }
   //endregion
+  function CalculatorBaseListener() {
+  }
+  CalculatorBaseListener.prototype.enterProg_xx5gk6_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitProg_794ld0_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterPrint_mn305g_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitPrint_r1pq9q_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterAssign_e4hz7u_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitAssign_d5m33w_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterBlank_p1ehhu_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitBlank_tg17m4_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterMulDiv_5lqp4m_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitMulDiv_wvurgc_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterAddSub_qh2xyu_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitAddSub_h9x1ok_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterParenthese_6hls52_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitParenthese_mmg2nw_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterId_8qq4cq_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitId_5ov9ks_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterInt_e26szs_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitInt_56rd32_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.enterEveryRule_qb430n_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.exitEveryRule_1zne9f_k$ = function (ctx) {
+  };
+  CalculatorBaseListener.prototype.visitTerminal_j27dif_k$ = function (node) {
+  };
+  CalculatorBaseListener.prototype.visitErrorNode_7q1wqt_k$ = function (node) {
+  };
+  CalculatorBaseListener.$metadata$ = classMeta('CalculatorBaseListener', [CalculatorListener]);
+  function CalculatorBaseListenerImpl() {
+    CalculatorBaseListener.call(this);
+    this.ctxs_1 = new ParseTreeProperty();
+    this.map_1 = HashMap_init_$Create$();
+  }
+  CalculatorBaseListenerImpl.prototype.get_ctxs_wokc51_k$ = function () {
+    return this.ctxs_1;
+  };
+  CalculatorBaseListenerImpl.prototype.get_map_18j0ul_k$ = function () {
+    return this.map_1;
+  };
+  CalculatorBaseListenerImpl.prototype.enterAddSub_qh2xyu_k$ = function (ctx) {
+    var left = this.ctxs_1.get_ygppjo_k$(ensureNotNull(ctx.findExpr_28ilfx_k$(0)));
+    var right = this.ctxs_1.get_ygppjo_k$(ensureNotNull(ctx.findExpr_28ilfx_k$(1)));
+    var tmp0_safe_receiver = ctx.op_1;
+    if ((tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_type_wovaf7_k$()) === Tokens_ADD_getInstance_0().id_1) {
+      this.ctxs_1.put_6s7jo3_k$(ctx, left + right | 0);
+    } else {
+      this.ctxs_1.put_6s7jo3_k$(ctx, left - right | 0);
+    }
+  };
+  CalculatorBaseListenerImpl.prototype.enterPrint_mn305g_k$ = function (ctx) {
+    var value = this.ctxs_1.get_ygppjo_k$(ensureNotNull(ctx.findExpr_b8mw8i_k$()));
+    var tmp = ctx.findExpr_b8mw8i_k$();
+    if (tmp instanceof PrintContext) {
+      println('\u7ED3\u679C\uFF1A' + value);
+    }
+  };
+  CalculatorBaseListenerImpl.$metadata$ = classMeta('CalculatorBaseListenerImpl', undefined, undefined, undefined, undefined, CalculatorBaseListener.prototype);
   function CalculatorBaseVisitor() {
     AbstractParseTreeVisitor.call(this);
   }
   CalculatorBaseVisitor.prototype.visitProg_t2dyu2_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitPrint_97nidc_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitAssign_737p8m_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitBlank_drhv0u_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitMulDiv_8a9qka_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitAddSub_aosz2e_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitParenthese_slvire_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitId_tbvyx2_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.prototype.visitInt_ew8u0s_k$ = function (ctx) {
-    return this.visitChildren_mqo9kp_k$(ctx);
+    return ensureNotNull(ensureNotNull(this).visitChildren_mqo9kp_k$(ctx));
   };
   CalculatorBaseVisitor.$metadata$ = classMeta('CalculatorBaseVisitor', [CalculatorVisitor], undefined, undefined, undefined, AbstractParseTreeVisitor.prototype);
   function _get_LITERAL_NAMES__i6pfaf($this) {
@@ -1058,13 +1139,11 @@
     }
   };
   ProgContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitProg_t2dyu2_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitProg_t2dyu2_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function ProgContext() {
   }
@@ -1098,13 +1177,11 @@
     }
   };
   PrintContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitPrint_97nidc_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitPrint_97nidc_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function PrintContext() {
   }
@@ -1123,13 +1200,11 @@
     }
   };
   BlankContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitBlank_drhv0u_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitBlank_drhv0u_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function BlankContext() {
   }
@@ -1154,13 +1229,11 @@
     }
   };
   AssignContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitAssign_737p8m_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitAssign_737p8m_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function AssignContext() {
   }
@@ -1177,6 +1250,9 @@
   function ExprContext() {
   }
   ExprContext.$metadata$ = classMeta('ExprContext', undefined, undefined, undefined, undefined, ParserRuleContext.prototype);
+  function IMulDivContext() {
+  }
+  IMulDivContext.$metadata$ = interfaceMeta('IMulDivContext');
   MulDivContext.prototype.set_op_s6kj74_k$ = function (_set____db54di) {
     this.op_1 = _set____db54di;
   };
@@ -1200,18 +1276,16 @@
     }
   };
   MulDivContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitMulDiv_8a9qka_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitMulDiv_8a9qka_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function MulDivContext() {
     this.op_1 = null;
   }
-  MulDivContext.$metadata$ = classMeta('MulDivContext', undefined, undefined, undefined, undefined, ExprContext.prototype);
+  MulDivContext.$metadata$ = classMeta('MulDivContext', [IMulDivContext], undefined, undefined, undefined, ExprContext.prototype);
   AddSubContext.prototype.set_op_s6kj74_k$ = function (_set____db54di) {
     this.op_1 = _set____db54di;
   };
@@ -1235,13 +1309,11 @@
     }
   };
   AddSubContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitAddSub_aosz2e_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitAddSub_aosz2e_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function AddSubContext() {
     this.op_1 = null;
@@ -1261,13 +1333,11 @@
     }
   };
   ParentheseContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitParenthese_slvire_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitParenthese_slvire_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function ParentheseContext() {
   }
@@ -1286,13 +1356,11 @@
     }
   };
   IdContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitId_tbvyx2_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitId_tbvyx2_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function IdContext() {
   }
@@ -1311,13 +1379,11 @@
     }
   };
   IntContext.prototype.accept_4ufyhw_k$ = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitInt_ew8u0s_k$(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).visitInt_ew8u0s_k$(this);
     } else {
-      tmp = ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
+      return ensureNotNull(visitor.visitChildren_mqo9kp_k$(this));
     }
-    return tmp;
   };
   function IntContext() {
   }
@@ -1407,12 +1473,12 @@
                     throw FailedPredicateException_init_$Create$($this, 'precpred(context!!, 5)', null, 4, null);
                   }
                   $this.state_1 = 32;
-                  (_localctx instanceof MulDivContext ? _localctx : THROW_CCE()).op_1 = ensureNotNull($this._input_1).LT_6crwc9_k$(1);
+                  (_localctx instanceof MulDivContext ? _localctx : THROW_CCE()).set_op_s6kj74_k$(ensureNotNull($this._input_1).LT_6crwc9_k$(1));
                   _la = ensureNotNull($this._input_1).LA_y7f82c_k$(1);
                   if (!(_la === $this.MUL_1 ? true : _la === $this.DIV_1)) {
                     var tmp_3 = _localctx instanceof MulDivContext ? _localctx : THROW_CCE();
                     var tmp_4 = $this.errorHandler_1.recoverInline_4nx07t_k$($this);
-                    tmp_3.op_1 = isInterface(tmp_4, Token) ? tmp_4 : THROW_CCE();
+                    tmp_3.set_op_s6kj74_k$(isInterface(tmp_4, Token) ? tmp_4 : THROW_CCE());
                   } else {
                     if (ensureNotNull($this._input_1).LA_y7f82c_k$(1) === Tokens_EOF_getInstance().id_1)
                       $this.isMatchedEOF_1 = true;
@@ -1713,27 +1779,24 @@
   }
   CalculatorVistorImp.prototype.visitPrint_97nidc_k$ = function (ctx) {
     var tmp0_safe_receiver = ctx.findExpr_b8mw8i_k$();
-    return tmp0_safe_receiver == null ? null : tmp0_safe_receiver.accept_4ufyhw_k$(this);
+    return ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.accept_4ufyhw_k$(this));
   };
   CalculatorVistorImp.prototype.visitMulDiv_8a9qka_k$ = function (ctx) {
     var tmp0_safe_receiver = ctx.findExpr_28ilfx_k$(0);
     var param1 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.accept_4ufyhw_k$(this);
     var tmp1_safe_receiver = ctx.findExpr_28ilfx_k$(1);
     var param2 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.accept_4ufyhw_k$(this);
-    var tmp2_safe_receiver = ctx.op_1;
+    var tmp2_safe_receiver = ctx.get_op_kntnrq_k$();
     if ((tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_type_wovaf7_k$()) === Tokens_MUL_getInstance_0().id_1) {
       var tmp3_safe_receiver = param1;
-      return tmp3_safe_receiver == null ? null : imul(tmp3_safe_receiver, ensureNotNull(param2));
+      return ensureNotNull(tmp3_safe_receiver == null ? null : imul(tmp3_safe_receiver, ensureNotNull(param2)));
     }
-    var tmp;
-    var tmp4_safe_receiver = ctx.op_1;
+    var tmp4_safe_receiver = ctx.get_op_kntnrq_k$();
     if ((tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_type_wovaf7_k$()) === Tokens_DIV_getInstance_0().id_1) {
       var tmp5_safe_receiver = param1;
-      tmp = tmp5_safe_receiver == null ? null : tmp5_safe_receiver / ensureNotNull(param2) | 0;
-    } else {
-      tmp = null;
+      return ensureNotNull(tmp5_safe_receiver == null ? null : tmp5_safe_receiver / ensureNotNull(param2) | 0);
     }
-    return tmp;
+    throw RuntimeException_init_$Create$_0('\u4E0D\u77E5\u9053\u7684\u7B26\u53F7');
   };
   CalculatorVistorImp.prototype.visitAddSub_aosz2e_k$ = function (ctx) {
     var tmp0_safe_receiver = ctx.findExpr_28ilfx_k$(0);
@@ -1743,20 +1806,17 @@
     var tmp2_safe_receiver = ctx.op_1;
     if ((tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_type_wovaf7_k$()) === Tokens_ADD_getInstance_0().id_1) {
       var tmp3_safe_receiver = param1;
-      return tmp3_safe_receiver == null ? null : tmp3_safe_receiver + ensureNotNull(param2) | 0;
+      return ensureNotNull(tmp3_safe_receiver == null ? null : tmp3_safe_receiver + ensureNotNull(param2) | 0);
     }
-    var tmp;
     var tmp4_safe_receiver = ctx.op_1;
     if ((tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_type_wovaf7_k$()) === Tokens_SUB_getInstance_0().id_1) {
       var tmp5_safe_receiver = param1;
-      tmp = tmp5_safe_receiver == null ? null : tmp5_safe_receiver - ensureNotNull(param2) | 0;
-    } else {
-      tmp = null;
+      return ensureNotNull(tmp5_safe_receiver == null ? null : tmp5_safe_receiver - ensureNotNull(param2) | 0);
     }
-    return tmp;
+    throw RuntimeException_init_$Create$_0('\u4E0D\u77E5\u9053\u7684\u7B26\u53F7');
   };
   CalculatorVistorImp.prototype.visitId_tbvyx2_k$ = function (ctx) {
-    return this.variable_1.get_1mhr4y_k$(ctx.get_text_wouvsm_k$());
+    return ensureNotNull(this.variable_1.get_1mhr4y_k$(ctx.get_text_wouvsm_k$()));
   };
   CalculatorVistorImp.prototype.visitInt_ew8u0s_k$ = function (ctx) {
     return toInt(ctx.get_text_wouvsm_k$());
@@ -1817,10 +1877,11 @@
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};
-  _.$_$.a = CalculatorLexer;
-  _.$_$.b = CalculatorParser;
-  _.$_$.c = CalculatorVistorImp;
-  _.$_$.d = Base64Factory_getInstance;
+  _.$_$.a = CalculatorBaseListenerImpl;
+  _.$_$.b = CalculatorLexer;
+  _.$_$.c = CalculatorParser;
+  _.$_$.d = CalculatorVistorImp;
+  _.$_$.e = Base64Factory_getInstance;
   //endregion
   return _;
 }));

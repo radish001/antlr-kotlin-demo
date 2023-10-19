@@ -1,15 +1,18 @@
 // Generated from java-escape by ANTLR 4.7.1
 package antlr;
-import com.strumenta.kotlinmultiplatform.TypeDeclarator
 import com.strumenta.kotlinmultiplatform.asCharArray
 import com.strumenta.kotlinmultiplatform.getType
+import com.strumenta.kotlinmultiplatform.TypeDeclarator
 import org.antlr.v4.kotlinruntime.*
 import org.antlr.v4.kotlinruntime.atn.*
-import org.antlr.v4.kotlinruntime.atn.ATN.Companion.INVALID_ALT_NUMBER
+import org.antlr.v4.kotlinruntime.atn.ATNDeserializer
+import org.antlr.v4.kotlinruntime.atn.ParserATNSimulator
+import org.antlr.v4.kotlinruntime.atn.PredictionContextCache
 import org.antlr.v4.kotlinruntime.dfa.*
 import org.antlr.v4.kotlinruntime.tree.ParseTreeListener
-import org.antlr.v4.kotlinruntime.tree.ParseTreeVisitor
 import org.antlr.v4.kotlinruntime.tree.TerminalNode
+import org.antlr.v4.kotlinruntime.atn.ATN.Companion.INVALID_ALT_NUMBER
+import org.antlr.v4.kotlinruntime.tree.ParseTreeVisitor
 import kotlin.reflect.KClass
 
 class CalculatorParser(input: TokenStream) : Parser(input) {
@@ -134,10 +137,10 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitProg(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitProg(this) else visitor.visitChildren(this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitProg(this)
+			else return visitor.visitChildren(this)!!
 		}
-
 	}
 
 	fun  prog() : ProgContext {
@@ -196,10 +199,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitPrint(this)
 		}
-
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitPrint(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitPrint(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 	open class BlankContext : StatContext {
@@ -211,9 +213,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitBlank(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitBlank(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitBlank(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 	open class AssignContext : StatContext {
@@ -227,11 +229,10 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitAssign(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitAssign(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitAssign(this)
+			else return visitor.visitChildren(this)!!
 		}
-
 	}
 
 	fun  stat() : StatContext {
@@ -292,10 +293,20 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 			super.copyFrom(ctx)
 		}
 	}
-	open class MulDivContext : ExprContext {
-		public var op: Token? = null
-		fun findExpr() : List<ExprContext> = getRuleContexts(solver.getType("ExprContext"))
-		fun findExpr(i: Int) : ExprContext? = getRuleContext(solver.getType("ExprContext"),i)
+
+	interface IMulDivContext {
+		var op: Token?
+		fun findExpr() : List<ExprContext>
+		fun findExpr(i: Int) : ExprContext?
+		fun enterRule(listener: ParseTreeListener)
+		fun exitRule(listener: ParseTreeListener)
+		fun <T> accept(visitor : ParseTreeVisitor<out T>) : T
+	}
+
+	open class MulDivContext : ExprContext, IMulDivContext {
+		override var op: Token? = null
+		override fun findExpr() : List<ExprContext> = getRuleContexts(solver.getType("ExprContext"))
+		override fun findExpr(i: Int) : ExprContext? = getRuleContext(solver.getType("ExprContext"),i)
 		constructor(ctx: ExprContext) { copyFrom(ctx) }
 		override fun enterRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).enterMulDiv(this)
@@ -303,9 +314,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitMulDiv(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitMulDiv(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitMulDiv(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 	open class AddSubContext : ExprContext {
@@ -319,9 +330,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitAddSub(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitAddSub(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitAddSub(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 	open class ParentheseContext : ExprContext {
@@ -333,9 +344,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitParenthese(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitParenthese(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitParenthese(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 	open class IdContext : ExprContext {
@@ -347,9 +358,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitId(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitId(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitId(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 	open class IntContext : ExprContext {
@@ -361,9 +372,9 @@ class CalculatorParser(input: TokenStream) : Parser(input) {
 		override fun exitRule(listener: ParseTreeListener) {
 			if ( listener is CalculatorListener ) (listener as CalculatorListener).exitInt(this)
 		}
-		override fun <T> accept(visitor: ParseTreeVisitor<out T>): T {
-			return if (visitor is CalculatorVisitor) (visitor as CalculatorVisitor<out T>).visitInt(this) else visitor.visitChildren(
-				this)!!
+		override fun <T> accept(visitor : ParseTreeVisitor<out T>) : T {
+			if ( visitor is CalculatorVisitor ) return (visitor as CalculatorVisitor<out T>).visitInt(this)
+			else return visitor.visitChildren(this)!!
 		}
 	}
 

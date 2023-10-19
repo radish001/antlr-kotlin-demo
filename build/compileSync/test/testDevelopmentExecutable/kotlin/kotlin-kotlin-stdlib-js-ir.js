@@ -1266,6 +1266,48 @@ if (typeof Math.imul === 'undefined') {
     }
     return -1;
   }
+  function mapNotNull(_this__u8e3s4, transform) {
+    var tmp$ret$1;
+    // Inline function 'kotlin.collections.mapNotNullTo' call
+    var tmp0_mapNotNullTo = ArrayList_init_$Create$();
+    // Inline function 'kotlin.collections.forEach' call
+    var tmp0_iterator = _this__u8e3s4.iterator_jk1svi_k$();
+    while (tmp0_iterator.hasNext_bitz1p_k$()) {
+      var element = tmp0_iterator.next_20eer_k$();
+      // Inline function 'kotlin.collections.mapNotNullTo.<anonymous>' call
+      var tmp0_safe_receiver = transform(element);
+      if (tmp0_safe_receiver == null)
+        null;
+      else {
+        var tmp$ret$0;
+        // Inline function 'kotlin.let' call
+        // Inline function 'kotlin.contracts.contract' call
+        tmp0_mapNotNullTo.add_1j60pz_k$(tmp0_safe_receiver);
+        tmp$ret$0 = Unit_getInstance();
+      }
+    }
+    tmp$ret$1 = tmp0_mapNotNullTo;
+    return tmp$ret$1;
+  }
+  function mapNotNullTo(_this__u8e3s4, destination, transform) {
+    // Inline function 'kotlin.collections.forEach' call
+    var tmp0_iterator = _this__u8e3s4.iterator_jk1svi_k$();
+    while (tmp0_iterator.hasNext_bitz1p_k$()) {
+      var element = tmp0_iterator.next_20eer_k$();
+      // Inline function 'kotlin.collections.mapNotNullTo.<anonymous>' call
+      var tmp0_safe_receiver = transform(element);
+      if (tmp0_safe_receiver == null)
+        null;
+      else {
+        var tmp$ret$0;
+        // Inline function 'kotlin.let' call
+        // Inline function 'kotlin.contracts.contract' call
+        destination.add_1j60pz_k$(tmp0_safe_receiver);
+        tmp$ret$0 = Unit_getInstance();
+      }
+    }
+    return destination;
+  }
   function find(_this__u8e3s4, predicate) {
     var tmp$ret$0;
     $l$block: {
@@ -6672,6 +6714,9 @@ if (typeof Math.imul === 'undefined') {
   }
   function get_indices_6(_this__u8e3s4) {
     return numberRangeToNumber(0, charSequenceLength(_this__u8e3s4) - 1 | 0);
+  }
+  function hasSurrogatePairAt(_this__u8e3s4, index) {
+    return ((0 <= index ? index <= (charSequenceLength(_this__u8e3s4) - 2 | 0) : false) ? isHighSurrogate(charSequenceGet(_this__u8e3s4, index)) : false) ? isLowSurrogate(charSequenceGet(_this__u8e3s4, index + 1 | 0)) : false;
   }
   function _set_index__fyfqnn($this, _set____db54di) {
     $this.index_1 = _set____db54di;
@@ -20989,23 +21034,25 @@ if (typeof Math.imul === 'undefined') {
   _.$_$.f4 = StringBuilder;
   _.$_$.g4 = decodeToString;
   _.$_$.h4 = encodeToByteArray;
-  _.$_$.i4 = toInt;
-  _.$_$.j4 = toLong;
-  _.$_$.k4 = uppercaseChar;
-  _.$_$.l4 = Annotation;
-  _.$_$.m4 = Char_0;
-  _.$_$.n4 = Comparable;
-  _.$_$.o4 = Comparator;
-  _.$_$.p4 = Enum;
-  _.$_$.q4 = Long;
-  _.$_$.r4 = NotImplementedError;
-  _.$_$.s4 = Pair;
-  _.$_$.t4 = RuntimeException;
-  _.$_$.u4 = THROW_CCE;
-  _.$_$.v4 = THROW_ISE;
-  _.$_$.w4 = ensureNotNull;
-  _.$_$.x4 = toString_2;
-  _.$_$.y4 = to;
+  _.$_$.i4 = hasSurrogatePairAt;
+  _.$_$.j4 = isHighSurrogate;
+  _.$_$.k4 = toInt;
+  _.$_$.l4 = toLong;
+  _.$_$.m4 = uppercaseChar;
+  _.$_$.n4 = Annotation;
+  _.$_$.o4 = Char_0;
+  _.$_$.p4 = Comparable;
+  _.$_$.q4 = Comparator;
+  _.$_$.r4 = Enum;
+  _.$_$.s4 = Long;
+  _.$_$.t4 = NotImplementedError;
+  _.$_$.u4 = Pair;
+  _.$_$.v4 = RuntimeException;
+  _.$_$.w4 = THROW_CCE;
+  _.$_$.x4 = THROW_ISE;
+  _.$_$.y4 = ensureNotNull;
+  _.$_$.z4 = toString_2;
+  _.$_$.a5 = to;
   //endregion
   return _;
 }));

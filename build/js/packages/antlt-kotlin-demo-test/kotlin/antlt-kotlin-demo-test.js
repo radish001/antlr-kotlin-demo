@@ -22,18 +22,21 @@
   'use strict';
   //region block: imports
   var ANTLRInputStream_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.h;
-  var CalculatorLexer = kotlin_me_goal_antlt_kotlin_demo.$_$.a;
-  var CommonTokenStream = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.t;
-  var CalculatorParser = kotlin_me_goal_antlt_kotlin_demo.$_$.b;
-  var CalculatorVistorImp = kotlin_me_goal_antlt_kotlin_demo.$_$.c;
+  var CalculatorLexer = kotlin_me_goal_antlt_kotlin_demo.$_$.b;
+  var CommonTokenStream = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.w;
+  var CalculatorParser = kotlin_me_goal_antlt_kotlin_demo.$_$.c;
   var println = kotlin_kotlin.$_$.c3;
+  var CalculatorVistorImp = kotlin_me_goal_antlt_kotlin_demo.$_$.d;
+  var CharStreams_getInstance = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.m;
+  var ParseTreeWalker = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.v;
+  var CalculatorBaseListenerImpl = kotlin_me_goal_antlt_kotlin_demo.$_$.a;
   var getKClassFromExpression = kotlin_kotlin.$_$.a;
-  var ensureNotNull = kotlin_kotlin.$_$.w4;
+  var ensureNotNull = kotlin_kotlin.$_$.y4;
   var classMeta = kotlin_kotlin.$_$.i3;
   var suite = kotlin_kotlin_test.$_$.b;
   var test = kotlin_kotlin_test.$_$.c;
   var Unit_getInstance = kotlin_kotlin.$_$.n1;
-  var Base64Factory_getInstance = kotlin_me_goal_antlt_kotlin_demo.$_$.d;
+  var Base64Factory_getInstance = kotlin_me_goal_antlt_kotlin_demo.$_$.e;
   var assertEquals$default = kotlin_kotlin_test.$_$.a;
   var charSequenceGet = kotlin_kotlin.$_$.g3;
   var Char__toInt_impl_vasixd = kotlin_kotlin.$_$.j1;
@@ -50,10 +53,23 @@
     var tokenStream = new CommonTokenStream(lexer);
     var parser = new CalculatorParser(tokenStream);
     parser.buildParseTree_1 = true;
+    println('\u8BBE\u7F6E\u4E3Atrue');
     var root = parser.prog_21xsq_k$();
+    println('\u83B7\u53D6root');
     var vistor = new CalculatorVistorImp();
     var res = vistor.visit_276if_k$(root);
-    println(res);
+    println('\u7ED3\u679C=============' + res);
+  };
+  EvalTest.prototype.test1_tc2nhu_k$ = function () {
+    var expr = '1+2';
+    var tmp = CharStreams_getInstance();
+    var charStream = tmp.fromString$default_ibgbyx_k$(expr, null, 2, null);
+    var lexer = new CalculatorLexer(charStream);
+    var tokens = new CommonTokenStream(lexer);
+    var parser = new CalculatorParser(tokens);
+    var parseTree = parser.prog_21xsq_k$();
+    var walker = new ParseTreeWalker();
+    walker.walk_g0y9jc_k$(new CalculatorBaseListenerImpl(), parseTree);
   };
   EvalTest.prototype.testLexer_em0q4p_k$ = function () {
     var expr = '1+2\n';
@@ -85,6 +101,7 @@
   }
   function test_fun$EvalTest_test_fun_jzcya8() {
     test('test', false, test_fun$EvalTest_test_fun$test_test_fun_3g1o51);
+    test('test1', false, test_fun$EvalTest_test_fun$test1_test_fun_jdlvpi);
     test('testLexer', false, test_fun$EvalTest_test_fun$testLexer_test_fun_44q6c5);
     test('testParser', false, test_fun$EvalTest_test_fun$testParser_test_fun_a8f6i4);
     return Unit_getInstance();
@@ -92,6 +109,11 @@
   function test_fun$EvalTest_test_fun$test_test_fun_3g1o51() {
     var tmp = new EvalTest();
     tmp.test_w6j16n_k$();
+    return Unit_getInstance();
+  }
+  function test_fun$EvalTest_test_fun$test1_test_fun_jdlvpi() {
+    var tmp = new EvalTest();
+    tmp.test1_tc2nhu_k$();
     return Unit_getInstance();
   }
   function test_fun$EvalTest_test_fun$testLexer_test_fun_44q6c5() {

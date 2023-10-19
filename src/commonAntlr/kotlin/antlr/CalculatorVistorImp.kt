@@ -15,38 +15,41 @@ class CalculatorVistorImp : CalculatorBaseVisitor<Int>() {
 
 
     //遇到print节点，计算结果，打印出来
-    override fun visitPrint(ctx: CalculatorParser.PrintContext): Int? {
+    override fun visitPrint(ctx: CalculatorParser.PrintContext): Int {
         //System.out.println(result);
-        return ctx.findExpr()?.accept(this)
+        return ctx.findExpr()?.accept(this)!!
     }
 
     //分别获取expr节点的值，并计算乘除结果
-    override fun visitMulDiv(ctx: CalculatorParser.MulDivContext): Int? {
+    override fun visitMulDiv(ctx: CalculatorParser.MulDivContext): Int {
         val param1: Int? = ctx.findExpr(0)?.accept(this)
         val param2: Int? = ctx.findExpr(1)?.accept(this)
         if (ctx.op?.type === CalculatorParser.Tokens.MUL.id) {
-            return param1?.times(param2!!)
+            return param1?.times(param2!!)!!
         }
-        return if (ctx.op?.type === CalculatorParser.Tokens.DIV.id) {
-            param1?.div(param2!!)
-        } else null
+        if (ctx.op?.type === CalculatorParser.Tokens.DIV.id) {
+            return param1?.div(param2!!)!!
+        }
+        throw RuntimeException("不知道的符号")
+
     }
 
     //分别获取expr节点的值，并计算结果
-    override fun visitAddSub(ctx: CalculatorParser.AddSubContext): Int? {
+    override fun visitAddSub(ctx: CalculatorParser.AddSubContext): Int {
         val param1: Int? = ctx.findExpr(0)?.accept(this)
         val param2: Int? = ctx.findExpr(1)?.accept(this)
         if (ctx.op?.type === CalculatorParser.Tokens.ADD.id) {
-            return param1?.plus(param2!!)
+            return param1?.plus(param2!!)!!
         }
-        return if (ctx.op?.type === CalculatorParser.Tokens.SUB.id) {
-            param1?.minus( param2!!)
-        } else null
+        if (ctx.op?.type === CalculatorParser.Tokens.SUB.id) {
+           return param1?.minus( param2!!)!!
+        }
+        throw RuntimeException("不知道的符号")
     }
 
     //当遇到Id时从变量表获取数据
-    override fun visitId(ctx: CalculatorParser.IdContext): Int? {
-        return variable[ctx.text]
+    override fun visitId(ctx: CalculatorParser.IdContext): Int {
+        return variable[ctx.text]!!
     }
 
     //当遇到Int节点时直接返回数据

@@ -3,6 +3,7 @@ package antlr
 
 
 import org.antlr.v4.kotlinruntime.*
+import org.antlr.v4.kotlinruntime.tree.ParseTreeWalker
 import kotlin.test.Test
 
 
@@ -29,10 +30,31 @@ class EvalTest {
         val tokenStream : CommonTokenStream = CommonTokenStream(lexer)
         val parser: CalculatorParser = CalculatorParser(tokenStream)
         parser.buildParseTree = true
+        println("设置为true")
         val root: CalculatorParser.ProgContext = parser.prog()
+        println("获取root")
         val vistor: CalculatorBaseVisitor<Int> = CalculatorVistorImp()
         val res: Int? = vistor.visit(root)
-        println(res)
+        println("结果============="+res)
+    }
+
+
+    @Test
+    fun test1(){
+        val expr = "1+2"
+        // 词法分析，获取token
+        val charStream = CharStreams.fromString(expr);
+        val lexer =  CalculatorLexer(charStream);
+        val tokens = CommonTokenStream(lexer);
+
+        // 语法分析，获取parse tree
+        val parser = CalculatorParser(tokens);
+        val parseTree = parser.prog();
+
+        // 使用自定义的Listener访问parse tree
+        val walker = ParseTreeWalker();
+        walker.walk(CalculatorBaseListenerImpl(), parseTree);
+
     }
 
 

@@ -17,6 +17,7 @@
   //region block: imports
   var imul = Math.imul;
   var AbstractParseTreeVisitor = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.q;
+  var ensureNotNull = kotlin_kotlin.$_$.t3;
   var classMeta = kotlin_kotlin.$_$.p2;
   var Unit_getInstance = kotlin_kotlin.$_$.i1;
   var PredictionContextCache = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.o;
@@ -26,7 +27,6 @@
   var fillArrayVal = kotlin_kotlin.$_$.r2;
   var ATNDeserializer_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.d;
   var asCharArray = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.b;
-  var ensureNotNull = kotlin_kotlin.$_$.t3;
   var DFA = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.p;
   var objectMeta = kotlin_kotlin.$_$.c3;
   var Enum = kotlin_kotlin.$_$.m3;
@@ -57,6 +57,7 @@
   var Long = kotlin_kotlin.$_$.o3;
   var ParseTreeVisitor = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.s;
   var HashMap_init_$Create$ = kotlin_kotlin.$_$.m;
+  var RuntimeException_init_$Create$ = kotlin_kotlin.$_$.a1;
   var toInt = kotlin_kotlin.$_$.h3;
   var println = kotlin_kotlin.$_$.l2;
   var ANTLRInputStream_init_$Create$ = kotlin_com_strumenta_antlr_kotlin_antlr_kotlin_runtime.$_$.h;
@@ -108,31 +109,31 @@
     AbstractParseTreeVisitor.call(this);
   }
   CalculatorBaseVisitor.prototype.b1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.c1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.d1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.e1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.f1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.g1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.h1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.i1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.prototype.j1a = function (ctx) {
-    return this.pp(ctx);
+    return ensureNotNull(ensureNotNull(this).pp(ctx));
   };
   CalculatorBaseVisitor.$metadata$ = classMeta('CalculatorBaseVisitor', [CalculatorVisitor], undefined, undefined, undefined, AbstractParseTreeVisitor.prototype);
   var Channels_DEFAULT_TOKEN_CHANNEL_instance;
@@ -664,13 +665,11 @@
     }
   };
   ProgContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).b1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).b1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function ProgContext() {
   }
@@ -698,13 +697,11 @@
     }
   };
   PrintContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).c1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).c1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function PrintContext() {
   }
@@ -720,13 +717,11 @@
     }
   };
   BlankContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).e1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).e1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function BlankContext() {
   }
@@ -748,13 +743,11 @@
     }
   };
   AssignContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).d1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).d1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function AssignContext() {
   }
@@ -768,7 +761,16 @@
   function ExprContext() {
   }
   ExprContext.$metadata$ = classMeta('ExprContext', undefined, undefined, undefined, undefined, ParserRuleContext.prototype);
-  MulDivContext.prototype.z1e = function (i) {
+  function IMulDivContext() {
+  }
+  IMulDivContext.$metadata$ = interfaceMeta('IMulDivContext');
+  MulDivContext.prototype.z1e = function (_set____db54di) {
+    this.y1e_1 = _set____db54di;
+  };
+  MulDivContext.prototype.a1f = function () {
+    return this.y1e_1;
+  };
+  MulDivContext.prototype.b1f = function (i) {
     return this.jp(getType(solver_getInstance(), 'ExprContext'), i);
   };
   MulDivContext.prototype.fo = function (listener) {
@@ -782,19 +784,17 @@
     }
   };
   MulDivContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).f1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).f1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function MulDivContext() {
     this.y1e_1 = null;
   }
-  MulDivContext.$metadata$ = classMeta('MulDivContext', undefined, undefined, undefined, undefined, ExprContext.prototype);
-  AddSubContext.prototype.z1e = function (i) {
+  MulDivContext.$metadata$ = classMeta('MulDivContext', [IMulDivContext], undefined, undefined, undefined, ExprContext.prototype);
+  AddSubContext.prototype.b1f = function (i) {
     return this.jp(getType(solver_getInstance(), 'ExprContext'), i);
   };
   AddSubContext.prototype.fo = function (listener) {
@@ -808,16 +808,14 @@
     }
   };
   AddSubContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).g1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).g1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function AddSubContext() {
-    this.h1f_1 = null;
+    this.j1f_1 = null;
   }
   AddSubContext.$metadata$ = classMeta('AddSubContext', undefined, undefined, undefined, undefined, ExprContext.prototype);
   ParentheseContext.prototype.b1e = function () {
@@ -834,13 +832,11 @@
     }
   };
   ParentheseContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).h1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).h1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function ParentheseContext() {
   }
@@ -856,13 +852,11 @@
     }
   };
   IdContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).i1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).i1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function IdContext() {
   }
@@ -878,13 +872,11 @@
     }
   };
   IntContext.prototype.kp = function (visitor) {
-    var tmp;
     if (isInterface(visitor, CalculatorVisitor)) {
-      tmp = (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).j1a(this);
+      return (isInterface(visitor, CalculatorVisitor) ? visitor : THROW_CCE()).j1a(this);
     } else {
-      tmp = ensureNotNull(visitor.pp(this));
+      return ensureNotNull(visitor.pp(this));
     }
-    return tmp;
   };
   function IntContext() {
   }
@@ -904,37 +896,37 @@
         $this.jf_1 = 29;
         $this.mg_1.dc($this);
         var tmp0_subject = ensureNotNull($this.ng_1).oc(1);
-        if (tmp0_subject === $this.x1g_1) {
+        if (tmp0_subject === $this.z1g_1) {
           {
             _localctx = IntContext_init_$Create$(_localctx);
             $this.pg_1 = _localctx;
             _prevctx = _localctx;
             $this.jf_1 = 23;
-            var tmp = $this.tn($this.x1g_1);
+            var tmp = $this.tn($this.z1g_1);
             if (isInterface(tmp, Token))
               tmp;
             else
               THROW_CCE();
           }
-        } else if (tmp0_subject === $this.w1g_1) {
+        } else if (tmp0_subject === $this.y1g_1) {
           {
             _localctx = IdContext_init_$Create$(_localctx);
             $this.pg_1 = _localctx;
             _prevctx = _localctx;
             $this.jf_1 = 24;
-            var tmp_0 = $this.tn($this.w1g_1);
+            var tmp_0 = $this.tn($this.y1g_1);
             if (isInterface(tmp_0, Token))
               tmp_0;
             else
               THROW_CCE();
           }
-        } else if (tmp0_subject === $this.q1g_1) {
+        } else if (tmp0_subject === $this.s1g_1) {
           {
             _localctx = ParentheseContext_init_$Create$(_localctx);
             $this.pg_1 = _localctx;
             _prevctx = _localctx;
             $this.jf_1 = 25;
-            var tmp_1 = $this.tn($this.q1g_1);
+            var tmp_1 = $this.tn($this.s1g_1);
             if (isInterface(tmp_1, Token))
               tmp_1;
             else
@@ -942,7 +934,7 @@
             $this.jf_1 = 26;
             expr($this, 0);
             $this.jf_1 = 27;
-            var tmp_2 = $this.tn($this.r1g_1);
+            var tmp_2 = $this.tn($this.t1g_1);
             if (isInterface(tmp_2, Token))
               tmp_2;
             else
@@ -974,12 +966,12 @@
                     throw FailedPredicateException_init_$Create$($this, 'precpred(context!!, 5)', null, 4, null);
                   }
                   $this.jf_1 = 32;
-                  (_localctx instanceof MulDivContext ? _localctx : THROW_CCE()).y1e_1 = ensureNotNull($this.ng_1).sd(1);
+                  (_localctx instanceof MulDivContext ? _localctx : THROW_CCE()).z1e(ensureNotNull($this.ng_1).sd(1));
                   _la = ensureNotNull($this.ng_1).oc(1);
-                  if (!(_la === $this.s1g_1 ? true : _la === $this.t1g_1)) {
+                  if (!(_la === $this.u1g_1 ? true : _la === $this.v1g_1)) {
                     var tmp_3 = _localctx instanceof MulDivContext ? _localctx : THROW_CCE();
                     var tmp_4 = $this.mg_1.bc($this);
-                    tmp_3.y1e_1 = isInterface(tmp_4, Token) ? tmp_4 : THROW_CCE();
+                    tmp_3.z1e(isInterface(tmp_4, Token) ? tmp_4 : THROW_CCE());
                   } else {
                     if (ensureNotNull($this.ng_1).oc(1) === Tokens_EOF_getInstance().a1d_1)
                       $this.tg_1 = true;
@@ -998,12 +990,12 @@
                     throw FailedPredicateException_init_$Create$($this, 'precpred(context!!, 4)', null, 4, null);
                   }
                   $this.jf_1 = 35;
-                  (_localctx instanceof AddSubContext ? _localctx : THROW_CCE()).h1f_1 = ensureNotNull($this.ng_1).sd(1);
+                  (_localctx instanceof AddSubContext ? _localctx : THROW_CCE()).j1f_1 = ensureNotNull($this.ng_1).sd(1);
                   _la = ensureNotNull($this.ng_1).oc(1);
-                  if (!(_la === $this.u1g_1 ? true : _la === $this.v1g_1)) {
+                  if (!(_la === $this.w1g_1 ? true : _la === $this.x1g_1)) {
                     var tmp_5 = _localctx instanceof AddSubContext ? _localctx : THROW_CCE();
                     var tmp_6 = $this.mg_1.bc($this);
-                    tmp_5.h1f_1 = isInterface(tmp_6, Token) ? tmp_6 : THROW_CCE();
+                    tmp_5.j1f_1 = isInterface(tmp_6, Token) ? tmp_6 : THROW_CCE();
                   } else {
                     if (ensureNotNull($this.ng_1).oc(1) === Tokens_EOF_getInstance().a1d_1)
                       $this.tg_1 = true;
@@ -1110,18 +1102,18 @@
   function CalculatorParser(input) {
     Companion_getInstance_1();
     Parser.call(this, input);
-    this.p1g_1 = Tokens_T__0_getInstance().a1d_1;
-    this.q1g_1 = Tokens_T__1_getInstance().a1d_1;
-    this.r1g_1 = Tokens_T__2_getInstance().a1d_1;
-    this.s1g_1 = Tokens_MUL_getInstance().a1d_1;
-    this.t1g_1 = Tokens_DIV_getInstance().a1d_1;
-    this.u1g_1 = Tokens_ADD_getInstance().a1d_1;
-    this.v1g_1 = Tokens_SUB_getInstance().a1d_1;
-    this.w1g_1 = Tokens_ID_getInstance().a1d_1;
-    this.x1g_1 = Tokens_INT_getInstance().a1d_1;
-    this.y1g_1 = Tokens_NEWLINE_getInstance().a1d_1;
-    this.z1g_1 = Tokens_DELIMITER_getInstance().a1d_1;
-    this.a1h_1 = Tokens_WS_getInstance().a1d_1;
+    this.r1g_1 = Tokens_T__0_getInstance().a1d_1;
+    this.s1g_1 = Tokens_T__1_getInstance().a1d_1;
+    this.t1g_1 = Tokens_T__2_getInstance().a1d_1;
+    this.u1g_1 = Tokens_MUL_getInstance().a1d_1;
+    this.v1g_1 = Tokens_DIV_getInstance().a1d_1;
+    this.w1g_1 = Tokens_ADD_getInstance().a1d_1;
+    this.x1g_1 = Tokens_SUB_getInstance().a1d_1;
+    this.y1g_1 = Tokens_ID_getInstance().a1d_1;
+    this.z1g_1 = Tokens_INT_getInstance().a1d_1;
+    this.a1h_1 = Tokens_NEWLINE_getInstance().a1d_1;
+    this.b1h_1 = Tokens_DELIMITER_getInstance().a1d_1;
+    this.c1h_1 = Tokens_WS_getInstance().a1d_1;
     this.if_1 = new ParserATNSimulator(this, Companion_getInstance_1().m1d_1, Companion_getInstance_1().e1d_1, Companion_getInstance_1().f1d_1);
   }
   CalculatorParser.prototype.gj = function () {
@@ -1133,7 +1125,7 @@
   CalculatorParser.prototype.lf = function () {
     return Companion_getInstance_1().j1d_1;
   };
-  CalculatorParser.prototype.b1h = function () {
+  CalculatorParser.prototype.d1h = function () {
     var _localctx = ProgContext_init_$Create$(this.pg_1, this.jf_1);
     this.so(_localctx, 0, Rules_RULE_prog_getInstance().d1d_1);
     var _la;
@@ -1147,14 +1139,14 @@
           {
             {
               this.jf_1 = 6;
-              this.c1h();
+              this.e1h();
             }
           }
           this.jf_1 = 9;
           this.mg_1.dc(this);
           _la = ensureNotNull(this.ng_1).oc(1);
         }
-         while ((_la & -64) === 0 ? !(new Long(1, 0)).kb(_la).mb((new Long(1, 0)).kb(this.q1g_1).nb((new Long(1, 0)).kb(this.w1g_1)).nb((new Long(1, 0)).kb(this.x1g_1)).nb((new Long(1, 0)).kb(this.y1g_1))).equals(new Long(0, 0)) : false);
+         while ((_la & -64) === 0 ? !(new Long(1, 0)).kb(_la).mb((new Long(1, 0)).kb(this.s1g_1).nb((new Long(1, 0)).kb(this.y1g_1)).nb((new Long(1, 0)).kb(this.z1g_1)).nb((new Long(1, 0)).kb(this.a1h_1))).equals(new Long(0, 0)) : false);
       }
     } catch ($p) {
       if ($p instanceof RecognitionException) {
@@ -1170,7 +1162,7 @@
     }
     return _localctx;
   };
-  CalculatorParser.prototype.c1h = function () {
+  CalculatorParser.prototype.e1h = function () {
     var _localctx = StatContext_init_$Create$(this.pg_1, this.jf_1);
     this.so(_localctx, 2, Rules_RULE_stat_getInstance().d1d_1);
     try {
@@ -1185,7 +1177,7 @@
             this.jf_1 = 11;
             expr(this, 0);
             this.jf_1 = 12;
-            var tmp = this.tn(this.y1g_1);
+            var tmp = this.tn(this.a1h_1);
             if (isInterface(tmp, Token))
               tmp;
             else
@@ -1198,13 +1190,13 @@
           this.uo(_localctx, 2);
           {
             this.jf_1 = 14;
-            var tmp_0 = this.tn(this.w1g_1);
+            var tmp_0 = this.tn(this.y1g_1);
             if (isInterface(tmp_0, Token))
               tmp_0;
             else
               THROW_CCE();
             this.jf_1 = 15;
-            var tmp_1 = this.tn(this.p1g_1);
+            var tmp_1 = this.tn(this.r1g_1);
             if (isInterface(tmp_1, Token))
               tmp_1;
             else
@@ -1212,7 +1204,7 @@
             this.jf_1 = 16;
             expr(this, 0);
             this.jf_1 = 17;
-            var tmp_2 = this.tn(this.y1g_1);
+            var tmp_2 = this.tn(this.a1h_1);
             if (isInterface(tmp_2, Token))
               tmp_2;
             else
@@ -1225,7 +1217,7 @@
           this.uo(_localctx, 3);
           {
             this.jf_1 = 19;
-            var tmp_3 = this.tn(this.y1g_1);
+            var tmp_3 = this.tn(this.a1h_1);
             if (isInterface(tmp_3, Token))
               tmp_3;
             else
@@ -1261,54 +1253,48 @@
   CalculatorVisitor.$metadata$ = interfaceMeta('CalculatorVisitor', [ParseTreeVisitor]);
   function CalculatorVistorImp() {
     CalculatorBaseVisitor.call(this);
-    this.d1h_1 = HashMap_init_$Create$();
+    this.f1h_1 = HashMap_init_$Create$();
   }
   CalculatorVistorImp.prototype.c1a = function (ctx) {
     var tmp0_safe_receiver = ctx.b1e();
-    return tmp0_safe_receiver == null ? null : tmp0_safe_receiver.kp(this);
+    return ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.kp(this));
   };
   CalculatorVistorImp.prototype.f1a = function (ctx) {
-    var tmp0_safe_receiver = ctx.z1e(0);
+    var tmp0_safe_receiver = ctx.b1f(0);
     var param1 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.kp(this);
-    var tmp1_safe_receiver = ctx.z1e(1);
+    var tmp1_safe_receiver = ctx.b1f(1);
     var param2 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.kp(this);
-    var tmp2_safe_receiver = ctx.y1e_1;
+    var tmp2_safe_receiver = ctx.a1f();
     if ((tmp2_safe_receiver == null ? null : tmp2_safe_receiver.kd()) === Tokens_MUL_getInstance().a1d_1) {
       var tmp3_safe_receiver = param1;
-      return tmp3_safe_receiver == null ? null : imul(tmp3_safe_receiver, ensureNotNull(param2));
+      return ensureNotNull(tmp3_safe_receiver == null ? null : imul(tmp3_safe_receiver, ensureNotNull(param2)));
     }
-    var tmp;
-    var tmp4_safe_receiver = ctx.y1e_1;
+    var tmp4_safe_receiver = ctx.a1f();
     if ((tmp4_safe_receiver == null ? null : tmp4_safe_receiver.kd()) === Tokens_DIV_getInstance().a1d_1) {
       var tmp5_safe_receiver = param1;
-      tmp = tmp5_safe_receiver == null ? null : tmp5_safe_receiver / ensureNotNull(param2) | 0;
-    } else {
-      tmp = null;
+      return ensureNotNull(tmp5_safe_receiver == null ? null : tmp5_safe_receiver / ensureNotNull(param2) | 0);
     }
-    return tmp;
+    throw RuntimeException_init_$Create$('\u4E0D\u77E5\u9053\u7684\u7B26\u53F7');
   };
   CalculatorVistorImp.prototype.g1a = function (ctx) {
-    var tmp0_safe_receiver = ctx.z1e(0);
+    var tmp0_safe_receiver = ctx.b1f(0);
     var param1 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.kp(this);
-    var tmp1_safe_receiver = ctx.z1e(1);
+    var tmp1_safe_receiver = ctx.b1f(1);
     var param2 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.kp(this);
-    var tmp2_safe_receiver = ctx.h1f_1;
+    var tmp2_safe_receiver = ctx.j1f_1;
     if ((tmp2_safe_receiver == null ? null : tmp2_safe_receiver.kd()) === Tokens_ADD_getInstance().a1d_1) {
       var tmp3_safe_receiver = param1;
-      return tmp3_safe_receiver == null ? null : tmp3_safe_receiver + ensureNotNull(param2) | 0;
+      return ensureNotNull(tmp3_safe_receiver == null ? null : tmp3_safe_receiver + ensureNotNull(param2) | 0);
     }
-    var tmp;
-    var tmp4_safe_receiver = ctx.h1f_1;
+    var tmp4_safe_receiver = ctx.j1f_1;
     if ((tmp4_safe_receiver == null ? null : tmp4_safe_receiver.kd()) === Tokens_SUB_getInstance().a1d_1) {
       var tmp5_safe_receiver = param1;
-      tmp = tmp5_safe_receiver == null ? null : tmp5_safe_receiver - ensureNotNull(param2) | 0;
-    } else {
-      tmp = null;
+      return ensureNotNull(tmp5_safe_receiver == null ? null : tmp5_safe_receiver - ensureNotNull(param2) | 0);
     }
-    return tmp;
+    throw RuntimeException_init_$Create$('\u4E0D\u77E5\u9053\u7684\u7B26\u53F7');
   };
   CalculatorVistorImp.prototype.i1a = function (ctx) {
-    return this.d1h_1.p1(ctx.zd());
+    return ensureNotNull(this.f1h_1.p1(ctx.zd()));
   };
   CalculatorVistorImp.prototype.j1a = function (ctx) {
     return toInt(ctx.zd());
@@ -1319,7 +1305,7 @@
     var tmp1_safe_receiver = ctx.b1e();
     var value = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.kp(this);
     // Inline function 'kotlin.collections.set' call
-    var tmp0_set = this.d1h_1;
+    var tmp0_set = this.f1h_1;
     var tmp1_set = ensureNotNull(name);
     var tmp2_set = ensureNotNull(value);
     tmp0_set.a2(tmp1_set, tmp2_set);
@@ -1349,7 +1335,7 @@
     parser.qg_1 = true;
     println('\u8BBE\u7F6E\u521B\u5EFA\u8BED\u6CD5\u6811\u89E3\u6790\u4E3Atrue');
     try {
-      var root = parser.b1h();
+      var root = parser.d1h();
       println('\u83B7\u53D6\u8868\u8FBE\u5F0F\u6839\u8282\u70B9');
       var vistor = new CalculatorVistorImp();
       println('\u521B\u5EFA\u8BBF\u95EE\u5668');

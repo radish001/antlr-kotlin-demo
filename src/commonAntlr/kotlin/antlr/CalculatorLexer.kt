@@ -1,9 +1,6 @@
 // Generated from java-escape by ANTLR 4.7.1
 package antlr
 
-
-
-
 import com.strumenta.kotlinmultiplatform.asCharArray
 import org.antlr.v4.kotlinruntime.CharStream
 import org.antlr.v4.kotlinruntime.Lexer
@@ -112,9 +109,6 @@ class CalculatorLexer(val input: CharStream) : Lexer(input) {
 	    DELIMITER,
 	    WS
 	}
-
-
-
 
 
 	init {

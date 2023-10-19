@@ -4,9 +4,9 @@ module.exports = function(config) {
 config.set({
   "singleRun": true,
   "autoWatch": false,
-  "basePath": "/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/js/packages/antlt-kotlin-demo-test/node_modules",
+  "basePath": "/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages/antlt-kotlin-demo-test/node_modules",
   "files": [
-    "/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/js/packages/antlt-kotlin-demo-test/adapter-browser.js"
+    "/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages/antlt-kotlin-demo-test/adapter-browser.js"
   ],
   "frameworks": [
     "mocha"
@@ -27,7 +27,7 @@ config.set({
     "karma-kotlin-reporter"
   ],
   "preprocessors": {
-    "/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/js/packages/antlt-kotlin-demo-test/adapter-browser.js": [
+    "/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages/antlt-kotlin-demo-test/adapter-browser.js": [
       "webpack",
       "sourcemap"
     ]
@@ -75,7 +75,7 @@ config.ignoreWarnings = [/Failed to parse source map/]
     const handler = (percentage, message, ...args) => {
         const p = percentage * 100;
         let msg = `${Math.trunc(p / 10)}${Math.trunc(p % 10)}% ${message} ${args.join(' ')}`;
-        msg = msg.replace("/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/js", '');;
+        msg = msg.replace("/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js", '');;
         console.log(msg);
     };
 

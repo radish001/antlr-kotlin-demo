@@ -3,6 +3,7 @@ rootProject.name = "antlt-kotlin-demo"
 
 
 
+
 pluginManagement {
     repositories {
         // used for local development and while building by travis ci and jitpack.io

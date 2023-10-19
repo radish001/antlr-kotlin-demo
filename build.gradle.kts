@@ -4,14 +4,14 @@ plugins {
 
 }
 
-val antlr_kotlin_version = "master-SNAPSHOT"
+val antlr_kotlin_version = "0.0.1"
 
 
 buildscript {
-    val antlr_kotlin_version = "master-SNAPSHOT"
+    val antlr_kotlin_version = "0.0.1"
     dependencies {
         // add the plugin to the classpath
-        classpath("com.strumenta.antlr-kotlin:antlr-kotlin-gradle-plugin:$antlr_kotlin_version")
+        classpath("com.github.radish001.antlr-kotlin:antlr-kotlin-gradle-plugin:$antlr_kotlin_version")
     }
 }
 
@@ -70,7 +70,8 @@ kotlin {
         val commonAntlr by creating {
             dependencies {
                 api(kotlin("stdlib-common"))
-                api("com.strumenta.antlr-kotlin:antlr-kotlin-runtime:$antlr_kotlin_version")
+                api("com.github.radish001.antlr-kotlin:antlr-kotlin-runtime:$antlr_kotlin_version")
+
 
             }
             //kotlin.srcDir("build/generated-src/commonAntlr/kotlin")
@@ -99,7 +100,7 @@ kotlin {
         val jsMain by getting {
             dependencies {
                 implementation(npm("base-64", "1.0.0"))
-                implementation("com.strumenta.antlr-kotlin:antlr-kotlin-runtime-js:$antlr_kotlin_version")
+                implementation("com.github.radish001.antlr-kotlin:antlr-kotlin-runtime-js:$antlr_kotlin_version")
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.7.21")
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-js:1.7.21")
             }
@@ -111,7 +112,8 @@ kotlin {
 tasks.register<com.strumenta.antlrkotlin.gradleplugin.AntlrKotlinTask>("generateKotlinCommonGrammarSource") {
 
     antlrClasspath = configurations.detachedConfiguration(
-        project.dependencies.create("com.strumenta.antlr-kotlin:antlr-kotlin-target:$antlr_kotlin_version")
+        project.dependencies.create("com.github.radish001.antlr-kotlin:antlr-kotlin-target:$antlr_kotlin_version")
+
     )
     maxHeapSize = "1024m"
     packageName = "com.strumenta.antlrkotlin.examples"

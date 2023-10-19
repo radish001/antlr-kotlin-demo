@@ -30,6 +30,9 @@
     "5702b4e10f6b1ff007497763ec0755f7": {
       "src": "/Users/huxiaodong/gradle/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-js/1.7.21/bf1ce1885b3b8556744a12da87bc55a2da776950/kotlin-test-js-1.7.21.jar",
       "target": "kotlin-test/1.7.21"
+    },
+    "37db9bd94489c11a83316f4a0118d75f": {
+      "src": "/Users/huxiaodong/gradle/.gradle/caches/modules-2/files-2.1/com.github.radish001.antlr-kotlin/antlr-kotlin-runtime-js/0.0.1/c49473d317b57263797c9c16491f174e0a8b81a7/antlr-kotlin-runtime-js-0.0.1.klib"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: [
       'node_modules'
@@ -32,20 +32,32 @@
   },
   entry: {
     main: [
-      '/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/js/packages/antlt-kotlin-demo/kotlin/antlt-kotlin-demo.js'
+      '/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages/antlt-kotlin-demo/kotlin/antlt-kotlin-demo.js'
     ]
   },
   output: {
-    path: '/Users/huxiaodong/Documents/ideaspaces/antlt-kotlin-demo/build/distributions',
+    path: '/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/distributions',
     filename: [Function: filename],
     library: 'antlt-kotlin-demo',
     libraryTarget: 'umd',
     globalObject: 'this'
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   ignoreWarnings: [
     /Failed to parse source map/
   ],
+  devServer: {
+    open: true,
+    static: [
+      '/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/processedResources/js/main'
+    ],
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false
+      }
+    }
+  },
   stats: {
     warnings: false,
     errors: false
