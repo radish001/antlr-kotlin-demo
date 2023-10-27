@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="antlrtest.EvalTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-27T03:48:14" hostname="huxiaodong-deMacBook-Pro.local" time="0.143">
+  <properties/>
+  <testcase name="mathTest[jsLegacy, browser]" classname="antlrtest.EvalTest" time="0.143"/>
+  <system-out><![CDATA[设置为true
+获取root
+结果=============3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
