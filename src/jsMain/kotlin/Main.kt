@@ -1,7 +1,7 @@
-import antlr.CalculatorBaseVisitor
-import antlr.CalculatorLexer
-import antlr.CalculatorParser
-import antlr.CalculatorVistorImp
+import antlrtest.CalculatorBaseVisitor
+import antlrtest.CalculatorLexer
+import antlrtest.CalculatorParser
+import antlrtest.CalculatorVistorImp
 import org.antlr.v4.kotlinruntime.ANTLRInputStream
 import org.antlr.v4.kotlinruntime.CharStreams
 import org.antlr.v4.kotlinruntime.CommonTokenStream

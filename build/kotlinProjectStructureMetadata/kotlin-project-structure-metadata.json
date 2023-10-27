@@ -4,14 +4,28 @@
     "isPublishedAsRoot": "true",
     "variants": [
       {
-        "name": "jsApiElements",
+        "name": "jsLegacyApiElements",
         "sourceSet": [
           "commonMain",
           "commonAntlr"
         ]
       },
       {
-        "name": "jsRuntimeElements",
+        "name": "jsLegacyRuntimeElements",
+        "sourceSet": [
+          "commonMain",
+          "commonAntlr"
+        ]
+      },
+      {
+        "name": "jsIrApiElements",
+        "sourceSet": [
+          "commonMain",
+          "commonAntlr"
+        ]
+      },
+      {
+        "name": "jsIrRuntimeElements",
         "sourceSet": [
           "commonMain",
           "commonAntlr"
@@ -37,8 +51,8 @@
         "name": "commonAntlr",
         "dependsOn": [],
         "moduleDependency": [
-          "org.jetbrains.kotlin:kotlin-stdlib-common",
-          "com.strumenta.antlr-kotlin:antlr-kotlin-runtime"
+          "com.github.radish001.antlr-kotlin:antlr-kotlin-runtime",
+          "org.jetbrains.kotlin:kotlin-stdlib-common"
         ],
         "binaryLayout": "klib"
       },
@@ -47,7 +61,9 @@
         "dependsOn": [
           "commonAntlr"
         ],
-        "moduleDependency": [],
+        "moduleDependency": [
+          "org.jetbrains.kotlin:kotlin-stdlib-common"
+        ],
         "binaryLayout": "klib"
       }
     ]

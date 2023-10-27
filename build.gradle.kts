@@ -6,12 +6,12 @@ plugins {
 
 val antlr_kotlin_version = "0.0.1"
 
-
 buildscript {
     val antlr_kotlin_version = "0.0.1"
     dependencies {
         // add the plugin to the classpath
         classpath("com.github.radish001.antlr-kotlin:antlr-kotlin-gradle-plugin:$antlr_kotlin_version")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.21")
     }
 }
 
@@ -43,7 +43,7 @@ repositories {
 
 kotlin {
     jvm {
-        compilations.all {
+       compilations.all {
             kotlinOptions.jvmTarget = "1.8"
         }
         withJava()
@@ -51,15 +51,21 @@ kotlin {
             useJUnitPlatform()
         }
     }
-    js(IR) {
-        binaries.executable()
+    js(BOTH) {
+        //binaries.executable()
         browser {
-            commonWebpackConfig {
-                // cssSupport.enabled = true
+            testTask {
+                useMocha {
+                    timeout = "10s"
+                }
             }
         }
         nodejs {
-
+            testTask {
+                useMocha {
+                    timeout = "10s"
+                }
+            }
         }
 
     }
@@ -69,10 +75,10 @@ kotlin {
     sourceSets {
         val commonAntlr by creating {
             dependencies {
-                api(kotlin("stdlib-common"))
+                //implementation(kotlin("collections"))
+                //implementation(kotlin("reflect"))
+                //implementation(kotlin("stdlib"))
                 api("com.github.radish001.antlr-kotlin:antlr-kotlin-runtime:$antlr_kotlin_version")
-
-
             }
             //kotlin.srcDir("build/generated-src/commonAntlr/kotlin")
         }
@@ -98,11 +104,13 @@ kotlin {
             }
         }
         val jsMain by getting {
+            dependsOn(commonAntlr)
             dependencies {
                 implementation(npm("base-64", "1.0.0"))
                 implementation("com.github.radish001.antlr-kotlin:antlr-kotlin-runtime-js:$antlr_kotlin_version")
-                implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.7.21")
-                implementation("org.jetbrains.kotlin:kotlin-stdlib-js:1.7.21")
+                implementation(kotlin("stdlib-js"))
+                implementation(npm("bignumber.js", "9.1.2"))
+
             }
         }
         val jsTest by getting
@@ -117,7 +125,7 @@ tasks.register<com.strumenta.antlrkotlin.gradleplugin.AntlrKotlinTask>("generate
     )
     maxHeapSize = "1024m"
     packageName = "com.strumenta.antlrkotlin.examples"
-    //arguments = listOf("-no-visitor", "-no-listener")
+    arguments = listOf("-visitor", "-listener")
     source = project.objects
         .sourceDirectorySet("antlr", "antlr")
         .srcDir("src/commonAntlr/resources").apply {
