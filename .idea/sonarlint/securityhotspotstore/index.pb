@@ -41,9 +41,6 @@ _
 /build/classes/kotlin/jsIr/main/default/manifest,2/c/2cde3beba456bc11ea5b5ba0ae93e25c22b22849
 _
 /build/js/node_modules/bignumber.js/bignumber.js,0/f/0f3e24a618cc3daec0ced79abc1a8bc14599785e
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 b
 2src/commonAntlr/kotlin/antlr/AntlrErrorListener.kt,5/c/5cd005016cd6f9c5728ca59308b53b06f67a7ad0
 `
