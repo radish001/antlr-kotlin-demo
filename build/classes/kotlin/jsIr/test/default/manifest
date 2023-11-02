@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=me.goal\:antlt-kotlin-demo_test
-ir_version=1.0.0
-compiler_version=1.7.21
-jsOutputName=antlt-kotlin-demo-js-ir-test
-depends=me.goal\:antlt-kotlin-demo com.github.radish001.antlr-kotlin\:antlr-kotlin-runtime com.benasher44\:uuid kotlin-test kotlin
-abi_version=1.7.0
-metadata_version=1.4.1

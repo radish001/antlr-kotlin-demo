@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=com.github.radish001.antlr-kotlin\:antlr-kotlin-runtime
-ir_version=1.0.0
-compiler_version=1.7.21
-jsOutputName=antlr-kotlin-antlr-kotlin-runtime-js-ir
-depends=com.benasher44\:uuid kotlin
-abi_version=1.7.0
-metadata_version=1.4.1
