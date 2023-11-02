@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="antlt-kotlin-demo-js-1.0-SNAPSHOT">
-    <output-path>$PROJECT_DIR$/build/libs</output-path>
-    <root id="archive" name="antlt-kotlin-demo-js-1.0-SNAPSHOT.jar">
-      <element id="module-output" name="antlt-kotlin-demo.jsMain" />
-    </root>
-  </artifact>
-</component>
