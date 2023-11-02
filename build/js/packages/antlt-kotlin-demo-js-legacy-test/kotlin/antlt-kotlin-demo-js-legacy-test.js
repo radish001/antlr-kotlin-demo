@@ -24,9 +24,9 @@
   var CalculatorLexer = $module$antlt_kotlin_demo_js_legacy.antlrtest.CalculatorLexer;
   var CommonTokenStream = $module$antlr_kotlin_antlr_kotlin_runtime_js_legacy.org.antlr.v4.kotlinruntime.CommonTokenStream;
   var CalculatorParser = $module$antlt_kotlin_demo_js_legacy.antlrtest.CalculatorParser;
-  var println = Kotlin.kotlin.io.println_s8jyv4$;
   var CalculatorVistorImp = $module$antlt_kotlin_demo_js_legacy.antlrtest.CalculatorVistorImp;
   var toString = Kotlin.toString;
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
   var MathLexer = $module$antlt_kotlin_demo_js_legacy.antlr.MathLexer;
   var MathParser = $module$antlt_kotlin_demo_js_legacy.antlr.MathParser;
   var MathVisitorImpl = $module$antlt_kotlin_demo_js_legacy.antlr.impl.MathVisitorImpl;
@@ -42,11 +42,8 @@
     var expr = '1+2';
     var input = ANTLRInputStream_init(expr);
     var lexer = new CalculatorLexer(input);
-    var tokenStream = new CommonTokenStream(lexer);
     var parser = new CalculatorParser(new CommonTokenStream(lexer));
-    println('\u8BBE\u7F6E\u4E3Atrue');
     var root = parser.prog();
-    println('\u83B7\u53D6root');
     var vistor = new CalculatorVistorImp();
     var res = vistor.visit_iaqcoz$(root);
     println('\u7ED3\u679C=============' + toString(res));
@@ -55,14 +52,11 @@
     var expr = '1+2';
     var input = ANTLRInputStream_init(expr);
     var lexer = new MathLexer(input);
-    var tokenStream = new CommonTokenStream(lexer);
     var parser = new MathParser(new CommonTokenStream(lexer));
-    println('\u8BBE\u7F6E\u4E3Atrue');
     var root = parser.prog();
-    println('\u83B7\u53D6root');
     var vistor = new MathVisitorImpl();
     var operand = vistor.visit_iaqcoz$(root);
-    println('\u7ED3\u679C=============' + toString(operand != null ? operand.IntValue() : null));
+    println('\u7ED3\u679C=============' + toString(operand != null ? operand.intValue() : null));
   };
   EvalTest.$metadata$ = {
     kind: Kind_CLASS,

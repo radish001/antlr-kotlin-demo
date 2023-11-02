@@ -12,7 +12,7 @@ enum class OperandType {
      NULL,
      ERROR,
      DATE,
-     ARRARY,
+     ARRAY,
      NUMBER,
      BOOLEAN,
      TEXT,

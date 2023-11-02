@@ -51,8 +51,7 @@
         "name": "commonAntlr",
         "dependsOn": [],
         "moduleDependency": [
-          "com.github.radish001.antlr-kotlin:antlr-kotlin-runtime",
-          "org.jetbrains.kotlin:kotlin-stdlib-common"
+          "com.github.radish001.antlr-kotlin:antlr-kotlin-runtime"
         ],
         "binaryLayout": "klib"
       },

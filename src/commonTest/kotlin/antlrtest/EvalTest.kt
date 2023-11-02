@@ -49,7 +49,7 @@ class EvalTest {
         val root = parser.prog()
         val vistor = MathVisitorImpl()
         val operand = vistor.visit(root)
-        println("结果============="+operand?.IntValue())
+        println("结果============="+operand?.intValue())
     }
 
 

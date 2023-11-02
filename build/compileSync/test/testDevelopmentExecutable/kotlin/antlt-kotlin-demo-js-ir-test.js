@@ -25,20 +25,20 @@
   var CalculatorLexer = kotlin_me_goal_antlt_kotlin_demo.$_$.d;
   var CommonTokenStream = kotlin_com_github_radish001_antlr_kotlin_antlr_kotlin_runtime.$_$.u;
   var CalculatorParser = kotlin_me_goal_antlt_kotlin_demo.$_$.e;
-  var println = kotlin_kotlin.$_$.g3;
   var CalculatorVistorImp = kotlin_me_goal_antlt_kotlin_demo.$_$.f;
+  var println = kotlin_kotlin.$_$.k3;
   var MathLexer = kotlin_me_goal_antlt_kotlin_demo.$_$.b;
   var MathParser = kotlin_me_goal_antlt_kotlin_demo.$_$.c;
   var MathVisitorImpl = kotlin_me_goal_antlt_kotlin_demo.$_$.a;
-  var classMeta = kotlin_kotlin.$_$.m3;
+  var classMeta = kotlin_kotlin.$_$.r3;
   var suite = kotlin_kotlin_test.$_$.b;
   var test = kotlin_kotlin_test.$_$.c;
-  var Unit_getInstance = kotlin_kotlin.$_$.q1;
+  var Unit_getInstance = kotlin_kotlin.$_$.u1;
   var Base64Factory_getInstance = kotlin_me_goal_antlt_kotlin_demo.$_$.g;
   var assertEquals$default = kotlin_kotlin_test.$_$.a;
-  var charSequenceGet = kotlin_kotlin.$_$.k3;
-  var Char__toInt_impl_vasixd = kotlin_kotlin.$_$.m1;
-  var toByte = kotlin_kotlin.$_$.c4;
+  var charSequenceGet = kotlin_kotlin.$_$.o3;
+  var Char__toInt_impl_vasixd = kotlin_kotlin.$_$.q1;
+  var toByte = kotlin_kotlin.$_$.i4;
   //endregion
   //region block: pre-declaration
   //endregion
@@ -48,11 +48,8 @@
     var expr = '1+2';
     var input = ANTLRInputStream_init_$Create$(expr);
     var lexer = new CalculatorLexer(input);
-    var tokenStream = new CommonTokenStream(lexer);
     var parser = new CalculatorParser(new CommonTokenStream(lexer));
-    println('\u8BBE\u7F6E\u4E3Atrue');
     var root = parser.prog_21xsq_k$();
-    println('\u83B7\u53D6root');
     var vistor = new CalculatorVistorImp();
     var res = vistor.visit_276if_k$(root);
     println('\u7ED3\u679C=============' + res);
@@ -61,15 +58,12 @@
     var expr = '1+2';
     var input = ANTLRInputStream_init_$Create$(expr);
     var lexer = new MathLexer(input);
-    var tokenStream = new CommonTokenStream(lexer);
     var parser = new MathParser(new CommonTokenStream(lexer));
-    println('\u8BBE\u7F6E\u4E3Atrue');
     var root = parser.prog_21xsq_k$();
-    println('\u83B7\u53D6root');
     var vistor = new MathVisitorImpl();
     var operand = vistor.visit_276if_k$(root);
     var tmp0_safe_receiver = operand;
-    println('\u7ED3\u679C=============' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.IntValue_a9jmqq_k$()));
+    println('\u7ED3\u679C=============' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.intValue_97230i_k$()));
   };
   EvalTest.$metadata$ = classMeta('EvalTest');
   function test_fun_izoufj() {

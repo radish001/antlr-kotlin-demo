@@ -10,7 +10,7 @@ package antlr.util
  */
 class CharUtil {
     companion object{
-        fun StandardChar(c: Char): Char {
+        fun standardChar(c: Char): Char {
             if (c.code <= 0) return c
             var o = c
             if (o == '‘') return '\''
@@ -33,45 +33,45 @@ class CharUtil {
             return o.uppercaseChar()
         }
 
-        fun StandardString(s: String): String {
+        fun standardString(s: String): String {
             val sb = StringBuilder()
             for (i in 0 until s.length) {
                 val c = s[i]
-                sb.append(StandardChar(c))
+                sb.append(standardChar(c))
             }
             return sb.toString()
         }
 
-        private fun EqualsOnce(left: String, right: String): Boolean {
+        private fun equalsOnce(left: String, right: String): Boolean {
             if (left.length != right.length) return false
             for (i in 0 until left.length) {
                 if (left[i] != right[i]) {
-                    val a = StandardChar(left[i])
-                    val b = StandardChar(right[i])
+                    val a = standardChar(left[i])
+                    val b = standardChar(right[i])
                     if (a != b) return false
                 }
             }
             return true
         }
 
-        fun Equals(left: String?, right: String?): Boolean {
-            return if (left == null) false else right?.let { EqualsOnce(left, it) } ?: false
+        fun equals(left: String?, right: String?): Boolean {
+            return if (left == null) false else right?.let { equalsOnce(left, it) } ?: false
         }
 
-        fun Equals(left: String?, arg1: String?, arg2: String?): Boolean {
+        fun equals(left: String?, arg1: String?, arg2: String?): Boolean {
             if (left == null) return false
-            if (arg1 != null && EqualsOnce(left, arg1)) return true
-            return if (arg2 != null && EqualsOnce(left, arg2)) true else false
+            if (arg1 != null && equalsOnce(left, arg1)) return true
+            return if (arg2 != null && equalsOnce(left, arg2)) true else false
         }
 
-        fun Equals(left: String?, arg1: String?, arg2: String?, arg3: String?): Boolean {
+        fun equals(left: String?, arg1: String?, arg2: String?, arg3: String?): Boolean {
             if (left == null) return false
-            if (arg1 != null && EqualsOnce(left, arg1)) return true
-            if (arg2 != null && EqualsOnce(left, arg2)) return true
-            return if (arg3 != null && EqualsOnce(left, arg3)) true else false
+            if (arg1 != null && equalsOnce(left, arg1)) return true
+            if (arg2 != null && equalsOnce(left, arg2)) return true
+            return if (arg3 != null && equalsOnce(left, arg3)) true else false
         }
 
-        fun SplitFormula(formula: String, splitChars: List<Char?>): List<String> {
+        fun splitFormula(formula: String, splitChars: List<Char?>): List<String> {
             val result: MutableList<String> = mutableListOf<String>()
             var inSquareBrackets = false
             var inBraceBrackets = false
@@ -123,7 +123,7 @@ class CharUtil {
             return result
         }
 
-        fun SplitFormulaForAnd(formula: String): List<String> {
+        fun splitFormulaForAnd(formula: String): List<String> {
             val result = mutableListOf<String>()
             var inSquareBrackets = false
             var inBraceBrackets = false

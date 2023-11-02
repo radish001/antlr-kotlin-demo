@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "base-64": "1.0.0",
-    "bignumber.js": "9.1.2"
+    "bignumber.js": "9.1.2",
+    "dayjs": "1.11.10"
   },
   "peerDependencies": {},
   "optionalDependencies": {},

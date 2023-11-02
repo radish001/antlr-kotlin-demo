@@ -1,5 +1,7 @@
 package antlr.json
 
+import antlr.data.CommonNumber
+
 /**
  * @ClassName JsonMapper.java
  * @author huxiaodong
@@ -11,9 +13,58 @@ package antlr.json
 class JsonMapper {
     companion object {
 
-        // todo 处理json
-        fun ToObject(txt: String): JsonData {
-            return JsonData()
+        fun readValue(reader: JsonReader): JsonData?{
+            reader.read()
+            if (reader.token() === JsonToken.ArrayEnd){
+                return null
+            }
+            val instance = JsonData()
+
+            if (reader.token() === JsonToken.String) {
+                instance.setString(reader.getValue() as String)
+                return instance
+            }
+
+            if (reader.token() === JsonToken.Double) {
+                instance.setDouble(reader.getValue() as CommonNumber)
+                return instance
+            }
+
+            if (reader.token() === JsonToken.Boolean) {
+                instance.setBoolean(reader.getValue() as Boolean)
+                return instance
+            }
+            if (reader.token() === JsonToken.Null) {
+                instance.setNull()
+                return instance
+            }
+
+
+            if (reader.token() === JsonToken.ArrayStart) {
+                instance.setJsonType(JsonType.Array)
+                while (true) {
+                    val item: JsonData? = readValue(reader)
+                    if (item == null && reader.token() === JsonToken.ArrayEnd) break
+                    instance.add(item as IJsonWrapper)
+                }
+            } else if (reader.token() === JsonToken.ObjectStart) {
+                instance.setJsonType(JsonType.Object)
+                while (true) {
+                    reader.read()
+                    if (reader.token() === JsonToken.ObjectEnd) break
+                    instance.set(reader.getValue() as String, readValue(reader) as IJsonWrapper)
+                }
+            }
+
+            return instance
+        }
+
+
+
+
+        fun toObject(json: String): JsonData? {
+            val reader = JsonReader(json)
+            return readValue(reader)
         }
     }
 }

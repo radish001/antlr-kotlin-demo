@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.111s</div>
+<div class="counter">1.836s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,15 +76,21 @@
 <a name="mathTest"></a>
 <h3 class="failures">mathTest[jsLegacy, node]</h3>
 <span class="code">
-<pre>NotImplementedError: An operation is not implemented: Not yet implemented
+<pre>NullPointerException:
 	at Object.captureStack(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/builtins.kt:103)
-	at NotImplementedError.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40226)
-	at Error.init(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:24)
-	at &lt;global&gt;.new NotImplementedError(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:62070)
-	at Companion.compile(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages/antlt-kotlin-demo-js-legacy/kotlin/src/kotlin/util/Standard.kt:30)
-	at &lt;global&gt;.new MathVisitorImpl(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/impl/MathVisitorImpl.kt:30)
-	at antlrtest.EvalTest.mathTest(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:60)
-	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-legacy-test.js:118)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40257)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:35)
+	at RuntimeException.init(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:37)
+	at &lt;global&gt;.new NullPointerException(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40403)
+	at Object.throwNPE(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/src/kotlin/exceptionUtils.kt:10)
+	at Kotlin.ensureNotNull(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/misc.js:115)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visitChildren(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:48)
+	at ExprContext.RuleContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/RuleContext.kt:190)
+	at MathVisitorImpl.visitProg(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/impl/MathVisitorImpl.kt:37)
+	at ProgContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:859)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visit(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:18)
+	at antlrtest.EvalTest.mathTest(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:51)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-legacy-test.js:112)
 	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
 	at &lt;global&gt;.processImmediate(node:internal/timers:464)
 </pre>
@@ -92,36 +98,47 @@
 </div>
 <div class="test">
 <a name="mathTest"></a>
-<h3 class="failures">mathTest[jsLegacy, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</h3>
+<h3 class="failures">mathTest[jsIr, browser]</h3>
 <span class="code">
-<pre>NotImplementedError: An operation is not implemented: Not yet implemented
-	at Object.captureStack(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:84251)
-	at NotImplementedError.constructor(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:84559)
-	at Error.init(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:84576)
-	at &lt;global&gt;.new NotImplementedError(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:106403)
-	at Companion.compile(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:25417)
-	at &lt;global&gt;.new MathVisitorImpl(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:21245)
-	at antlrtest.EvalTest.mathTest(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:281)
-	at &lt;global&gt;.&lt;unknown&gt;(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:336)
-	at Context.&lt;anonymous&gt;(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:42879)
+<pre>ClassCastException:
+	at &lt;global&gt;.THROW_CCE(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/runtime/hacks.kt:23)
+	at MathLexer.Lexer.readInputStream_cn8ozw(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Lexer.kt:44)
+	at MathLexer.Lexer.nextToken_jykgjq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Lexer.kt:214)
+	at CommonTokenStream.BufferedTokenStream.fetch_es1drt(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:170)
+	at CommonTokenStream.BufferedTokenStream.sync_o63rt2(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:153)
+	at CommonTokenStream.BufferedTokenStream.setup_2uql04(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:254)
+	at CommonTokenStream.BufferedTokenStream.lazyInit_ml29bh(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:249)
+	at CommonTokenStream.LT_6crwc9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/CommonTokenStream.kt:101)
+	at MathParser.Parser.enterRule_khu8i(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Parser.kt:647)
+	at MathParser.prog_21xsq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:866)
+	at antlrtest.EvalTest.mathTest_5jk9k9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:49)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-ir-test.js:84)
+	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
+	at &lt;global&gt;.processImmediate(node:internal/timers:464)
 </pre>
 </span>
 </div>
 <div class="test">
 <a name="mathTest"></a>
-<h3 class="failures">mathTest[jsIr, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</h3>
+<h3 class="failures">mathTest[jsLegacy, browser]</h3>
 <span class="code">
-<pre>ClassCastException
-	at &lt;global&gt;.THROW_CCE(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:60341)
-	at Lexer.readInputStream_cn8ozw(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:1870)
-	at Lexer.nextToken_jykgjq(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:2029)
-	at BufferedTokenStream.fetch_es1drt(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:843)
-	at BufferedTokenStream.sync_o63rt2(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:829)
-	at BufferedTokenStream.setup_2uql04(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:915)
-	at BufferedTokenStream.lazyInit_ml29bh(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:911)
-	at CommonTokenStream.LT_6crwc9(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:1397)
-	at Parser.enterRule_khu8i(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:2491)
-	at MathParser.prog_21xsq(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:37326)
+<pre>NullPointerException:
+	at Object.captureStack(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/builtins.kt:103)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40257)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:35)
+	at RuntimeException.init(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:37)
+	at &lt;global&gt;.new NullPointerException(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40403)
+	at Object.throwNPE(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/src/kotlin/exceptionUtils.kt:10)
+	at Kotlin.ensureNotNull(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/misc.js:115)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visitChildren(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:48)
+	at ExprContext.RuleContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/RuleContext.kt:190)
+	at MathVisitorImpl.visitProg(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/impl/MathVisitorImpl.kt:37)
+	at ProgContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:859)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visit(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:18)
+	at antlrtest.EvalTest.mathTest(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:51)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-legacy-test.js:112)
+	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
+	at &lt;global&gt;.processImmediate(node:internal/timers:464)
 </pre>
 </span>
 </div>
@@ -139,9 +156,9 @@
 	at CommonTokenStream.BufferedTokenStream.lazyInit_ml29bh(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:249)
 	at CommonTokenStream.LT_6crwc9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/CommonTokenStream.kt:101)
 	at MathParser.Parser.enterRule_khu8i(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Parser.kt:647)
-	at MathParser.prog_21xsq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:883)
-	at antlrtest.EvalTest.mathTest_5jk9k9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:58)
-	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-ir-test.js:90)
+	at MathParser.prog_21xsq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:866)
+	at antlrtest.EvalTest.mathTest_5jk9k9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:49)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-ir-test.js:84)
 	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
 	at &lt;global&gt;.processImmediate(node:internal/timers:464)
 </pre>
@@ -151,16 +168,14 @@
 <a name="mathTest()"></a>
 <h3 class="failures">mathTest()[jvm]</h3>
 <span class="code">
-<pre>kotlin.NotImplementedError: An operation is not implemented: Not yet implemented
-	at antlr.data.MyNumber.add(MyNumber.jvm.kt:58)
-	at antlr.impl.MathVisitorImpl.visitAddSub_fun(MathVisitorImpl.kt:169)
-	at antlr.impl.MathVisitorImpl.visitAddSub_fun(MathVisitorImpl.kt:20)
-	at antlr.MathParser$AddSub_funContext.accept(MathParser.kt:991)
-	at antlr.impl.MathVisitorImpl.visitProg(MathVisitorImpl.kt:38)
-	at antlr.impl.MathVisitorImpl.visitProg(MathVisitorImpl.kt:20)
-	at antlr.MathParser$ProgContext.accept(MathParser.kt:876)
+<pre>java.lang.NullPointerException
+	at org.antlr.v4.kotlinruntime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.kt:48)
+	at org.antlr.v4.kotlinruntime.RuleContext.accept(RuleContext.kt:190)
+	at antlr.impl.MathVisitorImpl.visitProg(MathVisitorImpl.kt:37)
+	at antlr.impl.MathVisitorImpl.visitProg(MathVisitorImpl.kt:16)
+	at antlr.MathParser$ProgContext.accept(MathParser.kt:859)
 	at org.antlr.v4.kotlinruntime.tree.AbstractParseTreeVisitor.visit(AbstractParseTreeVisitor.kt:18)
-	at antlrtest.EvalTest.mathTest(EvalTest.kt:61)
+	at antlrtest.EvalTest.mathTest(EvalTest.kt:51)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -256,6 +271,28 @@
 </div>
 <div class="test">
 <a name="test"></a>
+<h3 class="failures">test[jsIr, browser]</h3>
+<span class="code">
+<pre>ClassCastException:
+	at &lt;global&gt;.THROW_CCE(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/runtime/hacks.kt:23)
+	at CalculatorLexer.Lexer.readInputStream_cn8ozw(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Lexer.kt:44)
+	at CalculatorLexer.Lexer.nextToken_jykgjq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Lexer.kt:214)
+	at CommonTokenStream.BufferedTokenStream.fetch_es1drt(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:170)
+	at CommonTokenStream.BufferedTokenStream.sync_o63rt2(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:153)
+	at CommonTokenStream.BufferedTokenStream.setup_2uql04(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:254)
+	at CommonTokenStream.BufferedTokenStream.lazyInit_ml29bh(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/BufferedTokenStream.kt:249)
+	at CommonTokenStream.LT_6crwc9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/CommonTokenStream.kt:101)
+	at CalculatorParser.Parser.enterRule_khu8i(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Parser.kt:647)
+	at CalculatorParser.prog_21xsq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlrtest/CalculatorParser.kt:149)
+	at antlrtest.EvalTest.test_w6j16n(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:35)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-ir-test.js:79)
+	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
+	at &lt;global&gt;.processImmediate(node:internal/timers:464)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="test"></a>
 <h3 class="failures">test[jsIr, node]</h3>
 <span class="code">
 <pre>ClassCastException:
@@ -269,28 +306,10 @@
 	at CommonTokenStream.LT_6crwc9(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/CommonTokenStream.kt:101)
 	at CalculatorParser.Parser.enterRule_khu8i(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/Parser.kt:647)
 	at CalculatorParser.prog_21xsq(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlrtest/CalculatorParser.kt:149)
-	at antlrtest.EvalTest.test_w6j16n(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:39)
-	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-ir-test.js:85)
+	at antlrtest.EvalTest.test_w6j16n(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:35)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-ir-test.js:79)
 	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
 	at &lt;global&gt;.processImmediate(node:internal/timers:464)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="test"></a>
-<h3 class="failures">test[jsIr, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</h3>
-<span class="code">
-<pre>ClassCastException
-	at &lt;global&gt;.THROW_CCE(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:60341)
-	at Lexer.readInputStream_cn8ozw(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:1870)
-	at Lexer.nextToken_jykgjq(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:2029)
-	at BufferedTokenStream.fetch_es1drt(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:843)
-	at BufferedTokenStream.sync_o63rt2(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:829)
-	at BufferedTokenStream.setup_2uql04(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:915)
-	at BufferedTokenStream.lazyInit_ml29bh(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:911)
-	at CommonTokenStream.LT_6crwc9(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:1397)
-	at Parser.enterRule_khu8i(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:2491)
-	at CalculatorParser.prog_21xsq(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_144772/commons.js:41035)
 </pre>
 </span>
 </div>
@@ -309,61 +328,61 @@
 <tr>
 <td class="failures">mathTest[jsLegacy, node]</td>
 <td class="failures">mathTest</td>
-<td class="failures">0.506s</td>
+<td class="failures">0.497s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="failures">mathTest[jsLegacy, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</td>
+<td class="failures">mathTest[jsIr, browser]</td>
 <td class="failures">mathTest</td>
-<td class="failures">0.009s</td>
+<td class="failures">0.066s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="failures">mathTest[jsIr, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</td>
+<td class="failures">mathTest[jsLegacy, browser]</td>
 <td class="failures">mathTest</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.490s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">mathTest[jsIr, node]</td>
 <td class="failures">mathTest</td>
-<td class="failures">0.062s</td>
+<td class="failures">0.067s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">mathTest()[jvm]</td>
 <td class="failures">mathTest()</td>
-<td class="failures">0.149s</td>
+<td class="failures">0.073s</td>
 <td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">test[jsLegacy, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</td>
-<td class="success">test</td>
-<td class="success">0.018s</td>
-<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test[jsLegacy, node]</td>
 <td class="success">test</td>
-<td class="success">0.014s</td>
+<td class="success">0.065s</td>
 <td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test[jsLegacy, browser]</td>
+<td class="success">test</td>
+<td class="success">0.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">test[jsIr, browser]</td>
+<td class="failures">test</td>
+<td class="failures">0.176s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">test[jsIr, node]</td>
 <td class="failures">test</td>
-<td class="failures">0.167s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">test[jsIr, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</td>
-<td class="failures">test</td>
-<td class="failures">0.005s</td>
+<td class="failures">0.174s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test()[jvm]</td>
 <td class="success">test()</td>
-<td class="success">0.180s</td>
+<td class="success">0.175s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -371,25 +390,9 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>设置为true
-获取root
+<pre>结果=============3
 结果=============3
-设置为true
-获取root
-[log] 设置为true
-[log] 设置为true
-设置为true
-设置为true
-[log] 设置为true
-[log] 获取root
-[log] 结果=============3
-[log] 设置为true
-[log] 获取root
-设置为true
-获取root
 结果=============3
-设置为true
-获取root
 </pre>
 </span>
 </div>
@@ -401,7 +404,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.1</a> at 2023-10-27 10:26:16</p>
+<a href="http://www.gradle.org">Gradle 7.1</a> at 2023-11-2 18:59:13</p>
 </div>
 </div>
 </body>

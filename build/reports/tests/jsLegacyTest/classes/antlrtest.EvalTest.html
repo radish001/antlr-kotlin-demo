@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.547s</div>
+<div class="counter">1.105s</div>
 <p>duration</p>
 </div>
 </td>
@@ -74,17 +74,23 @@
 <h2>Failed tests</h2>
 <div class="test">
 <a name="mathTest"></a>
-<h3 class="failures">mathTest[jsLegacy, node]</h3>
+<h3 class="failures">mathTest[jsLegacy, browser]</h3>
 <span class="code">
-<pre>NotImplementedError: An operation is not implemented: Not yet implemented
+<pre>NullPointerException:
 	at Object.captureStack(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/builtins.kt:103)
-	at NotImplementedError.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40226)
-	at Error.init(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:24)
-	at &lt;global&gt;.new NotImplementedError(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:62070)
-	at Companion.compile(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages/antlt-kotlin-demo-js-legacy/kotlin/src/kotlin/util/Standard.kt:30)
-	at &lt;global&gt;.new MathVisitorImpl(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/impl/MathVisitorImpl.kt:30)
-	at antlrtest.EvalTest.mathTest(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:60)
-	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-legacy-test.js:118)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40257)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:35)
+	at RuntimeException.init(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:37)
+	at &lt;global&gt;.new NullPointerException(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40403)
+	at Object.throwNPE(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/src/kotlin/exceptionUtils.kt:10)
+	at Kotlin.ensureNotNull(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/misc.js:115)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visitChildren(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:48)
+	at ExprContext.RuleContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/RuleContext.kt:190)
+	at MathVisitorImpl.visitProg(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/impl/MathVisitorImpl.kt:37)
+	at ProgContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:859)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visit(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:18)
+	at antlrtest.EvalTest.mathTest(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:51)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-legacy-test.js:112)
 	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
 	at &lt;global&gt;.processImmediate(node:internal/timers:464)
 </pre>
@@ -92,18 +98,25 @@
 </div>
 <div class="test">
 <a name="mathTest"></a>
-<h3 class="failures">mathTest[jsLegacy, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</h3>
+<h3 class="failures">mathTest[jsLegacy, node]</h3>
 <span class="code">
-<pre>NotImplementedError: An operation is not implemented: Not yet implemented
-	at Object.captureStack(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:84251)
-	at NotImplementedError.constructor(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:84559)
-	at Error.init(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:84576)
-	at &lt;global&gt;.new NotImplementedError(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:106403)
-	at Companion.compile(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:25417)
-	at &lt;global&gt;.new MathVisitorImpl(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:21245)
-	at antlrtest.EvalTest.mathTest(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:281)
-	at &lt;global&gt;.&lt;unknown&gt;(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:336)
-	at Context.&lt;anonymous&gt;(/var/folders/qj/hf2rrhzn1fn3tfx_1tmnyd0r0000gn/T/_karma_webpack_815321/commons.js:42879)
+<pre>NullPointerException:
+	at Object.captureStack(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/builtins.kt:103)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40257)
+	at NullPointerException.constructor(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:35)
+	at RuntimeException.init(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/src/kotlin/exceptions.kt:37)
+	at &lt;global&gt;.new NullPointerException(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/kotlin.js:40403)
+	at Object.throwNPE(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/src/kotlin/exceptionUtils.kt:10)
+	at Kotlin.ensureNotNull(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin/1.8.21/js/misc.js:115)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visitChildren(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:48)
+	at ExprContext.RuleContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/RuleContext.kt:190)
+	at MathVisitorImpl.visitProg(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/impl/MathVisitorImpl.kt:37)
+	at ProgContext.accept(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonAntlr/kotlin/antlr/MathParser.kt:859)
+	at MathVisitorImpl.AbstractParseTreeVisitor.visit(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/antlr-kotlin-runtime/src/commonMain/kotlin/org/antlr/v4/kotlinruntime/tree/AbstractParseTreeVisitor.kt:18)
+	at antlrtest.EvalTest.mathTest(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/src/commonTest/kotlin/antlrtest/EvalTest.kt:51)
+	at &lt;global&gt;.fn(kotlin/antlt-kotlin-demo-js-legacy-test.js:112)
+	at Context.&lt;anonymous&gt;(/Users/huxiaodong/Documents/ideaspaces/antlr-kotlin-demo/build/js/packages_imported/kotlin-test-js-runner/src/KotlinTestTeamCityConsoleAdapter.ts:72)
+	at &lt;global&gt;.processImmediate(node:internal/timers:464)
 </pre>
 </span>
 </div>
@@ -120,27 +133,27 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">mathTest[jsLegacy, node]</td>
+<td class="failures">mathTest[jsLegacy, browser]</td>
 <td class="failures">mathTest</td>
-<td class="failures">0.506s</td>
+<td class="failures">0.490s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="failures">mathTest[jsLegacy, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</td>
+<td class="failures">mathTest[jsLegacy, node]</td>
 <td class="failures">mathTest</td>
-<td class="failures">0.009s</td>
+<td class="failures">0.497s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test[jsLegacy, node]</td>
 <td class="success">test</td>
-<td class="success">0.014s</td>
+<td class="success">0.065s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">test[jsLegacy, browser, ChromeHeadless118.0.5993.117, MacOS10.15.7]</td>
+<td class="success">test[jsLegacy, browser]</td>
 <td class="success">test</td>
-<td class="success">0.018s</td>
+<td class="success">0.053s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -148,16 +161,8 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>[log] 设置为true
-[log] 获取root
-[log] 结果=============3
-[log] 设置为true
-[log] 获取root
-设置为true
-获取root
+<pre>结果=============3
 结果=============3
-设置为true
-获取root
 </pre>
 </span>
 </div>
@@ -169,7 +174,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.1</a> at 2023-10-27 10:26:07</p>
+<a href="http://www.gradle.org">Gradle 7.1</a> at 2023-11-2 18:58:59</p>
 </div>
 </div>
 </body>

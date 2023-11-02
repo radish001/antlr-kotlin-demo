@@ -1,6 +1,6 @@
 package antlr.json
 
-import antlr.data.MyNumber
+import antlr.data.CommonNumber
 
 /**
  * @ClassName IJsonWrapper.java
@@ -12,22 +12,21 @@ import antlr.data.MyNumber
  */
 interface IJsonWrapper {
 
+    fun isArray(): Boolean
+    fun isBoolean(): Boolean
+    fun isDouble(): Boolean
+    fun isObject(): Boolean
+    fun isString(): Boolean
+    fun isNull(): Boolean
 
-    fun IsArray(): Boolean
-    fun IsBoolean(): Boolean
-    fun IsDouble(): Boolean
-    fun IsObject(): Boolean
-    fun IsString(): Boolean
-    fun IsNull(): Boolean
-
-    fun SetBoolean(`val`: Boolean)
+    fun setBoolean(boolean: Boolean)
    // fun SetDouble(`val`: java.math.BigDecimal?)
-    fun SetJsonType(type: JsonType?)
-    fun SetString(`val`: String?)
-    fun SetNull()
+    fun setJsonType(type: JsonType?)
+    fun setString(`val`: String?)
+    fun setNull()
 
-    fun Add(`val`: IJsonWrapper?)
+    fun add(json: IJsonWrapper?)
 
-    fun Set(key: String?, `val`: IJsonWrapper?)
-    fun NumberValue(): MyNumber
+    fun set(key: String?, json: IJsonWrapper?)
+    fun numberValue(): CommonNumber
 }

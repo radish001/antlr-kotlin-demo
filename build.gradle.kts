@@ -77,14 +77,16 @@ kotlin {
             dependencies {
                 //implementation(kotlin("collections"))
                 //implementation(kotlin("reflect"))
-                //implementation(kotlin("stdlib"))
+                implementation(kotlin("stdlib"))
                 api("com.github.radish001.antlr-kotlin:antlr-kotlin-runtime:$antlr_kotlin_version")
+
             }
             //kotlin.srcDir("build/generated-src/commonAntlr/kotlin")
         }
 
         val commonMain by getting {
             dependsOn(commonAntlr)
+
         }
         val commonTest by getting {
 
@@ -96,6 +98,7 @@ kotlin {
             dependencies {
                 api(kotlin("stdlib-jdk8"))
                 api(kotlin("reflect"))
+                implementation("joda-time:joda-time:2.12.5")
             }
         }
         val jvmTest by getting {
@@ -110,6 +113,7 @@ kotlin {
                 implementation("com.github.radish001.antlr-kotlin:antlr-kotlin-runtime-js:$antlr_kotlin_version")
                 implementation(kotlin("stdlib-js"))
                 implementation(npm("bignumber.js", "9.1.2"))
+                implementation(npm("dayjs", "1.11.10"))
 
             }
         }

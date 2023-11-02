@@ -1,7 +1,7 @@
 package antlr.impl
 
-import antlr.data.MyDate
-import antlr.data.MyNumber
+import antlr.data.CommonDate
+import antlr.data.CommonNumber
 import antlr.json.JsonData
 import antlr.json.JsonMapper
 
@@ -14,526 +14,512 @@ import antlr.json.JsonMapper
  * Copyright (C) 2022 HOSE
  */
 abstract class Operand {
-   // val True: Operand = OperandBoolean(true)
-   // val False: Operand = OperandBoolean(false)
-   // val One: Operand = Create(1)
-   // val Zero: Operand = Create(0)
-
-
 
     companion object {
-        fun Create(obj: Boolean): Operand {
-            return OperandBoolean(obj)
+        /**
+         * 静态创建方法
+         */
+        fun create(bool: Boolean): Operand {
+            return OperandBoolean(bool)
         }
 
-        fun Create(obj: Short): Operand {
-            return OperandNumber(MyNumber())
+        fun create(short: Short): Operand {
+            return OperandNumber(CommonNumber(short))
         }
 
-        fun Create(obj: Int): Operand {
-            return OperandNumber(MyNumber())
+        fun create(int: Int): Operand {
+            return OperandNumber(CommonNumber(int))
         }
 
-        fun Create(obj: Long): Operand {
-            return OperandNumber(MyNumber())
+        fun create(long: Long): Operand {
+            return OperandNumber(CommonNumber(long))
         }
 
-        fun Create(obj: Float): Operand {
-            return OperandNumber(MyNumber())
+        fun create(float: Float): Operand {
+            return OperandNumber(CommonNumber(float))
         }
 
-        fun Create(obj: Double): Operand {
-            return OperandNumber(MyNumber())
-        }
-        // todo 处理bigdecimal
-        fun Create(obj: MyNumber): Operand {
-            return OperandNumber(obj)
+        fun create(double: Double): Operand {
+            return OperandNumber(CommonNumber(double))
         }
 
-        fun Create(obj: String?): Operand {
-            return obj?.let { OperandString(it) } ?: CreateNull()
+
+        fun create(commonNumber: CommonNumber): Operand {
+            return OperandNumber(commonNumber)
         }
 
-        // todo 处理json
-        /* fun CreateJson(txt: String): Operand {
-             if (txt.startsWith("{") && txt.endsWith("}") || txt.startsWith("[") && txt.endsWith("]")) {
-                 try {
-                     val json: JsonData = JsonMapper.ToObject(txt) as JsonData
-                     return Create(json)
-                 } catch (e: java.lang.Exception) {
-                 }
-             }
-             return Error("string to json is error!")
-         }*/
+        fun create(str: String): Operand {
+            return OperandString(str)
+        }
 
-        fun Create(obj: MyDate): Operand {
+
+        fun createJson(txt: String): Operand {
+            if (txt.startsWith("{") && txt.endsWith("}") || txt.startsWith("[") && txt.endsWith("]")) {
+                try {
+                    val json: JsonData = JsonMapper.toObject(txt) as JsonData
+                    return create(json)
+                } catch (e: Exception) {
+                    return error("string to json is error!")
+                }
+            }
+            return error("string to json is error!")
+        }
+
+        fun create(obj: CommonDate): Operand {
             return OperandDate(obj)
         }
 
-        // todo 处理日期
-        /*fun Create(obj: DateTime?): Operand {
-            return OperandDate(MyDate(obj))
-        }*/
 
-        // todo 处理日期
-        /*fun Create(obj: java.util.Date?):Operand {
-            return OperandDate(MyDate(obj))
-        }*/
-
-        fun Create(obj: JsonData): Operand {
-            return OperandJson(obj)
+        fun create(json: JsonData): Operand {
+            return OperandJson(json)
         }
 
-        fun Create(obj: List<Operand>):Operand {
-            return OperandArray(obj)
+        fun create(list: List<Operand>): Operand {
+            return OperandArray(list)
         }
 
-        fun Error(msg: String?): Operand {
-            return OperandError(msg)
+        fun error(msg: String?): Operand {
+            return OperandError(msg!!)
         }
 
-        fun CreateNull(): Operand {
+        fun createNull(): Operand {
             return OperandNull()
         }
     }
 
-    open fun IsNull(): Boolean {
+
+    open fun isNull(): Boolean {
         return false
     }
 
-    open fun IsError(): Boolean {
+    open fun isError(): Boolean {
         return false
     }
 
-    open fun ErrorMsg(): String? {
+    open fun errorMsg(): String? {
         return null
     }
 
-    open fun Type(): OperandType {
+    open fun type(): OperandType {
         return OperandType.ERROR
     }
 
-    open fun NumberValue(): MyNumber? {
+    open fun numberValue(): CommonNumber? {
         return null
     }
 
-    open fun DoubleValue(): Double {
+    open fun doubleValue(): Double {
         return 0.0
     }
 
-    open fun IntValue(): Int {
+    open fun intValue(): Int {
         return 0
     }
 
-    open fun LongValue(): Long {
-        return 0
+    open fun longValue(): Long {
+        return 0L
     }
 
-    open fun Value(): Any? {
+    open fun getOperandValue(): Any? {
         return null
     }
 
-    open fun TextValue(): String? {
+    open fun textValue(): String? {
         return null
     }
 
-    open fun BooleanValue(): Boolean {
+    open fun booleanValue(): Boolean {
         return false
     }
 
-    open fun ArrayValue(): List<Operand>? {
+    open fun arrayValue(): List<Operand>? {
         return null
     }
 
-    open fun JsonValue(): JsonData? {
+    open fun jsonValue(): JsonData? {
         return null
     }
 
-    open fun DateValue(): MyDate? {
+    open fun dateValue(): CommonDate? {
         return null
     }
 
 
-
-    open fun ToNumber(errorMessage: String?): Operand {
-        return Error(errorMessage)
+    open fun toNumber(errorMessage: String?): Operand {
+        return error(errorMessage)
     }
 
-    open fun ToBoolean(errorMessage: String?): Operand {
-        return Error(errorMessage)
+    open fun toBoolean(errorMessage: String?): Operand {
+        return error(errorMessage)
     }
 
-    open fun ToText(errorMessage: String?): Operand {
-        return Error(errorMessage)
+    open fun toText(errorMessage: String?): Operand {
+        return error(errorMessage)
     }
 
-    open fun ToDate(errorMessage: String?): Operand {
-        return Error(errorMessage)
+    open fun toDate(errorMessage: String?): Operand {
+        return error(errorMessage)
     }
 
-    open fun ToJson(errorMessage: String?): Operand {
-        return Error(errorMessage)
+    open fun toJson(errorMessage: String?): Operand {
+        return error(errorMessage)
     }
 
-    open fun ToArray(errorMessage: String?):Operand {
-        return Error(errorMessage)
+    open fun toArray(errorMessage: String?): Operand {
+        return error(errorMessage)
     }
 
 
     internal abstract class OperandT<T>(protected var value: T) : Operand() {
-
-        override fun Value(): T {
+        override fun getOperandValue(): T {
             return value
         }
     }
 
 
-    internal class OperandArray(obj: List<Operand>) : OperandT<List<Operand>?>(obj) {
-        override fun Type(): OperandType {
-            return OperandType.ARRARY
+    internal class OperandArray(obj: List<Operand>) : OperandT<List<Operand>>(obj) {
+        override fun type(): OperandType {
+            return OperandType.ARRAY
         }
 
-        override fun ArrayValue(): List<Operand>? {
+        override fun arrayValue(): List<Operand>? {
             return value
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             return this
         }
     }
 
 
-    internal class OperandBoolean(obj: Boolean) : OperandT<Boolean?>(obj) {
-        override fun Type(): OperandType {
+    internal class OperandBoolean(obj: Boolean) : OperandT<Boolean>(obj) {
+        override fun type(): OperandType {
             return OperandType.BOOLEAN
         }
 
-        override fun BooleanValue(): Boolean {
-            return value!!
+        override fun booleanValue(): Boolean {
+            return value
         }
 
-        override fun ToNumber(errorMessage: String?): Operand {
-            return if (BooleanValue()) Create(1) else Create(0)
+        override fun toNumber(errorMessage: String?): Operand {
+            return if (booleanValue()) create(1) else create(0)
         }
 
-        override fun ToBoolean(errorMessage: String?): Operand {
+        override fun toBoolean(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToText(errorMessage: String?): Operand {
-            return Create(if (BooleanValue()) "TRUE" else "FALSE")
+        override fun toText(errorMessage: String?): Operand {
+            return create(if (booleanValue()) "TRUE" else "FALSE")
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert bool to array error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToJson(errorMessage: String?): Operand {
+        override fun toJson(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert bool to json error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToDate(errorMessage: String?): Operand {
+        override fun toDate(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert bool to date error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
     }
 
 
-    internal class OperandDate(obj: MyDate) : OperandT<MyDate?>(obj) {
-        override fun Type(): OperandType {
+    internal class OperandDate(obj: CommonDate) : OperandT<CommonDate?>(obj) {
+        override fun type(): OperandType {
             return OperandType.DATE
         }
 
-        override fun DateValue(): MyDate? {
+        override fun dateValue(): CommonDate? {
             return value
         }
 
-        override fun ToNumber(errorMessage: String?): Operand {
-            return Create(DateValue()?.ToNumber()!!)
+        override fun toNumber(errorMessage: String?): Operand {
+            return create(dateValue()?.toNumber()!!)
         }
 
-        override fun ToBoolean(errorMessage: String?): Operand {
-            return if (DateValue()?.ToNumber()!!.compareTo(MyNumber.zero()) !== 0) Create(true) else Create(false)
+        override fun toBoolean(errorMessage: String?): Operand {
+            return if (dateValue()?.toNumber()!!.compareTo(CommonNumber.zero()) !== 0) create(true) else create(false)
         }
 
-        override fun ToText(errorMessage: String?): Operand {
-            return Create(DateValue().toString())
+        override fun toText(errorMessage: String?): Operand {
+            return create(dateValue().toString())
         }
 
-        override fun ToDate(errorMessage: String?): Operand {
+        override fun toDate(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert date to array error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToJson(errorMessage: String?): Operand {
+        override fun toJson(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert date to json error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
     }
 
 
-    internal class OperandError(private val _errorMsg: String?) : Operand() {
-        override fun Type(): OperandType {
+    internal class OperandError(msg: String) : OperandT<String>(msg) {
+        override fun type(): OperandType {
             return OperandType.ERROR
         }
 
-        override fun IsError(): Boolean {
+        override fun isError(): Boolean {
             return true
         }
 
-        override fun ErrorMsg(): String? {
-            return _errorMsg
+        override fun errorMsg(): String? {
+            return value
         }
 
-        override fun ToNumber(errorMessage: String?): Operand {
+        override fun toNumber(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToBoolean(errorMessage: String?): Operand {
+        override fun toBoolean(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToText(errorMessage: String?): Operand {
+        override fun toText(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToJson(errorMessage: String?):Operand {
+        override fun toJson(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToDate(errorMessage: String?): Operand {
+        override fun toDate(errorMessage: String?): Operand {
             return this
         }
     }
 
 
-    internal class OperandJson(obj: JsonData) : OperandT<JsonData?>(obj) {
-        override fun Type(): OperandType {
+    internal class OperandJson(obj: JsonData) : OperandT<JsonData>(obj) {
+        override fun type(): OperandType {
             return OperandType.JSON
         }
 
-        override fun JsonValue(): JsonData? {
+        override fun jsonValue(): JsonData? {
             return value
         }
 
-        override fun ToJson(errorMessage: String?): Operand {
+        override fun toJson(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             var errorMessage = errorMessage
-            if (JsonValue()?.IsArray()!!) {
+            if (jsonValue()?.isArray()!!) {
                 val list: MutableList<Operand> = mutableListOf()
-                for (v in JsonValue()!!.inst_array!!) {
-                    if (v!!.IsString()) list.add(Create(v.StringValue())) else if (v.IsBoolean()) list.add(Create(v.BooleanValue())) else if (v.IsDouble()) list.add(
-                        Create(v.NumberValue())
-                    ) else if (v.IsNull()) list.add(CreateNull()) else list.add(Create(v))
+                for (v in jsonValue()!!.instanceArray!!) {
+                    if (v!!.isString()) list.add(create(v.stringValue()!!)) else if (v.isBoolean()) list.add(create(v.booleanValue())) else if (v.isDouble()) list.add(
+                        create(v.numberValue())
+                    ) else if (v.isNull()) list.add(createNull()) else list.add(create(v))
                 }
-                return Create(list)
+                return create(list)
             }
             if (errorMessage == null) {
                 errorMessage = "Convert json to array error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToBoolean(errorMessage: String?): Operand {
+        override fun toBoolean(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert json to bool error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToDate(errorMessage: String?): Operand {
+        override fun toDate(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert json to date error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToNumber(errorMessage: String?): Operand {
+        override fun toNumber(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert json to number error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToText(errorMessage: String?): Operand {
+        override fun toText(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert number to string error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
     }
 
 
     internal class OperandNull : Operand() {
-        override fun Type(): OperandType {
+        override fun type(): OperandType {
             return OperandType.NULL
         }
 
-        override fun IsNull(): Boolean {
+        override fun isNull(): Boolean {
             return true
         }
     }
 
 
-    internal class OperandNumber(obj: MyNumber) : OperandT<MyNumber>(obj) {
-        override fun Type(): OperandType {
+    internal class OperandNumber(obj: CommonNumber) : OperandT<CommonNumber>(obj) {
+        override fun type(): OperandType {
             return OperandType.NUMBER
         }
 
-        override fun IntValue(): Int {
+        override fun intValue(): Int {
             return value.toInt()
         }
 
-        override fun NumberValue(): MyNumber{
+        override fun numberValue(): CommonNumber {
             return value
         }
 
-        override fun DoubleValue(): Double {
+        override fun doubleValue(): Double {
             return value.toDouble()
         }
 
-        override fun LongValue(): Long {
+        override fun longValue(): Long {
             return value.toLong()
         }
 
-        override fun ToNumber(errorMessage: String?): Operand {
+        override fun toNumber(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToBoolean(errorMessage: String?): Operand {
-            return if (NumberValue().compareTo(MyNumber.zero()) != 0) Create(true) else Create(false)
+        override fun toBoolean(errorMessage: String?): Operand {
+            return if (numberValue().compareTo(CommonNumber.zero()) != 0) create(true) else create(false)
         }
 
-        override fun ToText(errorMessage: String?): Operand {
-            var str = (NumberValue().toDouble() as Double).toString()
+        override fun toText(errorMessage: String?): Operand {
+            var str = (numberValue().toDouble() as Double).toString()
             if (str.contains(".")) {
-                // todo 处理正则
-                // str = java.util.regex.Pattern.compile("(\\.)?0+$").matcher(str).replaceAll("")
+                //  todo 待测试
+                str = str.replace(Regex(pattern = "(\\.)?0+$"), "")
             }
-            return Create(str)
+            return create(str)
         }
 
-        override fun ToDate(errorMessage: String?): Operand {
-            return Create(MyDate(NumberValue()))
+        override fun toDate(errorMessage: String?): Operand {
+            return create(CommonDate(numberValue()))
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert number to array error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
 
-        override fun ToJson(errorMessage: String?): Operand {
+        override fun toJson(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert number to json error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
     }
 
 
-
-
-
-
     internal class OperandString(obj: String) : OperandT<String>(obj) {
-        override fun Type(): OperandType {
+        override fun type(): OperandType {
             return OperandType.TEXT
         }
 
-        override fun TextValue(): String {
+        override fun textValue(): String {
             return value
         }
 
-        override fun ToNumber(errorMessage: String?): Operand {
+        override fun toNumber(errorMessage: String?): Operand {
             try {
-                val d = MyNumber(TextValue())
-                return Create(d)
+                val d = CommonNumber(textValue())
+                return create(d)
             } catch (e: Exception) {
+                return errorMessage?.let { error(it) } ?: error("Convert string to number error!")
             }
-            return errorMessage?.let { Error(it) } ?: Error("Convert string to number error!")
+            return errorMessage?.let { error(it) } ?: error("Convert string to number error!")
         }
 
-        override fun ToText(errorMessage: String?): Operand {
+        override fun toText(errorMessage: String?): Operand {
             return this
         }
 
-        override fun ToBoolean(errorMessage: String?): Operand {
-            if (TextValue().lowercase() == "true" || TextValue().lowercase() == "yes") {
-                return Create(true)
+        override fun toBoolean(errorMessage: String?): Operand {
+            if (textValue().lowercase() == "true" || textValue().lowercase() == "yes") {
+                return create(true)
             }
-            if (TextValue().lowercase() == "false" || TextValue().lowercase() == "no") {
-                return Create(false)
+            if (textValue().lowercase() == "false" || textValue().lowercase() == "no") {
+                return create(false)
             }
-            if (TextValue() == "1" || TextValue() == "是" || TextValue() == "有") {
-                return Create(true)
+            if (textValue() == "1" || textValue() == "是" || textValue() == "有") {
+                return create(true)
             }
-            return if (TextValue() == "0" || TextValue() == "否" || TextValue() == "不是" || TextValue() == "无" || TextValue() == "没有") {
-                Create(false)
-            } else errorMessage?.let { Error(it) } ?: Error("Convert string to bool error!")
+            return if (textValue() == "0" || textValue() == "否" || textValue() == "不是" || textValue() == "无" || textValue() == "没有") {
+                create(false)
+            } else errorMessage?.let { error(it) } ?: error("Convert string to bool error!")
         }
 
-        override fun ToDate(errorMessage: String?): Operand {
-            val date = MyDate.parse(TextValue())
+        override fun toDate(errorMessage: String?): Operand {
+            val date = CommonDate.parse(textValue())
             return if (date != null) {
-                Create(date)
-            } else errorMessage?.let { Error(it) } ?: Error("Convert string to date error!")
+                create(date)
+            } else errorMessage?.let { error(it) } ?: error("Convert string to date error!")
         }
 
-        override fun ToJson(errorMessage: String?): Operand {
-            val txt = TextValue()
+        override fun toJson(errorMessage: String?): Operand {
+            val txt = textValue()
             if (txt.startsWith("{") && txt.endsWith("}") || txt.startsWith("[") && txt.endsWith("]")) {
                 try {
-                    val json: JsonData = JsonMapper.ToObject(txt)
-                    return Create(json)
+                    val json: JsonData = JsonMapper.toObject(txt)!!
+                    return create(json)
                 } catch (e: Exception) {
-                    e.stackTraceToString()
+                    return errorMessage?.let { error(it) } ?: error("Convert string to json error!")
                 }
             }
-            return errorMessage?.let { Error(it) } ?: Error("Convert string to json error!")
+            return errorMessage?.let { error(it) } ?: error("Convert string to json error!")
         }
 
-        override fun ToArray(errorMessage: String?): Operand {
+        override fun toArray(errorMessage: String?): Operand {
             var errorMessage = errorMessage
             if (errorMessage == null) {
                 errorMessage = "Convert string to array error!"
             }
-            return Error(errorMessage)
+            return error(errorMessage)
         }
     }
 

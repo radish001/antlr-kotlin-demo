@@ -3,9 +3,9 @@ package antlr.impl
 import antlr.AntlrErrorListener
 import antlr.MathLexer
 import antlr.MathParser
-import antlr.collection.MyTreeMap
-import antlr.data.MyDate
-import antlr.data.MyNumber
+import antlr.collection.CommonTreeMap
+import antlr.data.CommonDate
+import antlr.data.CommonNumber
 import antlr.json.JsonData
 import antlr.json.JsonMapper
 import antlr.util.CharUtil
@@ -26,165 +26,162 @@ class AlgorithmEngine {
     /**
      * 使用EXCEL索引
      */
-    var UseExcelIndex = true
+    private var useExcelIndex = true
 
     /**
      * 最后一个错误
      */
-    var LastError: String? = null
+    private var lastError: String? = null
 
     /**
      * 保存到临时文档
      */
-    var UseTempDict = false
+    private var useTempDict = false
 
     /**
      * 是否忽略大小写
      */
-    var IgnoreCase = false
+    private var ignoreCase = false
 
     /**
      * 使用本地时区
      */
-    var UseLocalTime = false
-    private var _context: MathParser.ProgContext? = null
-    private var _tempdict: MyTreeMap<String, Operand>? = null
+    private var useLocalTime = false
 
-    /// <summary>
-    /// 默认不带缓存
-    /// </summary>
+    private var context: MathParser.ProgContext? = null
+
+    private var tempdict: CommonTreeMap<Operand>? = null
+
+
     constructor()  {
-        IgnoreCase = false
-        _tempdict = MyTreeMap<String, Operand>(IgnoreCase)
+        ignoreCase = false
+        tempdict = CommonTreeMap(ignoreCase)
     }
 
-    /// <summary>
-    /// 带缓存关键字大小写参数
-    /// </summary>
-    /// <param name="ignoreCase"></param>
+
     constructor(ignoreCase: Boolean) {
-        IgnoreCase = ignoreCase
-        _tempdict = MyTreeMap<String, Operand>(ignoreCase)
+        this.ignoreCase = ignoreCase
+        tempdict = CommonTreeMap(ignoreCase)
 
     }
 
-    private fun GetDiyParameterInside(parameter: String): Operand? {
-        if (_tempdict!!.containsKey(parameter)) {
-            return _tempdict!![parameter]
+    private fun getDiyParameterInside(parameter: String): Operand? {
+        if (tempdict!!.containsKey(parameter)) {
+            return tempdict!![parameter]
         }
-        val result: Operand = GetParameter(parameter)
-        if (UseTempDict) {
-            _tempdict!![parameter] = result
+        val result: Operand = getParameter(parameter)
+        if (useTempDict) {
+            tempdict!![parameter] = result
         }
         return result
     }
 
-    protected fun GetParameter(parameter: String): Operand {
-        return Operand.Error("Parameter [$parameter] is missing.")
+    private fun getParameter(parameter: String): Operand {
+        return Operand.error("Parameter [$parameter] is missing.")
     }
 
-    protected fun ExecuteDiyFunction(funcName: String, operands: List<Operand?>?): Operand {
-        return Operand.Error("DiyFunction [$funcName] is missing.")
+    private fun executeDiyFunction(funcName: String, operands: List<Operand?>?): Operand {
+        return Operand.error("DiyFunction [$funcName] is missing.")
     }
 
-    fun ClearParameters() {
-        _tempdict!!.clear()
-    }
-
-    /**
-     * 添加自定义参数
-     */
-    fun AddParameter(key: String, obj: Operand) {
-        _tempdict!![key] = obj
+    fun clearParameters() {
+        tempdict!!.clear()
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: Boolean) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: Operand) {
+        tempdict!![key] = obj
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: Short) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: Boolean) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: Int) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: Short) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: Long) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: Int) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: Float) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: Long) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: Double) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: Float) {
+        tempdict!![key] = Operand.create(obj)
+    }
+
+    /**
+     * 添加自定义参数
+     */
+    fun addParameter(key: String, obj: Double) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
 
-    fun AddParameter(key: String, obj: MyNumber) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: CommonNumber) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: String?) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: String) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: MyDate) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: CommonDate) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
-    fun AddParameter(key: String, obj: List<Operand>) {
-        _tempdict!![key] = Operand.Create(obj)
+    fun addParameter(key: String, obj: List<Operand>) {
+        tempdict!![key] = Operand.create(obj)
     }
 
     /**
      * 添加自定义参数
      */
     @Throws(Exception::class)
-    fun AddParameterFromJson(json: String) {
+    fun addParameterFromJson(json: String) {
         if (json.startsWith("{") && json.endsWith("}")) {
-            val jo: JsonData = JsonMapper.ToObject(json) as JsonData
-            if (jo.IsObject()) {
-                for (item in jo.inst_object!!.keys) {
-                    val v: JsonData = jo.inst_object!![item]!!
-                    if (v.IsString()) _tempdict!![item] =
-                        Operand.Create(v.StringValue()) else if (v.IsBoolean()) _tempdict!![item] =
-                        Operand.Create(v.BooleanValue()) else if (v.IsDouble()) _tempdict!![item] =
-                        Operand.Create(v.NumberValue()) else if (v.IsObject()) _tempdict!![item] =
-                        Operand.Create(v) else if (v.IsArray()) _tempdict!![item] =
-                        Operand.Create(v) else if (v.IsNull()) _tempdict!![item] = Operand.CreateNull()
+            val jo: JsonData = JsonMapper.toObject(json) as JsonData
+            if (jo.isObject()) {
+                for (item in jo.getInstanceObject()!!.keys) {
+                    val v: JsonData = jo.getInstanceObject()!![item]!!
+                    if (v.isString()) tempdict!![item] =
+                        Operand.create(v.stringValue()!!) else if (v.isBoolean()) tempdict!![item] =
+                        Operand.create(v.booleanValue()) else if (v.isDouble()) tempdict!![item] =
+                        Operand.create(v.numberValue()) else if (v.isObject()) tempdict!![item] =
+                        Operand.create(v) else if (v.isArray()) tempdict!![item] =
+                        Operand.create(v) else if (v.isNull()) tempdict!![item] = Operand.createNull()
                 }
                 return
             }
@@ -193,172 +190,172 @@ class AlgorithmEngine {
     }
 
     @Throws(RecognitionException::class)
-    fun Parse(exp: String?): Boolean {
+    fun parse(exp: String?): Boolean {
         if (exp == null || exp == "") {
-            LastError = "Parameter exp invalid !"
+            lastError = "Parameter exp invalid !"
             return false
         }
         val stream = CharStreams.fromString(exp)
         val lexer = MathLexer(stream)
-        val tokens: CommonTokenStream = CommonTokenStream(lexer)
+        val tokens = CommonTokenStream(lexer)
         val parser = MathParser(tokens)
         val antlrErrorListener = AntlrErrorListener()
         parser.removeErrorListeners()
         parser.addErrorListener(antlrErrorListener)
         val context: MathParser.ProgContext = parser.prog()
         if (antlrErrorListener.IsError) {
-            _context = null
-            LastError = antlrErrorListener.ErrorMsg
+            this.context = null
+            lastError = antlrErrorListener.ErrorMsg
             return false
         }
-        _context = context
+        this.context = context
         return true
     }
 
     @Throws(Exception::class)
-    fun Evaluate(): Operand? {
-        if (_context == null) {
-            LastError = "Please use Parse to compile formula !"
+    fun evaluate(): Operand? {
+        if (context == null) {
+            lastError = "Please use Parse to compile formula !"
             throw Exception("Please use Parse to compile formula !")
         }
         val visitor = MathVisitorImpl()
-        visitor.GetParameter = label@{ f ->
+        visitor.getParameter = label@{ f ->
             try {
-                return@label GetDiyParameterInside(f)
+                return@label getDiyParameterInside(f)
             } catch (e: Exception) {
             }
             null
         }
-        visitor.excelIndex = if (UseExcelIndex) 1 else 0
-        visitor.DiyFunction = { f -> ExecuteDiyFunction(f.Name, f.OperandList) }
-        visitor.useLocalTime = UseLocalTime
-        return visitor.visit(_context!!)
+        visitor.excelIndex = if (useExcelIndex) 1 else 0
+        visitor.diyFunction = { f -> executeDiyFunction(f.name, f.operandList) }
+        visitor.useLocalTime = useLocalTime
+        return visitor.visit(context!!)
     }
 
-    fun TryEvaluate(exp: String?, defvalue: MyNumber): MyNumber? {
+    fun tryEvaluate(exp: String?, defaultValue: CommonNumber): CommonNumber? {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                obj = obj?.ToNumber("It can't be converted to number!")
-                if (obj?.IsError()!!) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                obj = obj?.toNumber("It can't be converted to number!")
+                if (obj?.isError()!!) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.NumberValue()
+                return obj.numberValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
-    fun TryEvaluate(exp: String?, defvalue: Int): Int {
+    fun tryEvaluate(exp: String?, defaultValue: Int): Int {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                obj = obj?.ToNumber("It can't be converted to number!")
-                if (obj?.IsError()!!) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                obj = obj?.toNumber("It can't be converted to number!")
+                if (obj?.isError()!!) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.IntValue()
+                return obj.intValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
-    fun TryEvaluate(exp: String?, defvalue: Double): Double {
+    fun tryEvaluate(exp: String?, defaultValue: Double): Double {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                obj = obj?.ToNumber("It can't be converted to number!")
-                if (obj?.IsError()!!) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                obj = obj?.toNumber("It can't be converted to number!")
+                if (obj?.isError()!!) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.DoubleValue()
+                return obj.doubleValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
-    fun TryEvaluate(exp: String?, defvalue: Long): Long {
+    fun tryEvaluate(exp: String?, defaultValue: Long): Long {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                obj = obj?.ToNumber("It can't be converted to number!")
-                if (obj?.IsError()!!) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                obj = obj?.toNumber("It can't be converted to number!")
+                if (obj?.isError()!!) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.LongValue()
+                return obj.longValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
-    fun TryEvaluate(exp: String?, defvalue: String?): String? {
+    fun tryEvaluate(exp: String?, defaultValue: String?): String? {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                if (obj?.IsNull()!!) {
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                if (obj?.isError()!!) {
                     return null
                 }
-                obj = obj.ToText("It can't be converted to String!")
-                if (obj.IsError()) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+                obj = obj.toText("It can't be converted to String!")
+                if (obj.isError()) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.TextValue()
+                return obj.textValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
-    fun TryEvaluate(exp: String?, defvalue: Boolean): Boolean {
+    fun tryEvaluate(exp: String?, defaultValue: Boolean): Boolean {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                obj = obj?.ToBoolean("It can't be converted to boolean!")
-                if (obj?.IsError()!!) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                obj = obj?.toBoolean("It can't be converted to boolean!")
+                if (obj?.isError()!!) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.BooleanValue()
+                return obj.booleanValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
-/*    fun TryEvaluate(exp: String?, defvalue: DateTime): DateTime {
+/*   fun TryEvaluate(exp: String?, defvalue: DateTime): DateTime {
        TODO("处理时间")
     }*/
 
-    fun TryEvaluate(exp: String?, defvalue: MyDate): MyDate? {
+    fun tryEvaluate(exp: String?, defaultValue: CommonDate): CommonDate? {
         try {
-            if (Parse(exp)) {
-                var obj: Operand? = Evaluate()
-                obj = obj?.ToDate("It can't be converted to MyDate!")
-                if (obj?.IsError()!!) {
-                    LastError = obj.ErrorMsg()
-                    return defvalue
+            if (parse(exp)) {
+                var obj: Operand? = evaluate()
+                obj = obj?.toDate("It can't be converted to CommonDate!")
+                if (obj?.isError()!!) {
+                    lastError = obj.errorMsg()
+                    return defaultValue
                 }
-                return obj.DateValue()
+                return obj.dateValue()
             }
         } catch (ex: Exception) {
-            LastError = ex.message
+            lastError = ex.message
         }
-        return defvalue
+        return defaultValue
     }
 
     /**
@@ -402,11 +399,12 @@ class AlgorithmEngine {
      * @param splitChar 分隔符
      * @return
      */
-    fun EvaluateFormula(formula: String?, splitChar: Char): String {
+    fun evaluateFormula(formula: String?, splitChar: Char): String {
         if (formula == null || formula == "") return ""
         val splitChars: MutableList<Char> = mutableListOf<Char>()
         splitChars.add(splitChar)
-        return EvaluateFormula(formula, splitChars)
+
+        return evaluateFormula(formula, splitChars)
     }
 
     /**
@@ -416,9 +414,9 @@ class AlgorithmEngine {
      * @param splitChars 分隔符
      * @return
      */
-    fun EvaluateFormula(formula: String?, splitChars: List<Char>): String {
+    fun evaluateFormula(formula: String?, splitChars: List<Char>): String {
         if (formula == null || formula == "") return ""
-        val sp: List<String> = CharUtil.SplitFormula(formula, splitChars)
+        val sp: List<String> = CharUtil.splitFormula(formula, splitChars)
         val stringBuilder: StringBuilder = StringBuilder()
         for (i in sp.indices) {
             val s = sp[i]
@@ -426,7 +424,7 @@ class AlgorithmEngine {
                 stringBuilder.append(s)
             } else {
                 // TODO 替换此处
-                val d: String? = TryEvaluate(s, "")
+                val d: String? = tryEvaluate(s, "")
                 stringBuilder.append(d)
             }
         }

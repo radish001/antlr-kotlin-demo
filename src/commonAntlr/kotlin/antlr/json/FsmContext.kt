@@ -8,4 +8,4 @@ package antlr.json
  * @createTime 2023-10-24
  * Copyright (C) 2022 HOSE
  */
-data class FsmContext(var Return:Boolean?, var NextState: Int?, var L:Lexer?,  var StateStack: Int?)
+data class FsmContext(var res:Boolean?, var nextState: Int?, var lexer:Lexer?, var stateStack: Int?)

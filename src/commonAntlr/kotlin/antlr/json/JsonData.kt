@@ -1,6 +1,6 @@
 package antlr.json
 
-import antlr.data.MyNumber
+import antlr.data.CommonNumber
 
 /**
  * @ClassName JsonData.java
@@ -12,144 +12,149 @@ import antlr.data.MyNumber
  */
 class JsonData: IJsonWrapper{
 
-    // todo  处理bigdecimal
 
-    var inst_array: MutableList<JsonData?>? = null
-    private var inst_boolean = false
-   // private var inst_double: java.math.BigDecimal? = null
-    var inst_object: MutableMap<String, JsonData>? = null
-    private var inst_string: String? = null
+
+    var instanceArray: MutableList<JsonData?>? = null
+    
+    private var instanceBoolean = false
+    
+    private var instanceCommonNumber: CommonNumber? = null
+
+    private var instanceObject: MutableMap<String, JsonData>? = null
+    
+    private var instanceString: String? = null
+    
     private var type: JsonType? = null
-    // private IList<KeyValuePair<string, JsonData>> object_list;
 
-    // private IList<KeyValuePair<string, JsonData>> object_list;
-    fun Count(): Int {
-        return EnsureCollection()!!.size
+    fun count(): Int {
+        return ensureCollection()!!.size
     }
 
-    override fun IsArray(): Boolean {
+    override fun isArray(): Boolean {
         return type === JsonType.Array
     }
 
-    override fun IsBoolean(): Boolean {
+    override fun isBoolean(): Boolean {
         return type === JsonType.Boolean
     }
 
-    override fun IsDouble(): Boolean {
+    override fun isDouble(): Boolean {
         return type === JsonType.Double
     }
 
-    override fun IsObject(): Boolean {
+    override fun isObject(): Boolean {
         return type === JsonType.Object
     }
 
-    override fun IsString(): Boolean {
+    override fun isString(): Boolean {
         return type === JsonType.String
     }
 
-    override fun IsNull(): Boolean {
+    override fun isNull(): Boolean {
         return type === JsonType.Null
     }
 
-    fun GetChild(prop_name: String): JsonData? {
-        EnsureDictionary()
-        return if (inst_object!!.containsKey(prop_name)) {
-            inst_object!![prop_name]
+    fun getChild(propName: String): JsonData? {
+        ensureDictionary()
+        return if (instanceObject!!.containsKey(propName)) {
+            instanceObject!![propName]
         } else null
     }
 
-    fun GetChild(index: Int): JsonData? {
-        EnsureCollection()
-        return if (type === JsonType.Array) inst_array?.get(index) else null
+    fun getChild(index: Int): JsonData? {
+        ensureCollection()
+        return if (type === JsonType.Array) instanceArray?.get(index) else null
     }
 
-    fun JsonData() {}
+   
 
-    override fun SetBoolean(`val`: Boolean) {
+    override fun setBoolean(bool: Boolean) {
         type = JsonType.Boolean
-        inst_boolean = `val`
+        instanceBoolean = bool
     }
 
 
 
-    /*fun SetDouble(`val`: java.math.BigDecimal?) {
-        type = JsonType.Double
-        inst_double = `val`
-    }*/
 
-    override fun SetString(`val`: String?) {
+
+    override fun setString(str: String?) {
         type = JsonType.String
-        inst_string = `val`
+        instanceString = str
     }
 
-    override fun SetNull() {
+    override fun setNull() {
         type = JsonType.Null
     }
 
-    override fun Add(value: IJsonWrapper?) {
-        EnsureList()!!.add(value as JsonData?)
+    override fun add(value: IJsonWrapper?) {
+        ensureList()!!.add(value as JsonData?)
     }
 
-    override fun Set(key: String?, value: IJsonWrapper?) {
+    override fun set(key: String?, value: IJsonWrapper?) {
         val data = value as JsonData
-        EnsureDictionary()!![key!!] = data
-        // KeyValuePair<string, JsonData> entry = new KeyValuePair<string,
-        // JsonData>((string)key, data);
-        // object_list.Add(entry);
+        ensureDictionary()!![key!!] = data
     }
 
 
 
-    private fun EnsureCollection(): Collection<*>? {
-        return if (type === JsonType.Array) inst_array else inst_object as Collection<*>?
+    private fun ensureCollection(): Collection<*>? {
+        return if (type === JsonType.Array) instanceArray else instanceObject as Collection<*>?
     }
 
-    private fun EnsureDictionary(): MutableMap<String, JsonData>? {
-        if (type === JsonType.Object) return inst_object
+    private fun ensureDictionary(): MutableMap<String, JsonData>? {
+        if (type === JsonType.Object) return instanceObject
         type = JsonType.Object
-        inst_object = mutableMapOf<String, JsonData>()
-        // object_list = new List<KeyValuePair<string, JsonData>>();
-        return inst_object
+        instanceObject = mutableMapOf()
+      
+        return instanceObject
     }
 
-    private fun EnsureList(): MutableList<JsonData?>? {
-        if (type === JsonType.Array) return inst_array
+    private fun ensureList(): MutableList<JsonData?>? {
+        if (type === JsonType.Array) return instanceArray
         type = JsonType.Array
-        inst_array = mutableListOf<JsonData?>()
-        return inst_array
+        instanceArray = mutableListOf()
+        return instanceArray
     }
 
-    override fun SetJsonType(type: JsonType?) {
+    override fun setJsonType(type: JsonType?) {
         if (this.type === type) return
         when (type) {
             JsonType.None -> {}
-            JsonType.Object -> inst_object = mutableMapOf<String, JsonData>()
-            JsonType.Array -> inst_array = mutableListOf<JsonData?>()
-            JsonType.String -> inst_string = null
-            // todo  处理bigdecimal
-            //JsonType.Double -> inst_double = java.math.BigDecimal(0)
-            JsonType.Boolean -> inst_boolean = false
+            JsonType.Object -> instanceObject = mutableMapOf()
+            JsonType.Array -> instanceArray = mutableListOf()
+            JsonType.String -> instanceString = null
+            JsonType.Double -> instanceCommonNumber = CommonNumber(0)
+            JsonType.Boolean -> instanceBoolean = false
             else -> {}
         }
         this.type = type
     }
 
 
-    fun BooleanValue(): Boolean {
-        return inst_boolean
-    }
-
-   /* fun NumberValue(): java.math.BigDecimal? {
-        return inst_double
-    }*/
-
-    fun StringValue(): String? {
-        return inst_string
+    fun booleanValue(): Boolean {
+        return instanceBoolean
     }
 
 
-    override fun NumberValue(): MyNumber {
-        TODO("Not yet implemented")
+
+    fun stringValue(): String? {
+        return instanceString
+    }
+
+
+    override fun numberValue(): CommonNumber {
+        return this.instanceCommonNumber!!
+    }
+
+
+    fun getInstanceObject(): MutableMap<String, JsonData>? {
+        return this.instanceObject
+    }
+
+
+    fun setDouble(value: CommonNumber) {
+        type = JsonType.Double
+        instanceCommonNumber = value
     }
 
 }
