@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlr-kotlin-demo.antlt-kotlin-demo.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/antlr-kotlin-demo.antlt-kotlin-demo.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlr-kotlin-demo.antlt-kotlin-demo.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/antlr-kotlin-demo.antlt-kotlin-demo.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlr-kotlin-demo.antlt-kotlin-demo.jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/antlr-kotlin-demo.antlt-kotlin-demo.jvmTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.commonAntlr.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.commonAntlr.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.commonMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.commonTest.iml" />
@@ -9,8 +13,14 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.jsTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.jvmMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.jvmTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/antlt-kotlin-demo.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.commonAntlr.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.commonAntlr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.commonMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jsMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jvmMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/me.goal.antlt-kotlin-demo.jvmTest.iml" />
     </modules>
   </component>
