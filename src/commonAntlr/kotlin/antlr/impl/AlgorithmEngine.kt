@@ -3,9 +3,9 @@ package antlr.impl
 import antlr.AntlrErrorListener
 import antlr.MathLexer
 import antlr.MathParser
-import antlr.collection.CommonTreeMap
 import antlr.data.CommonDate
 import antlr.data.CommonNumber
+import antlr.data.SimpleMapWrapper
 import antlr.json.JsonData
 import antlr.json.JsonMapper
 import antlr.util.CharUtil
@@ -48,22 +48,22 @@ class AlgorithmEngine {
      */
     private var useLocalTime = false
 
+
     private var context: MathParser.ProgContext? = null
 
-    private var tempdict: CommonTreeMap<Operand>? = null
+
+    private var tempdict: SimpleMapWrapper<Operand>? = null
 
 
-    constructor()  {
-        ignoreCase = false
-        tempdict = CommonTreeMap(ignoreCase)
+    constructor() {
+        this.tempdict = SimpleMapWrapper(this.ignoreCase)
     }
-
 
     constructor(ignoreCase: Boolean) {
         this.ignoreCase = ignoreCase
-        tempdict = CommonTreeMap(ignoreCase)
-
+        this.tempdict = SimpleMapWrapper(ignoreCase)
     }
+
 
     private fun getDiyParameterInside(parameter: String): Operand? {
         if (tempdict!!.containsKey(parameter)) {
@@ -337,9 +337,6 @@ class AlgorithmEngine {
         return defaultValue
     }
 
-/*   fun TryEvaluate(exp: String?, defvalue: DateTime): DateTime {
-       TODO("处理时间")
-    }*/
 
     fun tryEvaluate(exp: String?, defaultValue: CommonDate): CommonDate? {
         try {
@@ -358,39 +355,6 @@ class AlgorithmEngine {
         return defaultValue
     }
 
-    /**
-     * 获取简化公式
-     *
-     * @param formula 公式
-     */
-    fun GetSimplifiedFormula(formula: String?): String? {
-      /*  try {
-            if (Parse(formula)) {
-                val visitor = MathSimplifiedFormulaVisitor()
-                visitor.GetParameter = label@{ f ->
-                    try {
-                        return@label GetDiyParameterInside(f)
-                    } catch (e: java.lang.Exception) {
-                    }
-                    null
-                }
-                visitor.excelIndex = if (UseExcelIndex) 1 else 0
-                visitor.DiyFunction = { f -> ExecuteDiyFunction(f.Name, f.OperandList) }
-                visitor.useLocalTime = UseLocalTime
-                var obj: Operand = visitor.visit(_context)
-                obj = obj.ToText("It can't be converted to String!")
-                if (obj.IsError()) {
-                    LastError = obj.ErrorMsg()
-                    return null
-                }
-                return obj.TextValue()
-            }
-        } catch (ex: java.lang.Exception) {
-            LastError = ex.message
-        }
-        return null*/
-        TODO()
-    }
 
     /**
      * 计算公式

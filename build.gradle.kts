@@ -114,6 +114,7 @@ kotlin {
                 implementation(kotlin("stdlib-js"))
                 implementation(npm("bignumber.js", "9.1.2"))
                 implementation(npm("dayjs", "1.11.10"))
+                implementation(npm("javascript-implementation-of-java.util.treemap-class-master", "1.0.0"))
 
             }
         }
