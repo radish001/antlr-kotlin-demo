@@ -1,4 +1,4 @@
-grammar Math;
+grammar Math_back;
 
 prog: expr EOF;
 

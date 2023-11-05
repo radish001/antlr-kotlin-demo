@@ -13,6 +13,14 @@ import kotlin.js.Date
 actual class CommonDate {
 
 
+
+    actual var year: Int = 0
+    actual var month: Int = 0
+    actual var day: Int = 0
+    actual var hour: Int = 0
+    actual var minute: Int = 0
+    actual var second: Int = 0
+
     actual constructor(
         year: Int,
         month: Int,
@@ -35,12 +43,10 @@ actual class CommonDate {
     actual constructor(commonNumber: CommonNumber) {
         val days: Int = commonNumber.toInt()
         if (days > 365) {
-
-            var dayjs = DayJs()
-            dayjs = dayjs.dayjs("1900-01-01")
+            var dayjs = DayJs("1900-01-01")
             var start = dayjs.add((days - 2), "day")
             this.year = start.year()
-            this.month = start.month()
+            this.month = start.month() + 1
             this.day = start.date()
         } else {
             this.day = days
@@ -48,10 +54,10 @@ actual class CommonDate {
         val d = commonNumber.subtract(CommonNumber(days))
         this.hour = d.multiply(CommonNumber(24)).toInt()
         this.minute = d.multiply(CommonNumber(24)).subtract(CommonNumber(hour)).multiply(CommonNumber(60)).toInt()
+
         this.second = d.multiply(CommonNumber(24)).subtract(CommonNumber(hour)).multiply(CommonNumber(60))
             .subtract(CommonNumber(minute))
             .multiply(CommonNumber(60)).toInt()
-
         if (this.second == 60) {
             this.second = 0
             this.minute += 1
@@ -84,11 +90,9 @@ actual class CommonDate {
         var result = CommonNumber(this.second).divide(CommonNumber(60),7, RoundingMode.ROUND_HALF_EVEN)
         result = result.add(CommonNumber(this.minute)).divide(CommonNumber(60), 7, RoundingMode.ROUND_HALF_EVEN)
         result = result.add(CommonNumber(this.hour)).divide(CommonNumber(24), 7, RoundingMode.ROUND_HALF_EVEN)
-
         if (this.year != null && this.year > 1900) {
-            val dayjs = DayJs()
-            val start = dayjs.dayjs(Date(year = this.year, month = this.month, day = this.day))
-            val end = dayjs.dayjs("1900-01-01")
+            val start = DayJs(Date(year = this.year, month = this.month - 1, day = this.day))
+            val end = DayJs("1900-01-01")
             val days = start.diff(end, "day") + 2
             return result.add(CommonNumber(days))
         }
@@ -166,25 +170,6 @@ actual class CommonDate {
 
 
 
-
-    actual var year: Int
-        get() = this.year
-        set(value) {this.year = value}
-    actual var month: Int
-        get() = this.month
-        set(value) {this.month = value}
-    actual var day: Int
-        get() = this.day
-        set(value) {this.day = value}
-    actual var hour: Int
-        get() = this.hour
-        set(value) {this.hour = value}
-    actual var minute: Int
-        get() = this.minute
-        set(value) {this.minute = value}
-    actual var second: Int
-        get() = this.second
-        set(value) {this.second = value}
 
 
 }

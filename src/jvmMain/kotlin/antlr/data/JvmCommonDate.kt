@@ -1,10 +1,10 @@
 package antlr.data
 
-import org.joda.time.DateTime
 
-import java.math.MathContext
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
+import java.util.*
 import java.util.regex.Pattern
 
 /**
@@ -18,7 +18,19 @@ import java.util.regex.Pattern
 actual class CommonDate {
 
 
-    private lateinit var dateTime: DateTime
+
+
+    actual var year: Int = 0
+    actual var month: Int = 0
+    actual var day: Int = 0
+    actual var hour: Int = 0
+    actual var minute: Int = 0
+    actual var second: Int = 0
+
+
+    actual constructor(){
+
+    }
 
 
     actual constructor(
@@ -51,7 +63,9 @@ actual class CommonDate {
         }
         val d = commonNumber.subtract(CommonNumber(days))
         this.hour = d.multiply(CommonNumber(24)).toInt()
+
         this.minute = d.multiply(CommonNumber(24)).subtract(CommonNumber(hour)).multiply(CommonNumber(60)).toInt()
+
         this.second = d.multiply(CommonNumber(24)).subtract(CommonNumber(hour)).multiply(CommonNumber(60))
             .subtract(CommonNumber(minute))
             .multiply(CommonNumber(60)).toInt()
@@ -163,33 +177,9 @@ actual class CommonDate {
     }
 
 
-    actual var year: Int
-        get() = this.year
-        set(value) {this.year = value}
-    actual var month: Int
-        get() = this.month
-        set(value) {this.month = value}
-    actual var day: Int
-        get() = this.day
-        set(value) {this.day = value}
-    actual var hour: Int
-        get() = this.hour
-        set(value) {this.hour = value}
-    actual var minute: Int
-        get() = this.minute
-        set(value) {this.minute = value}
-    actual var second: Int
-        get() = this.second
-        set(value) {this.second = value}
 
-    actual constructor() {
-        this.year = 0
-        this.month = 0
-        this.day = 0
-        this.hour = 0
-        this.minute = 0
-        this.second = 0
-    }
+
+
 
 
 }

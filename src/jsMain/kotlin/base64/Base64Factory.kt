@@ -1,11 +1,6 @@
 package org.jetbrains.base64
 
-import antlrtest.CalculatorBaseVisitor
-import antlrtest.CalculatorLexer
-import antlrtest.CalculatorParser
-import antlrtest.CalculatorVistorImp
-import org.antlr.v4.kotlinruntime.CharStreams
-import org.antlr.v4.kotlinruntime.CommonTokenStream
+
 
 actual object Base64Factory {
     actual fun createEncoder(): Base64Encoder = JsBase64Encoder

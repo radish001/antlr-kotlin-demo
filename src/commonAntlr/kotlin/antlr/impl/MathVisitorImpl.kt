@@ -2,7 +2,9 @@ package antlr.impl
 
 import antlr.MathParser
 import antlr.MathVisitor
+import antlr.data.CommonNumber
 import antlr.function.CommonFunction
+import antlr.util.CharUtil
 import org.antlr.v4.kotlinruntime.tree.AbstractParseTreeVisitor
 
 /**
@@ -50,7 +52,103 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
     }
 
     override fun visitAddSub_fun(ctx: MathParser.AddSub_funContext): Operand {
-        TODO("Not yet implemented")
+
+        val args: MutableList<Operand> = mutableListOf<Operand>()
+        for (item in ctx.findExpr()) {
+            val aa: Operand = item.accept(this)
+            if (aa.isError()) {
+                return aa
+            }
+            args.add(aa)
+        }
+
+        var firstValue = args[0]
+        var secondValue = args[1]
+        val t: String = ctx.op!!.text!!
+
+        if (CharUtil.equals(t, "&")) {
+            if (firstValue.isNull() && secondValue.isNull()) {
+                return firstValue
+            } else if (firstValue.isNull()) {
+                secondValue = secondValue.toText("Function '$t' parameter 2 is error!")
+                return secondValue
+            } else if (secondValue.isNull()) {
+                firstValue = firstValue.toText("Function '$t' parameter 1 is error!")
+                return firstValue
+            }
+            firstValue = firstValue.toText("Function '$t' parameter 1 is error!")
+            if (firstValue.isError()) {
+                return firstValue
+            }
+            secondValue = secondValue.toText("Function '$t' parameter 2 is error!")
+            return if (secondValue.isError()) {
+                secondValue
+            } else Operand.create(firstValue.textValue() + secondValue.textValue())
+        }
+        if (firstValue.type() == OperandType.TEXT) {
+            if (numberRegex.find(firstValue.textValue()!!) != null) {
+                val a: Operand = firstValue.toNumber(null)
+                if (a.isError() === false) firstValue = a
+            } else {
+                val a: Operand = firstValue.toDate(null)
+                if (a.isError() === false) firstValue = a
+            }
+        }
+        if (secondValue.type() == OperandType.TEXT) {
+            if (numberRegex.find(secondValue.textValue()!!) != null) {
+                val a: Operand = secondValue.toNumber(null)
+                if (a.isError() === false) secondValue = a
+            } else {
+                val a: Operand = secondValue.toDate(null)
+                if (a.isError() === false) secondValue = a
+            }
+        }
+        if (CharUtil.equals(t, "+")) {
+            if (firstValue.type() === OperandType.DATE && secondValue.type() === OperandType.DATE) {
+                return Operand.create(firstValue.dateValue()!!.add(secondValue.dateValue()!!))
+            } else if (firstValue.type() === OperandType.DATE) {
+                secondValue = secondValue.toNumber("Function '$t' parameter 2 is error!")
+                return if (secondValue.isError()) {
+                    secondValue
+                } else Operand.create(firstValue.dateValue()!!.add(secondValue.numberValue()!!))
+            } else if (secondValue.type() === OperandType.DATE) {
+                firstValue = firstValue.toNumber("Function '$t' parameter 1 is error!")
+                return if (firstValue.isError()) {
+                    firstValue
+                } else Operand.create(secondValue.dateValue()!!.add(firstValue.numberValue()!!))
+            }
+            firstValue = firstValue.toNumber("Function '$t' parameter 1 is error!")
+            if (firstValue.isError()) {
+                return firstValue
+            }
+            secondValue = secondValue.toNumber("Function '$t' parameter 2 is error!")
+            return if (secondValue.isError()) {
+                secondValue
+            } else Operand.create(firstValue.numberValue()!!.add(secondValue.numberValue()!!))
+        } else if (CharUtil.equals(t, "-")) {
+            if (firstValue.type() === OperandType.DATE && secondValue.type() === OperandType.DATE) {
+                return Operand.create(firstValue.dateValue()!!.sub(secondValue.dateValue()!!))
+            } else if (firstValue.type() === OperandType.DATE) {
+                secondValue = secondValue.toNumber("Function '$t' parameter 2 is error!")
+                return if (secondValue.isError()) {
+                    secondValue
+                } else Operand.create(firstValue.dateValue()!!.sub(secondValue.dateValue()!!))
+            } else if (secondValue.type() === OperandType.DATE) {
+                firstValue = firstValue.toNumber("Function '$t' parameter 1 is error!")
+                return if (firstValue.isError()) {
+                    firstValue
+                } else Operand.create(secondValue.dateValue()!!.sub(firstValue.numberValue()!!))
+            }
+            firstValue = firstValue.toNumber(null)
+            if (firstValue.isNull()) {
+                return firstValue
+            }
+            secondValue = secondValue.toNumber("Function '$t' parameter 2 is error!")
+            return if (secondValue.isError()) {
+                secondValue
+            } else Operand.create(firstValue.numberValue()!!.subtract(secondValue.numberValue()!!))
+        }
+        return Operand.error("Function '$t' parameter is error!")
     }
 
     override fun visitAVERAGEIF_fun(ctx: MathParser.AVERAGEIF_funContext): Operand {
@@ -98,6 +196,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
     }
 
     override fun visitPERCENTILE_fun(ctx: MathParser.PERCENTILE_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
+    override fun visitDiyFunction_fun(ctx: MathParser.DiyFunction_funContext): Operand {
         TODO("Not yet implemented")
     }
 
@@ -301,6 +403,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitGetJsonValue_fun(ctx: MathParser.GetJsonValue_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
     override fun visitTINV_fun(ctx: MathParser.TINV_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -345,6 +451,18 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitNUM_fun(ctx: MathParser.NUM_funContext): Operand {
+        val t: String = ctx.NUM()!!.text
+        val subNode = ctx.SUB()
+        if (subNode != null) {
+            val sub: String = subNode.text
+            val d = CommonNumber(sub + t)
+            return Operand.create(d)
+        }
+        val d2: CommonNumber = CommonNumber(t)
+        return Operand.create(d2)
+    }
+
     override fun visitCOSH_fun(ctx: MathParser.COSH_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -385,6 +503,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitRANDBETWEEN_fun(ctx: MathParser.RANDBETWEEN_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
     override fun visitAVERAGE_fun(ctx: MathParser.AVERAGE_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -413,6 +535,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitArray_fun(ctx: MathParser.Array_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
     override fun visitROUND_fun(ctx: MathParser.ROUND_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -437,6 +563,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitPARAMETER_fun(ctx: MathParser.PARAMETER_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
     override fun visitSPLIT_fun(ctx: MathParser.SPLIT_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -446,6 +576,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
     }
 
     override fun visitLARGE_fun(ctx: MathParser.LARGE_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
+    override fun visitTIMESTAMP_fun(ctx: MathParser.TIMESTAMP_funContext): Operand {
         TODO("Not yet implemented")
     }
 
@@ -529,6 +663,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitLOOKUP_fun(ctx: MathParser.LOOKUP_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
     override fun visitHEX2DEC_fun(ctx: MathParser.HEX2DEC_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -566,6 +704,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
     }
 
     override fun visitLASTINDEXOF_fun(ctx: MathParser.LASTINDEXOF_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
+    override fun visitMOD_fun(ctx: MathParser.MOD_funContext): Operand {
         TODO("Not yet implemented")
     }
 
@@ -607,6 +749,26 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
 
     override fun visitLN_fun(ctx: MathParser.LN_funContext): Operand {
         TODO("Not yet implemented")
+    }
+
+    override fun visitSTRING_fun(ctx: MathParser.STRING_funContext): Operand {
+        val opd: String = ctx.STRING()!!.text
+        val sb = StringBuilder()
+        var index = 1
+        while (index < opd.length - 1) {
+            val c = opd[index++] // [index++];
+            if (c == '\\') {
+                val c2 = opd[index++]
+                if (c2 == 'n') sb.append('\n') else if (c2 == 'r') sb.append('\r') else if (c2 == 't') sb.append('\t') else if (c2 == '0') sb.append(
+                    '\u0000'
+                ) else if (c2 == 'b') sb.append('\b') else if (c2 == 'f') sb.append('\u000c') else sb.append(
+                    opd[index++]
+                )
+            } else {
+                sb.append(c)
+            }
+        }
+        return Operand.create(sb.toString())
     }
 
     override fun visitHMACMD5_fun(ctx: MathParser.HMACMD5_funContext): Operand {
@@ -837,6 +999,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
         TODO("Not yet implemented")
     }
 
+    override fun visitNULL_fun(ctx: MathParser.NULL_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
     override fun visitBASE64TOTEXT_fun(ctx: MathParser.BASE64TOTEXT_funContext): Operand {
         TODO("Not yet implemented")
     }
@@ -886,6 +1052,10 @@ class MathVisitorImpl : AbstractParseTreeVisitor<Operand>(), MathVisitor<Operand
     }
 
     override fun visitADDHOURS_fun(ctx: MathParser.ADDHOURS_funContext): Operand {
+        TODO("Not yet implemented")
+    }
+
+    override fun visitRAND_fun(ctx: MathParser.RAND_funContext): Operand {
         TODO("Not yet implemented")
     }
 

@@ -130,6 +130,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitPERCENTILE_fun(ctx : MathParser.PERCENTILE_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code DiyFunction_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitDiyFunction_fun(ctx : MathParser.DiyFunction_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code SHA256_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -480,6 +487,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitFIXED_fun(ctx : MathParser.FIXED_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code GetJsonValue_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitGetJsonValue_fun(ctx : MathParser.GetJsonValue_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code TINV_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -557,6 +571,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitISNULLORWHITESPACE_fun(ctx : MathParser.ISNULLORWHITESPACE_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code NUM_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitNUM_fun(ctx : MathParser.NUM_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code COSH_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -627,6 +648,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitSUBSTRING_fun(ctx : MathParser.SUBSTRING_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code RANDBETWEEN_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitRANDBETWEEN_fun(ctx : MathParser.RANDBETWEEN_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code AVERAGE_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -676,6 +704,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitADDSECONDS_fun(ctx : MathParser.ADDSECONDS_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code Array_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitArray_fun(ctx : MathParser.Array_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code ROUND_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -718,6 +753,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitDATE_fun(ctx : MathParser.DATE_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code PARAMETER_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitPARAMETER_fun(ctx : MathParser.PARAMETER_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code SPLIT_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -738,6 +780,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	fun visitLARGE_fun(ctx : MathParser.LARGE_funContext) : T
+	/**
+	 * Visit a parse tree produced by the {@code TIMESTAMP_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitTIMESTAMP_fun(ctx : MathParser.TIMESTAMP_funContext) : T
 	/**
 	 * Visit a parse tree produced by the {@code VALUE_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -879,6 +928,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitDEC2BIN_fun(ctx : MathParser.DEC2BIN_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code LOOKUP_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitLOOKUP_fun(ctx : MathParser.LOOKUP_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code HEX2DEC_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -948,6 +1004,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	fun visitLASTINDEXOF_fun(ctx : MathParser.LASTINDEXOF_funContext) : T
+	/**
+	 * Visit a parse tree produced by the {@code MOD_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitMOD_fun(ctx : MathParser.MOD_funContext) : T
 	/**
 	 * Visit a parse tree produced by the {@code CHAR_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -1019,6 +1082,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitLN_fun(ctx : MathParser.LN_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code STRING_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitSTRING_fun(ctx : MathParser.STRING_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code HMACMD5_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1047,19 +1117,19 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitADDMINUTES_fun(ctx : MathParser.ADDMINUTES_funContext) : T
 	/**
-	 * Visit a parse tree produced by the {@code SUM_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	fun visitSUM_fun(ctx : MathParser.SUM_funContext) : T
-	/**
 	 * Visit a parse tree produced by the {@code SUMSQ_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	fun visitSUMSQ_fun(ctx : MathParser.SUMSQ_funContext) : T
+	/**
+	 * Visit a parse tree produced by the {@code SUM_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitSUM_fun(ctx : MathParser.SUM_funContext) : T
 	/**
 	 * Visit a parse tree produced by the {@code SECOND_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -1208,19 +1278,19 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitBETADIST_fun(ctx : MathParser.BETADIST_funContext) : T
 	/**
-	 * Visit a parse tree produced by the {@code NOW_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	fun visitNOW_fun(ctx : MathParser.NOW_funContext) : T
-	/**
 	 * Visit a parse tree produced by the {@code ATANH_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	fun visitATANH_fun(ctx : MathParser.ATANH_funContext) : T
+	/**
+	 * Visit a parse tree produced by the {@code NOW_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitNOW_fun(ctx : MathParser.NOW_funContext) : T
 	/**
 	 * Visit a parse tree produced by the {@code MEDIAN_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -1292,19 +1362,19 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitSHA512_fun(ctx : MathParser.SHA512_funContext) : T
 	/**
-	 * Visit a parse tree produced by the {@code ADDDAYS_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	fun visitADDDAYS_fun(ctx : MathParser.ADDDAYS_funContext) : T
-	/**
 	 * Visit a parse tree produced by the {@code MIN_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	fun visitMIN_fun(ctx : MathParser.MIN_funContext) : T
+	/**
+	 * Visit a parse tree produced by the {@code ADDDAYS_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitADDDAYS_fun(ctx : MathParser.ADDDAYS_funContext) : T
 	/**
 	 * Visit a parse tree produced by the {@code ISNONTEXT_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -1418,6 +1488,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 */
 	fun visitBIN2OCT_fun(ctx : MathParser.BIN2OCT_funContext) : T
 	/**
+	 * Visit a parse tree produced by the {@code NULL_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitNULL_fun(ctx : MathParser.NULL_funContext) : T
+	/**
 	 * Visit a parse tree produced by the {@code BASE64TOTEXT_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1508,6 +1585,13 @@ interface MathVisitor<T> : ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	fun visitADDHOURS_fun(ctx : MathParser.ADDHOURS_funContext) : T
+	/**
+	 * Visit a parse tree produced by the {@code RAND_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	fun visitRAND_fun(ctx : MathParser.RAND_funContext) : T
 	/**
 	 * Visit a parse tree produced by {@link MathParser#parameter2}.
 	 * @param ctx the parse tree

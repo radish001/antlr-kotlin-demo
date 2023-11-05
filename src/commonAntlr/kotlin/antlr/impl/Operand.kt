@@ -79,7 +79,12 @@ abstract class Operand {
         }
 
         fun error(msg: String?): Operand {
-            return OperandError(msg!!)
+            var error = ""
+            if(msg != null){
+                error = msg
+
+            }
+            return OperandError(error)
         }
 
         fun createNull(): Operand {

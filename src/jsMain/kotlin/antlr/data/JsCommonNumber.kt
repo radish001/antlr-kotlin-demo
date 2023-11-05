@@ -65,7 +65,7 @@ actual class CommonNumber {
     }
 
     actual fun multiply(commonNumber: CommonNumber): CommonNumber {
-        val res = value.plus(commonNumber.value).toPrecision(null , null)
+        val res = value.multipliedBy(commonNumber.value).toPrecision(null , null)
         return CommonNumber(res)
     }
 

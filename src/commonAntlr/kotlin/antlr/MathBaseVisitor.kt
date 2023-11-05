@@ -137,6 +137,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitDiyFunction_fun(ctx : MathParser.DiyFunction_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitSHA256_fun(ctx : MathParser.SHA256_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -487,6 +494,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitGetJsonValue_fun(ctx : MathParser.GetJsonValue_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitTINV_fun(ctx : MathParser.TINV_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -564,6 +578,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitNUM_fun(ctx : MathParser.NUM_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitCOSH_fun(ctx : MathParser.COSH_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -634,6 +655,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitRANDBETWEEN_fun(ctx : MathParser.RANDBETWEEN_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitAVERAGE_fun(ctx : MathParser.AVERAGE_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -683,6 +711,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitArray_fun(ctx : MathParser.Array_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitROUND_fun(ctx : MathParser.ROUND_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -725,6 +760,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitPARAMETER_fun(ctx : MathParser.PARAMETER_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitSPLIT_fun(ctx : MathParser.SPLIT_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -740,6 +782,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	override fun visitLARGE_fun(ctx : MathParser.LARGE_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	override fun visitTIMESTAMP_fun(ctx : MathParser.TIMESTAMP_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -886,6 +935,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitLOOKUP_fun(ctx : MathParser.LOOKUP_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitHEX2DEC_fun(ctx : MathParser.HEX2DEC_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -950,6 +1006,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	override fun visitLASTINDEXOF_fun(ctx : MathParser.LASTINDEXOF_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	override fun visitMOD_fun(ctx : MathParser.MOD_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1026,6 +1089,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitSTRING_fun(ctx : MathParser.STRING_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitHMACMD5_fun(ctx : MathParser.HMACMD5_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -1054,14 +1124,14 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	override fun visitSUM_fun(ctx : MathParser.SUM_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	override fun visitSUMSQ_fun(ctx : MathParser.SUMSQ_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	override fun visitSUMSQ_fun(ctx : MathParser.SUMSQ_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	override fun visitSUM_fun(ctx : MathParser.SUM_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1215,14 +1285,14 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	override fun visitNOW_fun(ctx : MathParser.NOW_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	override fun visitATANH_fun(ctx : MathParser.ATANH_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	override fun visitATANH_fun(ctx : MathParser.ATANH_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	override fun visitNOW_fun(ctx : MathParser.NOW_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1299,14 +1369,14 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	override fun visitADDDAYS_fun(ctx : MathParser.ADDDAYS_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	override fun visitMIN_fun(ctx : MathParser.MIN_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	override fun visitMIN_fun(ctx : MathParser.MIN_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	override fun visitADDDAYS_fun(ctx : MathParser.ADDDAYS_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1425,6 +1495,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	override fun visitNULL_fun(ctx : MathParser.NULL_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	override fun visitBASE64TOTEXT_fun(ctx : MathParser.BASE64TOTEXT_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
@@ -1510,6 +1587,13 @@ open class MathBaseVisitor<T> : AbstractParseTreeVisitor<T>(), MathVisitor<T> {
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	override fun visitADDHOURS_fun(ctx : MathParser.ADDHOURS_funContext ) : T { return this!!.visitChildren(ctx)!! }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	override fun visitRAND_fun(ctx : MathParser.RAND_funContext ) : T { return this!!.visitChildren(ctx)!! }
 	/**
 	 * {@inheritDoc}
 	 *

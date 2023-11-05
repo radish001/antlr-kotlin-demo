@@ -220,6 +220,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterDiyFunction_fun(ctx: MathParser.DiyFunction_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitDiyFunction_fun(ctx: MathParser.DiyFunction_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterSHA256_fun(ctx: MathParser.SHA256_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -820,6 +832,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterGetJsonValue_fun(ctx: MathParser.GetJsonValue_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitGetJsonValue_fun(ctx: MathParser.GetJsonValue_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterTINV_fun(ctx: MathParser.TINV_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -952,6 +976,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterNUM_fun(ctx: MathParser.NUM_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitNUM_fun(ctx: MathParser.NUM_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterCOSH_fun(ctx: MathParser.COSH_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1072,6 +1108,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterRANDBETWEEN_fun(ctx: MathParser.RANDBETWEEN_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitRANDBETWEEN_fun(ctx: MathParser.RANDBETWEEN_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterAVERAGE_fun(ctx: MathParser.AVERAGE_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1156,6 +1204,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterArray_fun(ctx: MathParser.Array_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitArray_fun(ctx: MathParser.Array_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterROUND_fun(ctx: MathParser.ROUND_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1228,6 +1288,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterPARAMETER_fun(ctx: MathParser.PARAMETER_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitPARAMETER_fun(ctx: MathParser.PARAMETER_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterSPLIT_fun(ctx: MathParser.SPLIT_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1259,6 +1331,18 @@ open class MathBaseListener : MathListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	override fun exitLARGE_fun(ctx: MathParser.LARGE_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun enterTIMESTAMP_fun(ctx: MathParser.TIMESTAMP_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitTIMESTAMP_fun(ctx: MathParser.TIMESTAMP_funContext) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1504,6 +1588,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterLOOKUP_fun(ctx: MathParser.LOOKUP_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitLOOKUP_fun(ctx: MathParser.LOOKUP_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterHEX2DEC_fun(ctx: MathParser.HEX2DEC_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1619,6 +1715,18 @@ open class MathBaseListener : MathListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	override fun exitLASTINDEXOF_fun(ctx: MathParser.LASTINDEXOF_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun enterMOD_fun(ctx: MathParser.MOD_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitMOD_fun(ctx: MathParser.MOD_funContext) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1744,6 +1852,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterSTRING_fun(ctx: MathParser.STRING_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitSTRING_fun(ctx: MathParser.STRING_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterHMACMD5_fun(ctx: MathParser.HMACMD5_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1792,18 +1912,6 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	override fun enterSUM_fun(ctx: MathParser.SUM_funContext) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	override fun exitSUM_fun(ctx: MathParser.SUM_funContext) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	override fun enterSUMSQ_fun(ctx: MathParser.SUMSQ_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -1811,6 +1919,18 @@ open class MathBaseListener : MathListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	override fun exitSUMSQ_fun(ctx: MathParser.SUMSQ_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun enterSUM_fun(ctx: MathParser.SUM_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitSUM_fun(ctx: MathParser.SUM_funContext) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -2068,18 +2188,6 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	override fun enterNOW_fun(ctx: MathParser.NOW_funContext) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	override fun exitNOW_fun(ctx: MathParser.NOW_funContext) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	override fun enterATANH_fun(ctx: MathParser.ATANH_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -2087,6 +2195,18 @@ open class MathBaseListener : MathListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	override fun exitATANH_fun(ctx: MathParser.ATANH_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun enterNOW_fun(ctx: MathParser.NOW_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitNOW_fun(ctx: MathParser.NOW_funContext) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -2212,18 +2332,6 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	override fun enterADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	override fun exitADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	override fun enterMIN_fun(ctx: MathParser.MIN_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -2231,6 +2339,18 @@ open class MathBaseListener : MathListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	override fun exitMIN_fun(ctx: MathParser.MIN_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun enterADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -2428,6 +2548,18 @@ open class MathBaseListener : MathListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	override fun enterNULL_fun(ctx: MathParser.NULL_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitNULL_fun(ctx: MathParser.NULL_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	override fun enterBASE64TOTEXT_fun(ctx: MathParser.BASE64TOTEXT_funContext) { }
 	/**
 	 * {@inheritDoc}
@@ -2579,6 +2711,18 @@ open class MathBaseListener : MathListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	override fun exitADDHOURS_fun(ctx: MathParser.ADDHOURS_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun enterRAND_fun(ctx: MathParser.RAND_funContext) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	override fun exitRAND_fun(ctx: MathParser.RAND_funContext) { }
 	/**
 	 * {@inheritDoc}
 	 *

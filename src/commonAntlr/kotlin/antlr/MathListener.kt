@@ -211,6 +211,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitPERCENTILE_fun(ctx: MathParser.PERCENTILE_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code DiyFunction_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterDiyFunction_fun(ctx: MathParser.DiyFunction_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code DiyFunction_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitDiyFunction_fun(ctx: MathParser.DiyFunction_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code SHA256_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -811,6 +823,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitFIXED_fun(ctx: MathParser.FIXED_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code GetJsonValue_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterGetJsonValue_fun(ctx: MathParser.GetJsonValue_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code GetJsonValue_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitGetJsonValue_fun(ctx: MathParser.GetJsonValue_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code TINV_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -943,6 +967,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitISNULLORWHITESPACE_fun(ctx: MathParser.ISNULLORWHITESPACE_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code NUM_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterNUM_fun(ctx: MathParser.NUM_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code NUM_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitNUM_fun(ctx: MathParser.NUM_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code COSH_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1063,6 +1099,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitSUBSTRING_fun(ctx: MathParser.SUBSTRING_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code RANDBETWEEN_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterRANDBETWEEN_fun(ctx: MathParser.RANDBETWEEN_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code RANDBETWEEN_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitRANDBETWEEN_fun(ctx: MathParser.RANDBETWEEN_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code AVERAGE_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1147,6 +1195,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitADDSECONDS_fun(ctx: MathParser.ADDSECONDS_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code Array_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterArray_fun(ctx: MathParser.Array_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code Array_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitArray_fun(ctx: MathParser.Array_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code ROUND_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1219,6 +1279,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitDATE_fun(ctx: MathParser.DATE_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code PARAMETER_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterPARAMETER_fun(ctx: MathParser.PARAMETER_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code PARAMETER_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitPARAMETER_fun(ctx: MathParser.PARAMETER_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code SPLIT_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1254,6 +1326,18 @@ interface MathListener : ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	fun exitLARGE_fun(ctx: MathParser.LARGE_funContext)
+	/**
+	 * Enter a parse tree produced by the {@code TIMESTAMP_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterTIMESTAMP_fun(ctx: MathParser.TIMESTAMP_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code TIMESTAMP_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitTIMESTAMP_fun(ctx: MathParser.TIMESTAMP_funContext)
 	/**
 	 * Enter a parse tree produced by the {@code VALUE_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -1495,6 +1579,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitDEC2BIN_fun(ctx: MathParser.DEC2BIN_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code LOOKUP_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterLOOKUP_fun(ctx: MathParser.LOOKUP_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code LOOKUP_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitLOOKUP_fun(ctx: MathParser.LOOKUP_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code HEX2DEC_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1614,6 +1710,18 @@ interface MathListener : ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	fun exitLASTINDEXOF_fun(ctx: MathParser.LASTINDEXOF_funContext)
+	/**
+	 * Enter a parse tree produced by the {@code MOD_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterMOD_fun(ctx: MathParser.MOD_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code MOD_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitMOD_fun(ctx: MathParser.MOD_funContext)
 	/**
 	 * Enter a parse tree produced by the {@code CHAR_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -1735,6 +1843,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitLN_fun(ctx: MathParser.LN_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code STRING_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterSTRING_fun(ctx: MathParser.STRING_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code STRING_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitSTRING_fun(ctx: MathParser.STRING_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code HMACMD5_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1783,18 +1903,6 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitADDMINUTES_fun(ctx: MathParser.ADDMINUTES_funContext)
 	/**
-	 * Enter a parse tree produced by the {@code SUM_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	fun enterSUM_fun(ctx: MathParser.SUM_funContext)
-	/**
-	 * Exit a parse tree produced by the {@code SUM_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	fun exitSUM_fun(ctx: MathParser.SUM_funContext)
-	/**
 	 * Enter a parse tree produced by the {@code SUMSQ_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -1806,6 +1914,18 @@ interface MathListener : ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	fun exitSUMSQ_fun(ctx: MathParser.SUMSQ_funContext)
+	/**
+	 * Enter a parse tree produced by the {@code SUM_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterSUM_fun(ctx: MathParser.SUM_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code SUM_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitSUM_fun(ctx: MathParser.SUM_funContext)
 	/**
 	 * Enter a parse tree produced by the {@code SECOND_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -2059,18 +2179,6 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitBETADIST_fun(ctx: MathParser.BETADIST_funContext)
 	/**
-	 * Enter a parse tree produced by the {@code NOW_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	fun enterNOW_fun(ctx: MathParser.NOW_funContext)
-	/**
-	 * Exit a parse tree produced by the {@code NOW_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	fun exitNOW_fun(ctx: MathParser.NOW_funContext)
-	/**
 	 * Enter a parse tree produced by the {@code ATANH_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -2082,6 +2190,18 @@ interface MathListener : ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	fun exitATANH_fun(ctx: MathParser.ATANH_funContext)
+	/**
+	 * Enter a parse tree produced by the {@code NOW_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterNOW_fun(ctx: MathParser.NOW_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code NOW_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitNOW_fun(ctx: MathParser.NOW_funContext)
 	/**
 	 * Enter a parse tree produced by the {@code MEDIAN_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -2203,18 +2323,6 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitSHA512_fun(ctx: MathParser.SHA512_funContext)
 	/**
-	 * Enter a parse tree produced by the {@code ADDDAYS_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	fun enterADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext)
-	/**
-	 * Exit a parse tree produced by the {@code ADDDAYS_fun}
-	 * labeled alternative in {@link MathParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	fun exitADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext)
-	/**
 	 * Enter a parse tree produced by the {@code MIN_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -2226,6 +2334,18 @@ interface MathListener : ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	fun exitMIN_fun(ctx: MathParser.MIN_funContext)
+	/**
+	 * Enter a parse tree produced by the {@code ADDDAYS_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code ADDDAYS_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitADDDAYS_fun(ctx: MathParser.ADDDAYS_funContext)
 	/**
 	 * Enter a parse tree produced by the {@code ISNONTEXT_fun}
 	 * labeled alternative in {@link MathParser#expr}.
@@ -2419,6 +2539,18 @@ interface MathListener : ParseTreeListener {
 	 */
 	fun exitBIN2OCT_fun(ctx: MathParser.BIN2OCT_funContext)
 	/**
+	 * Enter a parse tree produced by the {@code NULL_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterNULL_fun(ctx: MathParser.NULL_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code NULL_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitNULL_fun(ctx: MathParser.NULL_funContext)
+	/**
 	 * Enter a parse tree produced by the {@code BASE64TOTEXT_fun}
 	 * labeled alternative in {@link MathParser#expr}.
 	 * @param ctx the parse tree
@@ -2574,6 +2706,18 @@ interface MathListener : ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	fun exitADDHOURS_fun(ctx: MathParser.ADDHOURS_funContext)
+	/**
+	 * Enter a parse tree produced by the {@code RAND_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun enterRAND_fun(ctx: MathParser.RAND_funContext)
+	/**
+	 * Exit a parse tree produced by the {@code RAND_fun}
+	 * labeled alternative in {@link MathParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	fun exitRAND_fun(ctx: MathParser.RAND_funContext)
 	/**
 	 * Enter a parse tree produced by {@link MathParser#parameter2}.
 	 * @param ctx the parse tree

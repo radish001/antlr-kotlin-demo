@@ -15,16 +15,31 @@ external class NpmBigNumber(value: String) {
     constructor(number: Number)
 
 
-
+    /**
+     * 转为指定精度
+     */
     fun toPrecision(precision:Int?, roundingMode : Int?): String
 
-
+    /**
+     * 加法
+     */
     fun plus(npmBigNumber: NpmBigNumber) : NpmBigNumber
 
+    /**
+     * 乘法
+     */
+    fun multipliedBy(npmBigNumber: NpmBigNumber): NpmBigNumber
 
+
+    /**
+     * 减法
+     */
     fun minus(npmBigNumber: NpmBigNumber): NpmBigNumber
 
 
+    /**
+     * 除法
+     */
     fun dividedBy(npmBigNumber: NpmBigNumber) : NpmBigNumber
 
 
@@ -37,7 +52,8 @@ external class NpmBigNumber(value: String) {
     fun decimalPlaces(decimalPlaces: Int, roundingMode : Int): NpmBigNumber
 
 
-
-
+    /**
+     * 比较
+     */
     fun comparedTo(npmBigNumber: NpmBigNumber) : Int
 }
