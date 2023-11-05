@@ -1,7 +1,7 @@
 package antlr.json
 
-import antlr.data.CommonNumber
-import antlr.string.CommonStringReader
+import antlr.expect.CommonNumber
+import antlr.util.CommonStringReader
 
 
 /**

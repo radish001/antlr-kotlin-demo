@@ -1,11 +1,6 @@
-package antlr.data
+package antlr.expect
 
-
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.temporal.ChronoUnit
-import java.util.*
-import java.util.regex.Pattern
+import kotlin.js.Date
 
 /**
  * @ClassName MyDate.java
@@ -19,19 +14,12 @@ actual class CommonDate {
 
 
 
-
     actual var year: Int = 0
     actual var month: Int = 0
     actual var day: Int = 0
     actual var hour: Int = 0
     actual var minute: Int = 0
     actual var second: Int = 0
-
-
-    actual constructor(){
-
-    }
-
 
     actual constructor(
         year: Int,
@@ -49,27 +37,27 @@ actual class CommonDate {
         this.second = second
     }
 
+    actual constructor()
+
 
     actual constructor(commonNumber: CommonNumber) {
         val days: Int = commonNumber.toInt()
         if (days > 365) {
-            var start = LocalDate.of(1900, 1, 1)
-            start = start.plusDays((days - 2).toLong())
-            this.year = start.year
-            this.month = start.monthValue
-            this.day = start.dayOfMonth
+            var dayjs = DayJs("1900-01-01")
+            var start = dayjs.add((days - 2), "day")
+            this.year = start.year()
+            this.month = start.month() + 1
+            this.day = start.date()
         } else {
             this.day = days
         }
         val d = commonNumber.subtract(CommonNumber(days))
         this.hour = d.multiply(CommonNumber(24)).toInt()
-
         this.minute = d.multiply(CommonNumber(24)).subtract(CommonNumber(hour)).multiply(CommonNumber(60)).toInt()
 
         this.second = d.multiply(CommonNumber(24)).subtract(CommonNumber(hour)).multiply(CommonNumber(60))
             .subtract(CommonNumber(minute))
             .multiply(CommonNumber(60)).toInt()
-
         if (this.second == 60) {
             this.second = 0
             this.minute += 1
@@ -79,6 +67,7 @@ actual class CommonDate {
             }
         }
     }
+
 
 
     actual fun add(dateValue: CommonDate): CommonDate {
@@ -98,14 +87,13 @@ actual class CommonDate {
     }
 
     actual fun toNumber(): CommonNumber {
-        var result = CommonNumber(this.second).divide(CommonNumber(60), 7, RoundingMode.ROUND_HALF_EVEN)
+        var result = CommonNumber(this.second).divide(CommonNumber(60),7, RoundingMode.ROUND_HALF_EVEN)
         result = result.add(CommonNumber(this.minute)).divide(CommonNumber(60), 7, RoundingMode.ROUND_HALF_EVEN)
         result = result.add(CommonNumber(this.hour)).divide(CommonNumber(24), 7, RoundingMode.ROUND_HALF_EVEN)
-
         if (this.year != null && this.year > 1900) {
-            val start: LocalDate = LocalDate.of(this.year, this.month, this.day)
-            val end = LocalDate.of(1900, 1, 1)
-            val days = ChronoUnit.DAYS.between(end, start) + 2
+            val start = DayJs(Date(year = this.year, month = this.month - 1, day = this.day))
+            val end = DayJs("1900-01-01")
+            val days = start.diff(end, "day") + 2
             return result.add(CommonNumber(days))
         }
         return if (this.day != null) {
@@ -116,66 +104,68 @@ actual class CommonDate {
     actual companion object {
         actual fun parse(textValue: String): CommonDate? {
             val t: String = textValue.trim { it <= ' ' }
-            var m = Pattern
-                .compile("^(\\d{4})-(1[012]|0?\\d)-(30|31|[012]?\\d) ([01]?\\d|2[0123]):([012345]?\\d):([012345]?\\d)$")
-                .matcher(t)
-            if (m.find()) {
+            var m = Regex(pattern = "^(\\d{4})-(1[012]|0?\\d)-(30|31|[012]?\\d) ([01]?\\d|2[0123]):([012345]?\\d):([012345]?\\d)$")
+            var mr = m.find(t)
+            if (mr != null) {
                 val date  = CommonDate()
-                date.year = m.group(1).toInt()
-                date.month = m.group(2).toInt()
-                date.day= m.group(3).toInt()
-                date.hour = m.group(4).toInt()
-                date.minute = m.group(5).toInt()
-                date.second = m.group(6).toInt()
+                date.year = mr.groups[1]!!.value.toInt()
+                date.month = mr.groups[2]!!.value.toInt()
+                date.day= mr.groups[3]!!.value.toInt()
+                date.hour = mr.groups[4]!!.value.toInt()
+                date.minute =  mr.groups[5]!!.value.toInt()
+                date.second = mr.groups[6]!!.value.toInt()
                 return date
             }
-            m = Pattern.compile("(\\d{4})-(1[012]|0?\\d)-(30|31|[012]?\\d) ([01]?\\d|2[0123]):([012345]?\\d)")
-                .matcher(t)
-            if (m.find()) {
+            m = Regex("(\\d{4})-(1[012]|0?\\d)-(30|31|[012]?\\d) ([01]?\\d|2[0123]):([012345]?\\d)")
+            mr = m.find(t)
+            if (mr != null) {
                 val date = CommonDate()
-                date.year = m.group(1).toInt()
-                date.month = m.group(2).toInt()
-                date.day = m.group(3).toInt()
-                date.hour = m.group(4).toInt()
-                date.minute = m.group(5).toInt()
+                date.year = mr.groups[1]!!.value.toInt()
+                date.month = mr.groups[2]!!.value.toInt()
+                date.day = mr.groups[3]!!.value.toInt()
+                date.hour = mr.groups[4]!!.value.toInt()
+                date.minute = mr.groups[5]!!.value.toInt()
                 return date
             }
-            m = Pattern.compile("(\\d{4})-(1[012]|0?\\d)-(30|31|[012]?\\d)").matcher(t)
-            if (m.find()) {
+            m = Regex("(\\d{4})-(1[012]|0?\\d)-(30|31|[012]?\\d)")
+            mr = m.find(t)
+            if (mr != null) {
                 val date = CommonDate()
-                date.year = m.group(1).toInt()
-                date.month = m.group(2).toInt()
-                date.day = m.group(3).toInt()
+                date.year = mr.groups[1]!!.value.toInt()
+                date.month = mr.groups[2]!!.value.toInt()
+                date.day = mr.groups[3]!!.value.toInt()
                 return date
             }
-            m = Pattern.compile("^(\\d+) (2[0123]|[01]?\\d):([012345]?\\d):([012345]?\\d)$").matcher(t)
-            if (m.find()) {
+            m = Regex("^(\\d+) (2[0123]|[01]?\\d):([012345]?\\d):([012345]?\\d)$")
+            mr = m.find(t)
+            if (mr != null) {
                 val date = CommonDate()
-                date.day = m.group(1).toInt()
-                date.hour = m.group(2).toInt()
-                date.minute = m.group(3).toInt()
-                date.second = m.group(4).toInt()
+                date.day = mr.groups[1]!!.value.toInt()
+                date.hour = mr.groups[2]!!.value.toInt()
+                date.minute = mr.groups[3]!!.value.toInt()
+                date.second = mr.groups[4]!!.value.toInt()
                 return date
             }
-            m = Pattern.compile("^(2[0123]|[01]?\\d):([012345]?\\d):([012345]?\\d)$").matcher(t)
-            if (m.find()) {
+            m = Regex("^(2[0123]|[01]?\\d):([012345]?\\d):([012345]?\\d)$")
+            mr = m.find(t)
+            if (mr  != null) {
                 val date = CommonDate()
-                date.hour = m.group(1).toInt()
-                date.minute = m.group(2).toInt()
-                date.second = m.group(3).toInt()
+                date.hour = mr.groups[1]!!.value.toInt()
+                date.minute = mr.groups[2]!!.value.toInt()
+                date.second = mr.groups[3]!!.value.toInt()
                 return date
             }
-            m = Pattern.compile("^(2[0123]|[01]?\\d):([012345]?\\d)$").matcher(t)
-            if (m.find()) {
+            m = Regex("^(2[0123]|[01]?\\d):([012345]?\\d)$")
+            mr = m.find(t)
+            if (mr  != null) {
                 val date = CommonDate()
-                date.hour = m.group(1).toInt()
-                date.minute = m.group(2).toInt()
+                date.hour = mr.groups[1]!!.value.toInt()
+                date.minute = mr.groups[2]!!.value.toInt()
                 return date
             }
             return null
         }
     }
-
 
 
 

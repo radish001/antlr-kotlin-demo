@@ -1,4 +1,4 @@
-package antlr.string
+package antlr.util
 
 
 /**

@@ -1,6 +1,6 @@
 package antlr.json
 
-import antlr.string.CommonStringReader
+import antlr.util.CommonStringReader
 
 /**
  * @ClassName Lexer.java

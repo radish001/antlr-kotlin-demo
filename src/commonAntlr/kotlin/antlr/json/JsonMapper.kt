@@ -1,6 +1,6 @@
 package antlr.json
 
-import antlr.data.CommonNumber
+import antlr.expect.CommonNumber
 
 /**
  * @ClassName JsonMapper.java

@@ -1,4 +1,4 @@
-package antlr.data
+package antlr.expect
 
 import java.math.BigDecimal
 
@@ -51,19 +51,19 @@ actual class CommonNumber {
     }
 
     actual fun add(numberValue: CommonNumber): CommonNumber {
-        return CommonNumber( value.add(numberValue.value))
+        return CommonNumber(value.add(numberValue.value))
     }
 
     actual fun subtract(numberValue: CommonNumber): CommonNumber {
-        return CommonNumber( value.subtract(numberValue.value))
+        return CommonNumber(value.subtract(numberValue.value))
     }
 
     actual fun multiply(commonNumber: CommonNumber): CommonNumber {
-        return CommonNumber( value.multiply(commonNumber.value))
+        return CommonNumber(value.multiply(commonNumber.value))
     }
 
     actual fun divide(divisor: CommonNumber, rounding: RoundingMode): CommonNumber {
-        return CommonNumber( value.divide(divisor.value, rounding.value))
+        return CommonNumber(value.divide(divisor.value, rounding.value))
     }
 
     actual fun setScale(scale: Int, rounding: RoundingMode): CommonNumber {
@@ -71,7 +71,7 @@ actual class CommonNumber {
     }
 
     actual fun divide(divisor: CommonNumber, scale: Int, rounding: RoundingMode): CommonNumber {
-        return CommonNumber( value.divide(divisor.value, scale, rounding.value))
+        return CommonNumber(value.divide(divisor.value, scale, rounding.value))
     }
 
 

@@ -2,8 +2,8 @@ package antlr.impl
 
 import antlr.MathParser
 import antlr.MathVisitor
-import antlr.data.CommonNumber
-import antlr.function.CommonFunction
+import antlr.expect.CommonNumber
+import antlr.data.CommonFunction
 import antlr.util.CharUtil
 import org.antlr.v4.kotlinruntime.tree.AbstractParseTreeVisitor
 

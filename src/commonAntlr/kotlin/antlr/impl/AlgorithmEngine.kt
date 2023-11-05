@@ -3,8 +3,8 @@ package antlr.impl
 import antlr.AntlrErrorListener
 import antlr.MathLexer
 import antlr.MathParser
-import antlr.data.CommonDate
-import antlr.data.CommonNumber
+import antlr.expect.CommonDate
+import antlr.expect.CommonNumber
 import antlr.data.SimpleMapWrapper
 import antlr.json.JsonData
 import antlr.json.JsonMapper

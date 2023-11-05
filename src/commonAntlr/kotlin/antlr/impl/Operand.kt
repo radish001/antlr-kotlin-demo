@@ -1,7 +1,7 @@
 package antlr.impl
 
-import antlr.data.CommonDate
-import antlr.data.CommonNumber
+import antlr.expect.CommonDate
+import antlr.expect.CommonNumber
 import antlr.json.JsonData
 import antlr.json.JsonMapper
 
